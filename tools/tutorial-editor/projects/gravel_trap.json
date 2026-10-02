@@ -1,0 +1,403 @@
+{
+  "id": "gravel_trap",
+  "symbol": "GravelTrap",
+  "name": "Gravel trap",
+  "title": "Gravel trap",
+  "titleRes": "how_to_play_step6_title",
+  "bodyRes": "how_to_play_step6_body",
+  "body": "Beyond the outer wall lies a gravel trap. When it is on, running wide is no crash: the gravel brakes you on every move from it and on the two after. The barrier at its far edge stops you like a wall. When it is off, the outer wall stops you as before.",
+  "notes": "Six-frame walkthrough of the gravel trap, following MoveRules: the outer wall runs along row 2, the gravel lies two rows beyond it and the barrier is on row 4.\n\n1. The car at (2,1) with velocity (2,1) coasts to (4,2), onto the outer wall.\n2. All nine candidates are legal: the wall line and row 3 are gravel.\n3. It runs wide to (5,3) at velocity (3,2). Unbraked it would coast to (8,5), past the barrier; braked (speed 3 less 2, rounded per axis to (1,1)) it coasts to (6,4).\n4. Around (6,4), rows 3 and 4 are gravel and offered; row 5 lies past the barrier and is withheld.\n5. It steers to (6,3). Moving from the gravel brakes it to a standstill coast, so the nine points round the car itself are offered.\n6. Two crawling moves take it over the wall at (7,2) and onto the track at (8,1); that last move started on the wall, so the brake holds for the two moves after it.",
+  "grid": {
+    "cols": 9,
+    "rows": 7,
+    "cellMode": "fit",
+    "cellScale": 0.85,
+    "cellDivisor": 7.0,
+    "originMode": "points"
+  },
+  "groups": {},
+  "frames": [
+    {
+      "phase": 0.0,
+      "caption": "Beyond the outer wall lies a gravel trap, two grid points deep, with a barrier at its far edge."
+    },
+    {
+      "phase": 0.16,
+      "caption": "With the gravel trap on, running wide is no crash: points in the gravel are legal moves."
+    },
+    {
+      "phase": 0.38,
+      "caption": "In the gravel the car is braked: its coast point is pulled back two grid points."
+    },
+    {
+      "phase": 0.5,
+      "caption": "You choose around the braked point as usual. Points past the barrier are withheld, like those past a wall."
+    },
+    {
+      "phase": 0.7,
+      "caption": "Every move from the gravel is braked; at low speed you may stop or crawl one point in any direction."
+    },
+    {
+      "phase": 0.92,
+      "caption": "Back on the track, the brake holds for two more moves, then you can speed up again."
+    }
+  ],
+  "elements": [
+    {
+      "id": "gravel",
+      "type": "gravel",
+      "from": [
+        -0.5,
+        2
+      ],
+      "to": [
+        8.5,
+        2
+      ],
+      "depth": 2.0
+    },
+    {
+      "id": "wall",
+      "type": "wall",
+      "from": [
+        -0.5,
+        2
+      ],
+      "to": [
+        8.5,
+        2
+      ],
+      "width": 0.15
+    },
+    {
+      "id": "trail_in",
+      "type": "trail",
+      "kind": "static",
+      "from": [
+        0,
+        0
+      ],
+      "to": [
+        2,
+        1
+      ]
+    },
+    {
+      "id": "trail_wide",
+      "type": "trail",
+      "kind": "follow",
+      "car": "car",
+      "move": 0
+    },
+    {
+      "id": "trail_steer",
+      "type": "trail",
+      "kind": "follow",
+      "car": "car",
+      "move": 1
+    },
+    {
+      "id": "trail_crawl",
+      "type": "trail",
+      "kind": "follow",
+      "car": "car",
+      "move": 2
+    },
+    {
+      "id": "trail_out",
+      "type": "trail",
+      "kind": "follow",
+      "car": "car",
+      "move": 3
+    },
+    {
+      "id": "projector_in",
+      "type": "projector",
+      "from": [
+        2,
+        1
+      ],
+      "to": [
+        4,
+        2
+      ],
+      "color": "legal",
+      "alpha": {
+        "out": [
+          0.18,
+          0.25
+        ]
+      }
+    },
+    {
+      "id": "pickers_into_gravel",
+      "type": "pickers",
+      "style": "offered",
+      "around": [
+        4,
+        2
+      ],
+      "alpha": {
+        "in": [
+          0.08,
+          0.15
+        ],
+        "out": [
+          0.18,
+          0.25
+        ]
+      }
+    },
+    {
+      "id": "ring_wide",
+      "type": "pickRing",
+      "at": [
+        5,
+        3
+      ],
+      "alpha": {
+        "in": [
+          0.12,
+          0.16
+        ],
+        "out": [
+          0.18,
+          0.25
+        ]
+      }
+    },
+    {
+      "id": "projector_unbraked",
+      "type": "projector",
+      "from": [
+        5,
+        3
+      ],
+      "to": [
+        8,
+        5
+      ],
+      "color": "crash",
+      "alpha": {
+        "in": [
+          0.3,
+          0.32
+        ],
+        "out": [
+          0.42,
+          0.48
+        ]
+      }
+    },
+    {
+      "id": "projector_braked",
+      "type": "projector",
+      "from": [
+        5,
+        3
+      ],
+      "to": [
+        6,
+        4
+      ],
+      "color": "legal",
+      "alpha": {
+        "in": [
+          0.32,
+          0.35
+        ],
+        "out": [
+          0.52,
+          0.56
+        ]
+      }
+    },
+    {
+      "id": "pickers_braked",
+      "type": "pickers",
+      "style": "offered",
+      "points": [
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          4
+        ],
+        [
+          7,
+          4
+        ]
+      ],
+      "alpha": {
+        "in": [
+          0.42,
+          0.48
+        ],
+        "out": [
+          0.52,
+          0.56
+        ]
+      }
+    },
+    {
+      "id": "pickers_past_barrier",
+      "type": "pickers",
+      "style": "withheld",
+      "points": [
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          7,
+          5
+        ]
+      ],
+      "alpha": {
+        "in": [
+          0.42,
+          0.48
+        ],
+        "out": [
+          0.52,
+          0.56
+        ]
+      }
+    },
+    {
+      "id": "ring_steer",
+      "type": "pickRing",
+      "at": [
+        6,
+        3
+      ],
+      "alpha": {
+        "in": [
+          0.49,
+          0.51
+        ],
+        "out": [
+          0.52,
+          0.56
+        ]
+      }
+    },
+    {
+      "id": "pickers_standstill",
+      "type": "pickers",
+      "style": "offered",
+      "around": [
+        6,
+        3
+      ],
+      "alpha": {
+        "in": [
+          0.63,
+          0.68
+        ],
+        "out": [
+          0.72,
+          0.75
+        ]
+      }
+    },
+    {
+      "id": "ring_crawl",
+      "type": "pickRing",
+      "at": [
+        7,
+        2
+      ],
+      "alpha": {
+        "in": [
+          0.68,
+          0.7
+        ],
+        "out": [
+          0.72,
+          0.75
+        ]
+      }
+    },
+    {
+      "id": "car",
+      "type": "car",
+      "rest": [
+        2,
+        1
+      ],
+      "restHeading": [
+        2,
+        1
+      ],
+      "moves": [
+        {
+          "to": [
+            5,
+            3
+          ],
+          "start": 0.2,
+          "end": 0.3,
+          "heading": [
+            3,
+            2
+          ]
+        },
+        {
+          "to": [
+            6,
+            3
+          ],
+          "start": 0.55,
+          "end": 0.62,
+          "heading": [
+            1,
+            0
+          ]
+        },
+        {
+          "to": [
+            7,
+            2
+          ],
+          "start": 0.74,
+          "end": 0.8,
+          "heading": [
+            1,
+            -1
+          ]
+        },
+        {
+          "to": [
+            8,
+            1
+          ],
+          "start": 0.82,
+          "end": 0.88,
+          "heading": [
+            1,
+            -1
+          ]
+        }
+      ]
+    }
+  ]
+}

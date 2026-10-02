@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="108" height="108" viewBox="0 0 108 108">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="108" y2="108" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0A0A1A"/>
+      <stop offset="1" stop-color="#1A1A3A"/>
+    </linearGradient>
+    <filter id="glowGreen" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="glowRed" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  <g id="background">
+    <rect x="0" y="0" width="108" height="108" fill="url(#bg)"/>
+  </g>
+  <g id="foreground">
+    <!-- Grid points -->
+    <g fill="#00E676" opacity="0.6">
+      <circle cx="58" cy="30" r="2.5"/>
+      <circle cx="70" cy="30" r="2.5"/>
+      <circle cx="82" cy="30" r="2.5"/>
+      <circle cx="58" cy="42" r="2.5"/>
+      <circle cx="82" cy="42" r="2.5"/>
+      <circle cx="58" cy="54" r="2.5"/>
+      <circle cx="70" cy="54" r="2.5"/>
+      <circle cx="82" cy="54" r="2.5"/>
+    </g>
+    <!-- Target Point Glowing -->
+    <circle cx="70" cy="42" r="4" fill="#B2FF59" filter="url(#glowGreen)"/>
+    <circle cx="70" cy="42" r="2" fill="#FFFFFF"/>
+    
+    <!-- Projector Line Glowing -->
+    <line x1="50" y1="62" x2="70" y2="42" stroke="#B2FF59" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 3" filter="url(#glowGreen)"/>
+    
+    <!-- Trail Glowing -->
+    <line x1="30" y1="82" x2="16" y2="96" stroke="#FF5252" stroke-opacity="0.5" stroke-width="5" stroke-linecap="round" filter="url(#glowRed)"/>
+    <line x1="42" y1="70" x2="30" y2="82" stroke="#FF5252" stroke-opacity="0.9" stroke-width="5" stroke-linecap="round" filter="url(#glowRed)"/>
+    
+    <!-- Car -->
+    <g transform="translate(42,70) rotate(-45)">
+      <path d="M-12,-8 L12,-8 L16,0 L12,8 L-12,8 Z" fill="#D50000"/>
+      <polygon points="4,-5 10,-5 12,0 10,5 4,5" fill="#84FFFF"/>
+      <rect x="6" y="-10" width="6" height="3" rx="1" fill="#000000"/>
+      <rect x="6" y="7" width="6" height="3" rx="1" fill="#000000"/>
+      <rect x="-8" y="-10" width="6" height="3" rx="1" fill="#000000"/>
+      <rect x="-8" y="7" width="6" height="3" rx="1" fill="#000000"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,53 @@
+# Build outputs (root and every module: app/, shared/, and any future module)
+build/
+.gradle/
+
+# Gradle/Kotlin incremental-compilation cache
+.kotlin/
+
+# Python bytecode caches
+__pycache__/
+*.pyc
+
+# Android Studio / IntelliJ project files
+.idea/
+*.iml
+
+# Machine-specific local config (SDK path etc.)
+local.properties
+
+# Release signing material (never commit)
+keystore.properties
+*.jks
+
+# The Play service-account key. It is not here and should never be: the key
+# lives outside every app repository and fastlane is given its path through
+# SUPPLY_JSON_KEY. But fastlane/Appfile falls back to this exact path when that
+# variable is unset, so a key dropped here would be picked up — and, without
+# this line, committed.
+fastlane/play-service-account.json
+
+# Temporary verification screenshots from emulator runs
+/screenshots/
+
+# Server runtime data
+server/gridracer.sqlite
+server/gridracer.sqlite-shm
+server/gridracer.sqlite-wal
+
+# A SQLite file created by a test or a `:server:run` from the repo root.
+/gridracer.sqlite
+/gridracer.sqlite-shm
+/gridracer.sqlite-wal
+
+# Race logs. They hold player display names, so they are runtime data and not
+# something to commit - see the privacy policy's retention section.
+/races/
+server/races/
+
+# Editor swap files
+*.kate-swp
+.*.kate-swp
+
+# Deployment bundle produced by the packaging step in server/README.md.
+/server-dist.tar.gz

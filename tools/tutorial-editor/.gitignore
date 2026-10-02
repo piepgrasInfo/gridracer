@@ -1,0 +1,3 @@
+# Generated Kotlin and the contact sheet: reproduce them with codegen.py / make_sheet.py.
+out/
+__pycache__/

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Online multiplayer, and Sentry-protocol crash reporting to whatever endpoint
+         the build was given (see legal/permissions.md). Auto-init is disabled so crash
+         reporting stays off until the user opts in via Settings; CrashReporting.init()
+         turns it on programmatically then. Official builds report to a self-hosted
+         Bugsink instance; a build from the published source has no endpoint at all. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Turn reminder notification: alerts a backgrounded player that their multiplayer turn
+         clock is running, before the server forfeits it for them. Requested at runtime on
+         API 33+; the notification is simply skipped if refused. -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.GridRacer"
+        android:supportsRtl="true">
+
+        <!-- Crash/error reporting only: no session replay, screenshots, view-hierarchy
+             attachment, or performance tracing - see legal/privacy-policy.md.
+             The DSN is passed in code (CrashReporting.kt, from a build-time property)
+             rather than declared here, so the SDK cannot find it and start itself before
+             the user has opted in. -->
+        <meta-data android:name="io.sentry.auto-init" android:value="false" />
+        <meta-data android:name="io.sentry.send-default-pii" android:value="false" />
+
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="landscape"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- FileProvider for exporting replay files via Intent.ACTION_SEND. -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+
+</manifest>

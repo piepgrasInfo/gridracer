@@ -1,0 +1,504 @@
+<resources>
+    <string name="app_name">Grid Racer</string>
+
+    <string name="action_back">Zurück</string>
+    <string name="action_main_menu">Hauptmenü</string>
+    <string name="action_cancel">Abbrechen</string>
+    <string name="action_ok">OK</string>
+    <string name="action_continue">Weiter</string>
+
+    <string name="editor_title">Strecken-Editor</string>
+    <string name="editor_step_inner">Wischen Sie um die innere Schleife. Sie schließt sich und richtet sich automatisch, wenn Sie den Finger heben.</string>
+    <string name="editor_step_outer">Wischen Sie nun um die äußere Begrenzung, außerhalb der inneren.</string>
+    <string name="editor_step_obstacles">Wischen Sie optional geschlossene Schleifen innerhalb der Strecke: wählen Sie unten einen Gefahrentyp. Barriere blockiert Autos (und verschmilzt mit einer Begrenzung, wenn sie eine berührt); Ölspur und Nägel sind Gefahren, über die Autos noch fahren können. Tippen Sie oben auf das Ziellinie-Werkzeug, wenn Sie fortfahren möchten.</string>
+    <string name="editor_step_finish_line">Ziehen Sie grob über die Strecke, um die Ziellinie zu platzieren – sie rastet automatisch an den Streckenrändern ein.</string>
+    <string name="editor_step_review">Überprüfen Sie Ihre Strecke und geben Sie ihr einen Namen.</string>
+    <string name="editor_undo">Rückgängig</string>
+    <string name="editor_close">Editor schließen</string>
+    <string name="editor_tool_inner">Innere Begrenzung</string>
+    <string name="editor_tool_outer">Äußere Begrenzung</string>
+    <string name="editor_tool_obstacle">Hindernis</string>
+    <string name="editor_tool_finish_line">Ziellinie</string>
+    <string name="editor_pick_direction">In welche Richtung überqueren Autos die Linie?</string>
+    <string name="editor_direction_a_description">Richtung A</string>
+    <string name="editor_direction_b_description">Richtung B</string>
+    <string name="editor_redraw_finish_line">Ziellinie neu zeichnen</string>
+    <string name="editor_track_name_label">Streckenname</string>
+    <string name="editor_save">Strecke speichern</string>
+    <string name="editor_start_over">Neu beginnen</string>
+    <string name="editor_start_over_confirm_title">Neu beginnen?</string>
+    <string name="editor_start_over_confirm_body">Dies verwirft die gesamte Strecke und kann nicht rückgängig gemacht werden.</string>
+    <string name="editor_default_track_name">Benutzerdefinierte Strecke</string>
+    <string name="editor_draw_kind_obstacle">Barriere</string>
+    <string name="editor_draw_kind_oil_spill">Ölspur</string>
+    <string name="editor_draw_kind_nails">Nägel</string>
+    <string name="editor_pan_zoom_hint">Zum Zoomen kneifen, mit zwei Fingern ziehen, um zu verschieben.</string>
+    <string name="editor_auto_fix">Auto-Korrektur</string>
+    <string name="editor_tidying_up">Form wird aufgeräumt…</string>
+
+    <string name="menu_start_race">Rennen starten</string>
+    <string name="menu_tracks">Strecken</string>
+    <string name="menu_leaderboard">Bestenliste</string>
+    <string name="menu_settings">Einstellungen</string>
+    <string name="menu_how_to_play">Spielanleitung</string>
+
+    <string name="account_logged_in_as">Angemeldet als %1$s</string>
+    <string name="account_rating_label">Wertung</string>
+    <string name="account_matches_label">Partien</string>
+    <string name="account_wins_label">Siege</string>
+    <string name="account_logout">Abmelden</string>
+    <string name="account_delete">Konto löschen…</string>
+    <string name="account_delete_title">Konto wirklich löschen?</string>
+    <string name="account_delete_body">Damit wird dein Konto auf diesem Server endgültig gelöscht: Benutzername, Anzeigename, Wertung und Partienbilanz, die von dir geteilten Strecken sowie deine Bewertungen und Meldungen. Dein Name wird auch aus gespeicherten Rennprotokollen entfernt — gefahrene Rennen bleiben in den Wiederholungen der anderen erhalten, aber ohne deinen Namen. Das lässt sich nicht rückgängig machen.</string>
+    <string name="account_delete_local_note">Strecken, Wiederholungen und Einstellungen auf diesem Gerät bleiben unberührt; sie verschwinden erst beim Deinstallieren der App.</string>
+    <string name="account_delete_password_label">Passwort bestätigen</string>
+    <string name="account_delete_confirm">Konto löschen</string>
+    <string name="account_delete_unsupported">Dieser Server kann Konten nicht aus der App löschen. Schreib an apps@piepgras.info und nenne deinen Benutzernamen, dann löschen wir es.</string>
+    <string name="account_delete_done">Dein Konto und alle zugehörigen Daten wurden gelöscht.</string>
+    <string name="account_error_in_room">Verlasse erst das Rennen, bevor du dein Konto löschst.</string>
+    <string name="account_error_delete_failed">Das Konto konnte nicht gelöscht werden. Bitte versuch es noch einmal.</string>
+    <string name="account_login_tab">Anmelden</string>
+    <string name="account_register_tab">Registrieren</string>
+    <string name="account_username">Benutzername</string>
+    <string name="account_password">Passwort</string>
+    <string name="account_display_name_optional">Anzeigename (optional)</string>
+    <string name="account_login_button">Anmelden</string>
+    <string name="account_register_button">Registrieren</string>
+    <string name="account_not_connected">Verbindung zum Server wird hergestellt…</string>
+    <string name="account_server_no_accounts">Dieser Server unterstützt keine Konten.</string>
+    <string name="account_error_generic">Die Anfrage konnte nicht abgeschlossen werden.</string>
+    <string name="account_error_invalid_username">Dieser Benutzername ist nicht zulässig. %1$s</string>
+    <string name="account_error_invalid_password">Dieses Passwort ist zu kurz. %1$s</string>
+    <string name="account_error_invalid_display_name">Dieser Anzeigename ist nicht zulässig. Versuchen Sie einen kürzeren Namen ohne ungewöhnliche Zeichen.</string>
+    <string name="account_error_username_taken">Dieser Benutzername ist bereits vergeben.</string>
+    <string name="account_error_no_such_user">Es gibt kein Konto mit diesem Benutzernamen.</string>
+    <string name="account_error_wrong_password">Falsches Passwort.</string>
+    <string name="account_error_rate_limited">Zu viele Versuche. Warten Sie eine Minute und versuchen Sie es erneut.</string>
+    <string name="account_hint_username">%1$d–%2$d Buchstaben, Ziffern oder Unterstriche; muss mit einem Buchstaben beginnen.</string>
+    <string name="account_hint_password">Mindestens %1$d Zeichen.</string>
+    <string name="account_dismiss_error">Schließen</string>
+
+    <string name="multiplayer_disconnected">Getrennt</string>
+    <string name="multiplayer_connecting">Verbinden…</string>
+    <string name="multiplayer_reconnecting">Erneut verbinden…</string>
+    <string name="multiplayer_connected">Verbunden</string>
+    <string name="multiplayer_error">Verbindungsfehler</string>
+    <string name="multiplayer_encrypted">Verschlüsselt</string>
+    <string name="multiplayer_encrypted_description">Verschlüsselte Verbindung</string>
+    <string name="multiplayer_unencrypted_description">Unverschlüsselte Verbindung</string>
+    <string name="multiplayer_unencrypted_warning">Nicht verschlüsselt: Dein Passwort und alles andere, was du an diesen Server sendest, geht im Klartext über das Netz. Nutze einen Server ohne wss:// nur in einem Netzwerk, dem du vertraust, etwa in deinem Heimnetz.</string>
+    <string name="multiplayer_unencrypted_password">Diese Verbindung ist nicht verschlüsselt: Dein Passwort wird im Klartext gesendet.</string>
+    <string name="multiplayer_host">Rennen hosten</string>
+    <string name="multiplayer_join">Rennen beitreten</string>
+    <string name="multiplayer_no_rooms">Keine offenen Räume</string>
+    <string name="multiplayer_max_players">Max. Spieler</string>
+    <string name="multiplayer_laps">Runden: %1$d</string>
+    <string name="multiplayer_room_settings_summary">Max. Spieler: %1$d · Zuglimit: %2$ds</string>
+    <string name="multiplayer_player_name">Ihr Name</string>
+    <string name="multiplayer_room_password">Raum-Passwort</string>
+    <string name="multiplayer_room_password_optional">Passwort (optional)</string>
+    <string name="multiplayer_room_private">Privater Raum</string>
+    <string name="multiplayer_room_code">Raumcode</string>
+    <string name="multiplayer_ready_header">Bereit?</string>
+    <string name="multiplayer_players">Spieler</string>
+    <string name="multiplayer_start_race">Rennen starten</string>
+    <string name="multiplayer_leave">Verlassen</string>
+    <string name="multiplayer_race_settings">Renneinstellungen…</string>
+    <string name="multiplayer_turn_timeout_label">Zuglimit</string>
+    <string name="multiplayer_seat_empty">Nicht verbunden</string>
+    <string name="multiplayer_seat_ai">Computer</string>
+    <string name="multiplayer_seat_ai_level">Computer · %1$s</string>
+    <string name="multiplayer_change_ai_level">Stufe ändern</string>
+    <string name="multiplayer_seat_you">%1$s (Sie)</string>
+    <string name="multiplayer_seat_host">Host</string>
+    <string name="multiplayer_seat_disconnected">Getrennt</string>
+    <string name="multiplayer_kick_player">Spieler entfernen</string>
+    <string name="multiplayer_kick_title">Diesen Spieler entfernen?</string>
+    <string name="multiplayer_kick_message">%1$s wird aus dem Raum entfernt und muss erneut eingeladen werden.</string>
+    <string name="multiplayer_kick_unnamed">Dieser Spieler</string>
+    <string name="multiplayer_add_ai">KI hinzufügen</string>
+    <string name="multiplayer_remove_ai">KI entfernen</string>
+    <string name="multiplayer_remove_ai_title">Diesen KI-Fahrer entfernen?</string>
+    <string name="multiplayer_remove_ai_message">%1$s verlässt das Starterfeld und der Platz wird wieder frei.</string>
+    <string name="multiplayer_leave_title">Diesen Raum verlassen?</string>
+    <string name="multiplayer_leave_message">Sie verlieren Ihren Platz. Wenn ein Rennen läuft, geben Sie es damit auf.</string>
+    <string name="multiplayer_room_code_copied">Raumcode kopiert</string>
+    <string name="multiplayer_room_code_share">Tritt meinem Grid-Racer-Raum mit dem Code %1$s bei</string>
+    <string name="action_copy">Kopieren</string>
+    <string name="action_share">Teilen</string>
+    <string name="lobby_hazards_on">⚡ Gefahren an</string>
+    <string name="lobby_hazards_off">⚡ Gefahren aus</string>
+    <string name="lobby_gravel_on">Kiesbett an</string>
+    <string name="lobby_gravel_off">Kiesbett aus</string>
+    <string name="error_title">Fehler</string>
+    <string name="action_load_more">Mehr laden</string>
+    <string name="action_refresh">Aktualisieren</string>
+
+    <string name="how_to_play_title">Spielanleitung</string>
+    <string name="how_to_play_back">Zurück zum Menü</string>
+    <string name="how_to_play_swipe_hint">Wischen Sie nach links/rechts für die nächste/vorherige Regel</string>
+    <string name="how_to_play_step1_title">Zug wählen</string>
+    <string name="how_to_play_step1_body">In jedem Zug projizieren Sie Ihre aktuelle Geschwindigkeit nach vorne. Von dieser ausrollenden Position aus müssen Sie eine der 8 Nachbarpositionen oder das Ausrollen selbst als Ihren nächsten Zug wählen.</string>
+    <string name="how_to_play_step2_title">Wände und Abstürze</string>
+    <string name="how_to_play_step2_body">Wände blockieren jeden Zug, dessen Pfad sie kreuzt. Wenn Ihr Ausrollpunkt hinter einer Wand liegt und jeder Zug sie kreuzen würde, stürzen Sie ab und sind aus dem Rennen. Planen Sie Ihr Bremsen früh: je schneller Sie fahren, desto länger dauert es, langsamer zu werden.</string>
+    <string name="how_to_play_step3_title">Ziellinie und Runden</string>
+    <string name="how_to_play_step3_body">Überqueren Sie die Ziellinie in Richtung ihres Pfeils, um eine Runde zu vollenden. Wer zuerst alle Runden vollendet, gewinnt. Das Überqueren der Linie gegen den Pfeil führt stattdessen zum Absturz.</string>
+    <string name="how_to_play_step4_title">Ölspuren</string>
+    <string name="how_to_play_step4_body">Wer über eine Ölspur fährt, verliert im nächsten Zug die Lenkung. Angeboten werden nur der Ausrollpunkt und zwei zufällig gewählte Nachbarpunkte – Sie haben eine Wahl, aber nicht die übliche. Bremsen Sie vor einer Ölspur ab, oder lenken Sie darum herum.</string>
+    <string name="how_to_play_step5_title">Nägel</string>
+    <string name="how_to_play_step5_body">Nägel erzwingen eine Verlangsamung. Mit Tempo bleiben nur die drei am stärksten bremsenden Züge. Bei Tempo eins oder weniger können Sie anhalten, geradeaus weiterrollen oder seitlich ausweichen – aber nicht beschleunigen. Wählen Sie Ihre Linie sorgfältig, bevor Sie auf Nägel fahren.</string>
+    <string name="how_to_play_step6_title">Kiesbett</string>
+    <string name="how_to_play_step6_body">Hinter der Außenwand liegt ein Kiesbett. Ist es an, ist ein Abflug kein Unfall: Der Kies bremst Sie bei jedem Zug aus ihm und bei den zwei Zügen danach. Die Barriere am äußeren Rand hält Sie auf wie eine Wand. Ist es aus, hält Sie die Außenwand auf wie bisher.</string>
+
+    <string name="settings_placement_order_label">Reihenfolge der Startaufstellung</string>
+    <string name="settings_placement_sequential">In Reihenfolge</string>
+    <string name="settings_placement_random">Zufällig</string>
+    <string name="settings_sound_label">Soundeffekte</string>
+    <string name="settings_dark_mode_label">Dunkles Design</string>
+    <string name="settings_dark_mode_description">Dunkelt die ganze App ab, die Rennstrecke eingeschlossen. Standardmäßig an.</string>
+    <string name="settings_crash_reporting_label">Absturzberichte</string>
+    <string name="settings_language_label">Sprache</string>
+    <string name="settings_multiplayer_server_label">Mehrspieler-Server</string>
+    <string name="settings_gameplay_section">Spielablauf</string>
+    <string name="settings_privacy_section">Datenschutz</string>
+    <string name="settings_placement_order_description">Wer zuerst einen Startplatz wählt.</string>
+    <string name="settings_crash_reporting_description">Anonyme Absturzberichte senden, damit Fehler behoben werden können. Enthält niemals Ihren Namen, Ihr Konto oder etwas, das Sie erstellt haben.</string>
+    <string name="settings_server_section">Server</string>
+    <string name="settings_app_info_label">App-Informationen</string>
+    <string name="nav_permissions">Berechtigungen</string>
+    <string name="nav_about">Über</string>
+
+    <string name="permissions_intro">Grid Racer fordert zwei Berechtigungen an und verzichtet bewusst auf mehrere andere – hier steht genau, was jede einzelne bewirkt und ob Ihr Gerät sie erteilt hat.</string>
+    <string name="permissions_never_title">Nicht benötigt</string>
+    <string name="permission_status_granted">Erteilt</string>
+    <string name="permission_status_denied">Abgelehnt</string>
+    <string name="permission_status_not_requested">Nicht angefordert</string>
+    <string name="permission_grant_install_time">Bei der Installation erteilt. Android führt sie nicht unter den Berechtigungen auf, die Sie ausschalten können.</string>
+    <string name="permission_grant_runtime_granted">Sie haben dies erlaubt.</string>
+    <string name="permission_grant_runtime_denied">Sie haben dies nicht erlaubt.</string>
+    <string name="permission_grant_notifications_on">Benachrichtigungen sind für diese App eingeschaltet.</string>
+    <string name="permission_grant_notifications_off">Benachrichtigungen sind für diese App ausgeschaltet.</string>
+    <string name="permission_grant_never_requested">Grid Racer fordert sie nie an, daher kann sie nie gewährt werden</string>
+    <string name="permission_tap_to_revoke">Zum Entziehen in den Android-Einstellungen tippen</string>
+    <string name="permission_tap_to_allow">Zum Erlauben in den Android-Einstellungen tippen</string>
+    <string name="permission_notifications_title">Benachrichtigungen</string>
+    <string name="permission_notifications_body">Wird verwendet, um Sie zu benachrichtigen, wenn Sie in einem Online-Rennen am Zug sind, während Grid Racer im Hintergrund läuft. Mehr wird nie gesendet, und eine Ablehnung ändert nichts am Spiel selbst.</string>
+    <string name="permission_notifications_granted">Grid Racer darf Sie benachrichtigen, wenn Sie am Zug sind.</string>
+    <string name="permission_notifications_denied">Ausgeschaltet – Sie werden nicht benachrichtigt, wenn Sie in einem Online-Rennen am Zug sind.</string>
+    <string name="permission_internet_title">Internetzugriff</string>
+    <string name="permission_internet_body">Wird für Online-Mehrspieler-Rennen verwendet und – nur wenn Sie es in den Einstellungen einschalten – zum Senden von Absturzberichten an Bugsink. Der Mehrspielermodus benötigt eine Netzwerkverbindung; Absturzberichte sind standardmäßig ausgeschaltet, und das Spiel funktioniert ohne sie genauso.</string>
+    <string name="permission_internet_granted">Wird bei der Installation automatisch erteilt. Android führt sie nicht unter den Berechtigungen auf, die Sie umschalten können – hier gibt es also nichts auszuschalten.</string>
+    <string name="permission_internal_broadcasts_title">Schutz interner Broadcasts</string>
+    <string name="permission_internal_broadcasts_body">Nichts, worum wir bitten: Die Android-Build-Werkzeuge erzeugen sie für die App und erteilen sie nur der App selbst, damit zur Laufzeit registrierte Empfänger nicht von anderen Apps ausgelöst werden können. Sie gewährt keinerlei Zugriff und ist für Sie nicht als Funktion sichtbar.</string>
+    <string name="permission_internal_broadcasts_granted">Bei der Installation erteilt und nur von Grid Racer selbst nutzbar.</string>
+    <string name="permission_camera_title">Kamera</string>
+    <string name="permission_camera_body">Grid Racer benötigt Ihre Kamera nicht und fordert nie Zugriff darauf an.</string>
+    <string name="permission_microphone_title">Mikrofon</string>
+    <string name="permission_microphone_body">Grid Racer benötigt Ihr Mikrofon nicht und fordert nie Zugriff darauf an.</string>
+    <string name="permission_location_title">Standort</string>
+    <string name="permission_location_body">Grid Racer benötigt Ihren Standort nicht und fordert nie Zugriff darauf an.</string>
+    <string name="permission_contacts_title">Kontakte</string>
+    <string name="permission_contacts_body">Grid Racer benötigt Ihre Kontakte nicht und fordert nie Zugriff darauf an.</string>
+
+    <string name="about_version">Version %1$s</string>
+    <string name="about_description">Grid Racer ist ein rundenbasiertes Vektor-Rennen-Spiel, das auf einem Raster gespielt wird, entwickelt bei piepgras.info.</string>
+    <string name="about_website">https://piepgras.info</string>
+    <string name="about_copyright">© piepgras.info. Kontakt: apps@piepgras.info</string>
+    <string name="about_privacy_policy_url" translatable="false">https://piepgras.info/legal/grid-racer/privacy-policy/</string>
+    <string name="about_terms_url" translatable="false">https://piepgras.info/legal/grid-racer/terms-of-service/</string>
+    <string name="about_permissions_url" translatable="false">https://piepgras.info/legal/grid-racer/permissions/</string>
+    <string name="about_delete_account_url" translatable="false">https://piepgras.info/legal/grid-racer/delete-account/</string>
+    <string name="about_view_privacy_policy">Datenschutzerklärung online ansehen</string>
+    <string name="about_view_terms">Nutzungsbedingungen online ansehen</string>
+    <string name="about_view_permissions">Berechtigungserklärung online ansehen</string>
+    <string name="about_view_delete_account">Kontolöschung online beantragen</string>
+    <string name="about_view_source">Quellcode ansehen</string>
+    <string name="about_source_url" translatable="false">https://github.com/piepgrasInfo/gridracer</string>
+    <string name="about_license">Open-Source-Software unter der MIT-Lizenz. Der vollständige Quellcode ist veröffentlicht; Sie dürfen ihn nutzen, untersuchen, verändern und weitergeben, auch kommerziell.</string>
+
+    <string name="legal_disclaimer_title">Nutzungsbedingungen</string>
+    <string name="legal_disclaimer_body">Grid Racer wird „wie besehen" bereitgestellt, soweit gesetzlich zulässig. Ihre Einstellungen, Bestenliste und benutzerdefinierten Strecken bleiben ausschließlich auf diesem Gerät.</string>
+    <string name="legal_disclaimer_read_full">Datenschutzerklärung &amp; Nutzungsbedingungen</string>
+    <string name="legal_disclaimer_storage_note">Benutzerdefinierte Strecken befinden sich auf diesem Gerät und werden nirgendwo gesichert. Die Deinstallation der App löscht sie.</string>
+    <string name="legal_disclaimer_privacy_note">Datenschutz: keine Analysen, keine Werbung, kein Konto. Beim lokalen Spiel bleibt alles auf diesem Gerät. Wenn Sie ein Online-Mehrspieler-Rennen hosten oder daran teilnehmen, werden Ihr Spielername, Ihre gewählten Züge und der aktuelle Rennstand an den Server gesendet, mit dem Sie sich verbinden; diese Daten dienen nur der Durchführung des Rennens und werden nicht dauerhaft gespeichert.</string>
+    <string name="legal_disclaimer_checkbox">Ich habe die Datenschutzerklärung und die Nutzungsbedingungen gelesen und akzeptiere sie</string>
+    <string name="legal_disclaimer_continue">Weiter</string>
+
+    <string name="crash_consent_title">Absturzberichte</string>
+    <string name="crash_consent_body">Sie können helfen, Grid Racer zu verbessern, indem Sie anonyme Absturzberichte senden. Ein Bericht wird nur gesendet, nachdem die App tatsächlich abgestürzt ist oder eingefroren war, und nur wenn Sie dies unten einschalten. Er enthält den Fehler, das Gerätemodell und die Android-Version, damit das Problem gefunden und behoben werden kann.</string>
+    <string name="crash_consent_permission_note">Das Einschalten aktiviert die Netzwerkkommunikation und verwendet die Internet-Berechtigung. Ihre benutzerdefinierten Strecken, Spielernamen und Rennergebnisse werden nie in einen Absturzbericht aufgenommen und nie übertragen.</string>
+    <string name="crash_consent_change_later">Sie können diese Wahl jederzeit in den Einstellungen ändern. Die Standardeinstellung ist aus, sodass keine Informationen Ihr Gerät verlassen, es sei denn, Sie stimmen ausdrücklich zu.</string>
+    <string name="crash_consent_toggle">Absturzberichte senden</string>
+    <string name="crash_consent_continue">Weiter</string>
+
+    <string name="setup_players_label">Spieler</string>
+    <string name="setup_human">Mensch</string>
+    <string name="setup_ai">KI</string>
+    <string name="setup_ai_with_level">KI: %1$s</string>
+    <string name="ai_level_easy">Leicht</string>
+    <string name="ai_level_normal">Normal</string>
+    <string name="ai_level_best">Perfekt</string>
+    <string name="ai_level_option">%1$s – %2$s</string>
+    <string name="ai_level_easy_description">der bisherige Gegner</string>
+    <string name="ai_level_normal_description">plant die Linie, patzt hin und wieder</string>
+    <string name="ai_level_best_description">fährt die schnellste Linie überhaupt</string>
+    <string name="setup_gravel_label">Kiesbett</string>
+    <string name="setup_gravel_description">Wer über die Außenwand ins Kiesbett rutscht, wird abgebremst, statt zu verunglücken.</string>
+    <string name="setup_track_label">Strecke</string>
+    <string name="setup_laps_label">Runden</string>
+    <string name="setup_modifiers_label">Gefahren (Öl &amp; Nägel)</string>
+    <string name="setup_start_race">Rennen starten</string>
+    <string name="setup_duplicate_names_warning">Menschliche Spieler benötigen eindeutige Namen.</string>
+    <string name="setup_track_no_start_positions">Diese Strecke hat keine gültigen Startpositionen und kann nicht befahren werden. Versuchen Sie, sie zu bearbeiten oder zu löschen.</string>
+    <string name="setup_track_not_raceable">Kein Startgitter in diese Richtung</string>
+
+    <string name="track_dimensions">%1$d × %2$d Raster</string>
+    <string name="tracks_custom_section">Benutzerdefinierte Strecken</string>
+    <string name="tracks_new_track">+ Neue Strecke</string>
+    <string name="action_edit">Bearbeiten</string>
+    <string name="action_delete">Löschen</string>
+
+    <string name="shared_tracks_title">Geteilte Strecken</string>
+    <string name="shared_tracks_refresh">Aktualisieren</string>
+    <string name="shared_tracks_empty">Noch keine geteilten Strecken. Seien Sie der Erste, der eine aus dem Strecken-Editor hochlädt!</string>
+    <string name="shared_tracks_download">Herunterladen</string>
+    <string name="shared_tracks_upload">Strecke teilen</string>
+    <string name="shared_tracks_uploaded">Strecke erfolgreich geteilt!</string>
+    <string name="shared_tracks_login_required">Melden Sie sich an, um Strecken zu teilen.</string>
+    <string name="shared_tracks_upload_failed">Hochladen fehlgeschlagen: %1$s</string>
+    <string name="shared_tracks_download_saved">Strecke zu Ihren Strecken gespeichert.</string>
+    <string name="shared_tracks_download_failed">Herunterladen fehlgeschlagen: %1$s</string>
+    <string name="shared_tracks_reported">Strecke zur Prüfung gemeldet.</string>
+    <string name="shared_tracks_not_connected">Nicht mit dem Server verbunden.</string>
+    <string name="shared_tracks_loading">Geteilte Strecken werden geladen…</string>
+    <string name="shared_tracks_open_settings">Servereinstellungen öffnen</string>
+    <string name="shared_tracks_rating_summary">★ %1$.1f (%2$d)</string>
+
+    <string name="track_info_not_found">Strecke nicht gefunden.</string>
+    <string name="track_info_rating_aggregate">★ %1$.1f aus %2$d Bewertungen</string>
+    <string name="track_info_no_ratings">Noch keine Bewertungen.</string>
+    <string name="track_info_your_rating">Ihre Bewertung: %1$d</string>
+    <string name="track_info_rate_label">Diese Strecke bewerten</string>
+    <string name="track_info_sign_in_to_rate">Melden Sie sich an, um diese Strecke zu bewerten.</string>
+    <string name="track_info_uuid">UUID</string>
+    <string name="track_info_server_id">Server-ID</string>
+    <string name="track_info_user_id">Autor</string>
+    <string name="track_info_shared_id">ID der geteilten Strecke</string>
+    <string name="track_info_not_applicable">k. A.</string>
+    <string name="track_info_builtin_description">Dies ist eine eingebaute Strecke. Sie hat keine Server-Identität und kann nicht bearbeitet oder hochgeladen werden.</string>
+    <string name="track_info_report">Diese Strecke melden</string>
+    <string name="track_info_report_title">Diese Strecke melden?</string>
+    <string name="track_info_report_message">Sagen Sie uns, was an „%1$s“ nicht stimmt. Ein Moderator wird es prüfen.</string>
+    <string name="track_info_report_reason">Grund</string>
+    <string name="track_info_report_submit">Meldung senden</string>
+    <string name="track_info_sign_in_to_report">Melden Sie sich an, um diese Strecke zu melden.</string>
+    <string name="tracks_downloaded_marker">Von einem Server heruntergeladen</string>
+    <string name="tracks_delete_title">Diese Strecke löschen?</string>
+    <string name="tracks_delete_message">„%1$s“ wird von diesem Gerät entfernt. Dies kann nicht rückgängig gemacht werden.</string>
+
+    <string name="placement_choose_prompt">%1$s, wählen Sie Ihre Startposition</string>
+    <string name="placement_choosing_ai">%1$s wählt eine Startposition…</string>
+
+    <string name="race_turn_label">%1$s ist am Zug</string>
+    <string name="race_turn_label_ai">%1$s ist am Zug (KI)</string>
+    <string name="race_round_label">Runde %1$d</string>
+    <string name="race_player_count">%1$d Spieler · %2$d KI</string>
+    <string name="race_turn_seconds_remaining">⏱ %1$ds übrig</string>
+
+    <string name="turn_notification_channel_name">Zug-Erinnerungen</string>
+    <string name="turn_notification_title">Sie sind in Grid Racer am Zug</string>
+    <string name="turn_notification_text">%1$ds, bis Ihr Zug verfällt</string>
+
+    <string name="replay_import">Importieren…</string>
+    <string name="replay_row_summary">%1$d Züge — %2$s</string>
+    <string name="replay_row_server">Von %1$s · Raum %2$s</string>
+    <string name="replay_row_unknown_server">einem Server</string>
+    <string name="replay_truncated">Diese Wiederholung endet vorzeitig: Ein Zug darin ließ sich nicht abspielen.</string>
+    <string name="replay_delete_title">Diese Wiederholung löschen?</string>
+    <string name="replay_delete_message">Die Wiederholung von „%1$s“ wird von diesem Gerät entfernt. Dies kann nicht rückgängig gemacht werden.</string>
+    <string name="replay_import_done">Wiederholung importiert.</string>
+    <string name="replay_import_duplicate">Sie haben diese Wiederholung schon.</string>
+    <string name="replay_import_failed">Diese Datei ist keine lesbare Grid-Racer-Wiederholung.</string>
+    <string name="race_quit">Beenden</string>
+    <string name="race_quit_title">Dieses Rennen beenden?</string>
+    <string name="race_quit_message_local">Das Rennen wird abgebrochen. Ihr Fortschritt wird nicht gespeichert.</string>
+    <string name="race_quit_message_online">Wer geht, gibt das Rennen auf — Sie werden aus der Wertung genommen und die anderen fahren ohne Sie weiter.</string>
+
+    <string name="results_title">Rennergebnisse</string>
+    <string name="results_finished_label">Im Ziel</string>
+    <string name="results_crashed_label">Abgestürzt</string>
+    <string name="results_dnf_label">Nicht im Ziel (Zeitlimit)</string>
+    <string name="results_race_again">Erneut fahren</string>
+    <string name="results_rematch">Neues Rennen starten</string>
+    <string name="results_waiting_for_host">Warten, bis der Host ein neues Rennen startet…</string>
+    <string name="results_leave">Raum verlassen</string>
+    <string name="results_host_promoted_title">Sie sind der neue Host</string>
+    <string name="results_host_promoted_body">Der vorherige Host hat den Raum verlassen. Sie sind nun der Host dieses Raums — es liegt an Ihnen, das nächste Rennen zu starten, wenn alle bereit sind.</string>
+
+    <string name="leaderboard_empty">Noch keine Rennen aufgezeichnet.</string>
+    <string name="leaderboard_points">%1$d Pkt · %2$d Rennen · %3$d Siege</string>
+
+    <string name="race_mode_single">Einzelrennen</string>
+    <string name="race_mode_tournament">Turnier</string>
+
+    <string name="setup_mode_label">Modus</string>
+    <string name="setup_format_label">Format</string>
+    <string name="setup_mode_local">Lokal</string>
+    <string name="setup_mode_host">Online hosten</string>
+    <string name="setup_mode_join">Beitreten</string>
+    <string name="setup_tap_room_hint">Tippen Sie auf einen Raum, um seinen Code zu übernehmen</string>
+    <string name="multiplayer_room_unavailable">Voll oder schon im Rennen</string>
+
+    <string name="setup_direction_normal">Normal</string>
+    <string name="setup_direction_reversed">Umgekehrt</string>
+
+    <string name="tournament_available_tracks_label">Wählen Sie eine Richtung und tippen Sie dann auf eine Strecke, um sie zum Ablauf hinzuzufügen</string>
+    <string name="tournament_itinerary_label">Ablauf: %1$d Strecken (benötigt %2$d–%3$d)</string>
+    <string name="tournament_start">Turnier starten</string>
+    <string name="tournament_track_progress">Strecke %1$d von %2$d abgeschlossen</string>
+    <string name="tournament_complete_title">Turnier abgeschlossen</string>
+    <string name="tournament_standings_label">Platzierungen</string>
+    <string name="tournament_standings_row">%1$d. %2$s%3$s — %4$d Pkt</string>
+
+    <string name="multiplayer_host_tournament">Turnier hosten</string>
+    <string name="multiplayer_spectate">Zuschauen</string>
+    <string name="multiplayer_ratings">Wertung</string>
+    <string name="multiplayer_read_only">Zuschauer (nur lesen)</string>
+
+    <string name="tournament_lobby_waiting">Warten auf den Host…</string>
+    <string name="tournament_standings_title">Turnierwertung</string>
+    <string name="tournament_standings_start_next">Nächstes Rennen starten</string>
+
+    <string name="ratings_title">Wertung</string>
+    <string name="ratings_empty">Keine Wertungen verfügbar.</string>
+    <string name="ratings_row">%1$d Spiele · %2$d Siege</string>
+
+    <string name="setup_none">Keiner</string>
+    <string name="setup_not_enough_players">Ein Rennen braucht mindestens zwei Autos.</string>
+
+    <string name="results_watch_replay">Wiederholung ansehen</string>
+    <string name="action_save_replay">Wiederholung speichern</string>
+    <string name="menu_replay_browser">Wiederholungen</string>
+    <string name="replay_empty">Noch keine Wiederholungen gespeichert. Beenden Sie ein Rennen, um eine aufzuzeichnen.</string>
+    <string name="replay_play">Abspielen</string>
+    <string name="replay_export">Exportieren</string>
+    <string name="replay_delete">Löschen</string>
+    <string name="replay_export_subject">Grid-Racer-Wiederholung</string>
+    <string name="replay_export_error">Wiederholung konnte nicht exportiert werden.</string>
+
+    <string name="how_to_play_velocity_rule_caption_1">Ihr Auto startet im Stand.</string>
+    <string name="how_to_play_velocity_rule_caption_2">Sie haben sich noch nicht bewegt, also ist der Ausrollpunkt Ihre aktuelle Position.</string>
+    <string name="how_to_play_velocity_rule_caption_3">Wählen Sie eine der 9 markierten Positionen.</string>
+    <string name="how_to_play_velocity_rule_caption_4">Sie fahren zur gewählten Position.</string>
+    <string name="how_to_play_velocity_rule_caption_5">Ihr neuer Ausrollpunkt ergibt sich aus Ihrer aktuellen Geschwindigkeit — ein Rasterpunkt voraus.</string>
+    <string name="how_to_play_velocity_rule_caption_6">Wählen Sie eine der 9 markierten Positionen.</string>
+    <string name="how_to_play_velocity_rule_caption_7">Sie fahren zur gewählten Position.</string>
+
+    <string name="how_to_play_wall_crash_caption_1">Ihr Ausrollpunkt zeigt auf die Wand zu.</string>
+    <string name="how_to_play_wall_crash_caption_2">Grüne Punkte sind erlaubt; blasse Punkte würden die Wand kreuzen.</string>
+    <string name="how_to_play_wall_crash_caption_3">Sie bremsen und lenken auf (4,2), doch der neue Ausrollpunkt kreuzt die Wand weiterhin.</string>
+    <string name="how_to_play_wall_crash_caption_4">Sie prallen gegen die Wand und sind aus dem Rennen.</string>
+
+    <string name="how_to_play_finish_line_caption_1">Die Ziellinie liegt vor Ihnen. Ihr Pfeil zeigt, in welcher Richtung Sie sie überqueren müssen.</string>
+    <string name="how_to_play_finish_line_caption_2">Alle neun Punkte werden wie üblich angeboten. Die drei hinter der Linie würden sie in der richtigen Richtung überqueren.</string>
+    <string name="how_to_play_finish_line_caption_3">Sie überqueren die Linie: eine Runde geschafft. Der Rundenzähler in Ihrem Statusfeld zählt weiter.</string>
+    <string name="how_to_play_finish_line_caption_4">Später kommen Sie zur Linie zurück, entgegen ihrem Pfeil.</string>
+    <string name="how_to_play_finish_line_caption_5">Die Punkte hinter der Linie werden weiterhin angeboten, aber ein Überqueren gegen den Pfeil ist ein Absturz.</string>
+    <string name="how_to_play_finish_line_caption_6">Sie überqueren sie in der falschen Richtung, brennen auf der Linie aus und sind aus dem Rennen.</string>
+
+    <string name="how_to_play_oil_spill_caption_1">Der dunkle Fleck vor Ihnen ist eine Ölspur, und Ihr Ausrollpunkt liegt genau darauf.</string>
+    <string name="how_to_play_oil_spill_caption_2">Öl blockiert Sie nicht: alle neun Punkte werden wie üblich angeboten. Sie behalten Ihr Tempo und nehmen den Ausrollpunkt.</string>
+    <string name="how_to_play_oil_spill_caption_3">Sie sind auf dem Öl. Wer hindurchfährt, verliert im nächsten Zug die Lenkung.</string>
+    <string name="how_to_play_oil_spill_caption_4">Nur Ihr Ausrollpunkt und zwei zufällige Punkte daneben werden angeboten. Die anderen sechs bleiben gesperrt.</string>
+    <string name="how_to_play_oil_spill_caption_5">Sie nehmen einen der drei und rutschen dorthin. Eine Ölspur ist ein Kontrollverlust, kein Unfall.</string>
+    <string name="how_to_play_oil_spill_caption_6">Dieser Zug hat kein Öl berührt, also werden wieder alle neun Punkte angeboten.</string>
+
+    <string name="how_to_play_nails_caption_1">Der orange Fleck vor Ihnen ist ein Nagelbrett, und Ihr Ausrollpunkt liegt darauf.</string>
+    <string name="how_to_play_nails_caption_2">Nägel blockieren Sie nicht: alle neun Punkte werden wie üblich angeboten. Sie behalten Ihr Tempo und nehmen den Ausrollpunkt.</string>
+    <string name="how_to_play_nails_caption_3">Sie sind auf den Nägeln. Wer darüber fährt, muss im nächsten Zug abbremsen.</string>
+    <string name="how_to_play_nails_caption_4">Mit Tempo werden nur die drei am stärksten bremsenden Punkte angeboten: die drei, die Ihrem Auto am nächsten sind.</string>
+    <string name="how_to_play_nails_caption_5">Sie bremsen auf Tempo eins. Dieser Zug begann auf den Nägeln, also wirken sie noch einmal.</string>
+    <string name="how_to_play_nails_caption_6">Bei Tempo eins können Sie anhalten, geradeaus weiterrollen oder seitlich ausweichen, aber nicht beschleunigen.</string>
+    <string name="how_to_play_nails_caption_7">Sie rollen weiter und sind frei von den Nägeln.</string>
+    <string name="how_to_play_nails_caption_8">Dieser Zug hat keine Nägel berührt, also werden wieder alle neun Punkte angeboten.</string>
+
+    <string name="editor_error_boundary_too_few_points">Eine Begrenzung braucht mindestens 3 Punkte.</string>
+    <string name="editor_error_shape_too_few_points">Eine Form braucht mindestens 3 Punkte.</string>
+    <string name="editor_error_obstacle_crosses_both">Das Hindernis schneidet beide Begrenzungen – zeichnen Sie es nur in einer Schleife.</string>
+    <string name="editor_error_no_auto_placement">Es wurde keine automatische Platzierung gefunden – zeichnen Sie die Ziellinie von Hand neu.</string>
+    <string name="editor_error_outer_too_few_points">Die äußere Begrenzung braucht mindestens 3 Punkte.</string>
+    <string name="editor_error_inner_too_few_points">Die innere Begrenzung braucht mindestens 3 Punkte.</string>
+    <string name="editor_error_outer_not_simple">Die Kanten der äußeren Begrenzung kreuzen sich selbst.</string>
+    <string name="editor_error_inner_not_simple">Die Kanten der inneren Begrenzung kreuzen sich selbst.</string>
+    <string name="editor_error_outer_too_small">Die Streckenschleife ist zu klein – machen Sie sie größer.</string>
+    <string name="editor_error_inner_not_nested">Die innere Begrenzung muss vollständig innerhalb der äußeren liegen.</string>
+    <string name="editor_error_corridor_too_narrow">Die Strecke ist an einer Stelle zu schmal – vergrößern Sie den Abstand zwischen den Begrenzungen.</string>
+    <string name="editor_error_obstacle_not_simple">Die Hindernisform kreuzt sich selbst.</string>
+    <string name="editor_error_obstacle_touches_boundary">Das Hindernis berührt eine Streckenbegrenzung – rücken Sie es weg.</string>
+    <string name="editor_error_obstacle_narrows_corridor">Das Hindernis lässt zu wenig Platz zum Vorbeifahren – rücken Sie es von den Wänden weg.</string>
+    <string name="editor_error_obstacle_not_in_track">Das Hindernis muss innerhalb des Streckenkorridors liegen.</string>
+    <string name="editor_error_modifier_not_simple">Die Gefahrenform kreuzt sich selbst.</string>
+    <string name="editor_error_modifier_not_in_track">Die Gefahr muss innerhalb des Streckenkorridors liegen.</string>
+    <string name="editor_error_finish_line_missing">Platzieren Sie eine Ziellinie.</string>
+    <string name="editor_error_finish_line_too_short">Die Ziellinie ist zu kurz – ziehen Sie weiter über die Strecke.</string>
+    <string name="editor_error_finish_line_not_across">Die Zielrichtung sollte die Ziellinie kreuzen, nicht entlang ihr verlaufen.</string>
+    <string name="editor_error_start_positions_invalid">Die Startpositionen würden außerhalb der Strecke liegen – passen Sie die Ziellinie an.</string>
+
+    <string name="multiplayer_error_connect">Verbindung fehlgeschlagen</string>
+    <string name="multiplayer_error_room_list">Räume konnten nicht geladen werden</string>
+    <string name="multiplayer_error_send">Senden fehlgeschlagen</string>
+    <string name="multiplayer_error_protocol_too_old">Diese App ist zu alt für diesen Server – bitte aktualisieren</string>
+
+    <string name="player_ai_tag">\u0020(KI)</string>
+    <string name="results_rank_row">%1$d. %2$s%3$s — %4$d Pkt</string>
+    <string name="results_name_row">%1$s%2$s</string>
+    <string name="results_no_points_row">%1$s%2$s — 0 Pkt</string>
+    <string name="lobby_tournament_header">Turnier — %1$d Strecken</string>
+    <string name="lobby_standings_row">%1$s: %2$d Pkt</string>
+    <string name="setup_laps_custom">Eigene</string>
+    <string name="multiplayer_turn_timeout_seconds">%1$ds</string>
+
+    <string name="race_ordinal_st">.</string>
+    <string name="race_ordinal_nd">.</string>
+    <string name="race_ordinal_rd">.</string>
+    <string name="race_ordinal_th">.</string>
+
+    <string name="replay_step_backward">Ein Schritt zurück</string>
+    <string name="replay_step_forward">Ein Schritt vor</string>
+    <string name="replay_pause">Pause</string>
+    <string name="replay_speed_multiplier">%1$sx</string>
+
+    <string name="a11y_race_track">Rennstrecke</string>
+    <string name="a11y_race_track_moves">Rennstrecke, %1$d erlaubte Züge verfügbar</string>
+    <string name="a11y_move_coast">Geradeaus ausrollen auf (%1$d, %2$d)</string>
+    <string name="a11y_move_accelerate">Nach %1$s beschleunigen auf (%2$d, %3$d)</string>
+    <string name="a11y_direction_up">oben</string>
+    <string name="a11y_direction_down">unten</string>
+    <string name="a11y_direction_left">links</string>
+    <string name="a11y_direction_right">rechts</string>
+    <string name="a11y_direction_diagonal">%1$s %2$s</string>
+    <string name="a11y_player">%1$s, Runde %2$d von %3$d</string>
+    <string name="a11y_player_crashed">%1$s, Runde %2$d von %3$d, abgestürzt</string>
+    <string name="a11y_player_hazards">%1$s, Gefahren: %2$s</string>
+    <string name="a11y_hazard_nails">Nägel</string>
+    <string name="a11y_hazard_oil">Öl</string>
+    <string name="a11y_hazard_gravel">vom Kiesbett gebremst</string>
+
+    <plurals name="multiplayer_empty_seat_notice">
+        <item quantity="one">Der leere Platz wird nicht gefahren.</item>
+        <item quantity="other">Die %1$d leeren Plätze werden nicht gefahren.</item>
+    </plurals>
+    <plurals name="multiplayer_empty_seat_notice_host">
+        <item quantity="one">Der leere Platz wird nicht gefahren – setzen Sie einen KI-Fahrer hinein.</item>
+        <item quantity="other">Die %1$d leeren Plätze werden nicht gefahren – setzen Sie KI-Fahrer hinein.</item>
+    </plurals>
+
+    <!-- Captions for the gravel_trap walkthrough, from
+         tools/tutorial-editor/projects/gravel_trap.json. -->
+    <string name="how_to_play_gravel_trap_caption_1">Hinter der Außenwand liegt ein Kiesbett, zwei Rasterpunkte tief, mit einer Barriere am äußeren Rand.</string>
+    <string name="how_to_play_gravel_trap_caption_2">Mit Kiesbett ist ein Abflug kein Unfall: Punkte im Kies sind erlaubte Züge.</string>
+    <string name="how_to_play_gravel_trap_caption_3">Im Kies wird das Auto gebremst: Sein Ausrollpunkt rückt um zwei Rasterpunkte zurück.</string>
+    <string name="how_to_play_gravel_trap_caption_4">Sie wählen wie gewohnt rund um den gebremsten Punkt. Punkte hinter der Barriere sind gesperrt wie hinter einer Wand.</string>
+    <string name="how_to_play_gravel_trap_caption_5">Jeder Zug aus dem Kies ist gebremst; bei wenig Tempo können Sie anhalten oder einen Punkt in jede Richtung kriechen.</string>
+    <string name="how_to_play_gravel_trap_caption_6">Zurück auf der Strecke hält die Bremse noch zwei Züge an, dann können Sie wieder beschleunigen.</string>
+</resources>

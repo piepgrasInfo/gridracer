@@ -1,0 +1,201 @@
+{
+  "id": "velocity_rule",
+  "symbol": "VelocityRule",
+  "captionSymbol": "velocityCaption",
+  "name": "Choosing your move",
+  "title": "Choosing your move",
+  "titleRes": "how_to_play_step1_title",
+  "bodyRes": "how_to_play_step1_body",
+  "body": "Each turn, you project your current speed forward. From this coasted position, you must choose any of the 8 neighboring positions or the coast itself as your next turn.",
+  "notes": "Step 1: how a move is chosen from the coasted position.\n\nSeven frames: at rest, the nine points offered, the pick, the drive, the new coast with its nine points, the second pick, the second drive. This is the only rule that starts from rest, so it is also the one that shows that the coast of a stationary car is the car's own position.",
+  "grid": {
+    "cols": 5,
+    "rows": 3,
+    "cellMode": "minDimension",
+    "cellScale": 0.85,
+    "cellDivisor": 7.0,
+    "originMode": "cells"
+  },
+  "groups": {},
+  "frames": [
+    {
+      "phase": 0.0,
+      "caption": "Your car starts at rest."
+    },
+    {
+      "phase": 0.14,
+      "caption": "You haven't moved yet, so the coast is your current position."
+    },
+    {
+      "phase": 0.24,
+      "caption": "Choose any of the 9 marked positions."
+    },
+    {
+      "phase": 0.38,
+      "caption": "You drive to the selected position."
+    },
+    {
+      "phase": 0.52,
+      "caption": "Your new coast is determined by your current speed — one grid point ahead."
+    },
+    {
+      "phase": 0.62,
+      "caption": "Choose any of the 9 marked positions."
+    },
+    {
+      "phase": 0.8,
+      "caption": "You drive to the selected position."
+    }
+  ],
+  "elements": [
+    {
+      "id": "trail_1",
+      "type": "trail",
+      "kind": "follow",
+      "car": "car",
+      "move": 0
+    },
+    {
+      "id": "trail_2",
+      "type": "trail",
+      "kind": "follow",
+      "car": "car",
+      "move": 1
+    },
+    {
+      "id": "projector",
+      "type": "projector",
+      "from": [
+        2,
+        1
+      ],
+      "to": [
+        3,
+        1
+      ],
+      "color": "legal",
+      "alpha": {
+        "in": [
+          0.38,
+          0.52
+        ],
+        "out": [
+          0.62,
+          0.8
+        ]
+      }
+    },
+    {
+      "id": "pickers_1",
+      "type": "pickers",
+      "style": "offered",
+      "around": [
+        1,
+        1
+      ],
+      "alpha": {
+        "in": [
+          0.0,
+          0.14
+        ],
+        "out": [
+          0.24,
+          0.38
+        ]
+      }
+    },
+    {
+      "id": "ring_1",
+      "type": "pickRing",
+      "at": [
+        2,
+        1
+      ],
+      "alpha": {
+        "in": [
+          0.14,
+          0.24
+        ],
+        "out": [
+          0.24,
+          0.38
+        ]
+      }
+    },
+    {
+      "id": "pickers_2",
+      "type": "pickers",
+      "style": "offered",
+      "around": [
+        3,
+        1
+      ],
+      "alpha": {
+        "in": [
+          0.38,
+          0.52
+        ],
+        "out": [
+          0.62,
+          0.8
+        ]
+      }
+    },
+    {
+      "id": "ring_2",
+      "type": "pickRing",
+      "at": [
+        4,
+        0
+      ],
+      "alpha": {
+        "in": [
+          0.52,
+          0.62
+        ],
+        "out": [
+          0.62,
+          0.8
+        ]
+      }
+    },
+    {
+      "id": "car",
+      "type": "car",
+      "rest": [
+        1,
+        1
+      ],
+      "restHeading": [
+        1,
+        0
+      ],
+      "moves": [
+        {
+          "to": [
+            2,
+            1
+          ],
+          "start": 0.24,
+          "end": 0.38,
+          "heading": [
+            1,
+            0
+          ]
+        },
+        {
+          "to": [
+            4,
+            0
+          ],
+          "start": 0.62,
+          "end": 0.8,
+          "heading": [
+            2,
+            -1
+          ]
+        }
+      ]
+    }
+  ]
+}

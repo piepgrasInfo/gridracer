@@ -1,0 +1,48 @@
+# Builds and tests every push to main and every pull request.
+#
+# Mirrors the commands in README.md "Building": the engine, server and app test suites,
+# Android lint (whose error count is kept at zero), and a debug build. A release build needs
+# the upload keystore, which is not in this repository, so it is not attempted here.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      # The Gradle daemon toolchain asks for JDK 25 - see gradle/gradle-daemon-jvm.properties.
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+
+      - uses: android-actions/setup-android@v3
+
+      # compileSdk is 37, newer than the platforms the runner image ships with.
+      - name: Install Android platform 37
+        run: sdkmanager "platforms;android-37.0"
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Engine tests
+        run: ./gradlew :shared:jvmTest
+
+      - name: Server tests
+        run: ./gradlew :server:test
+
+      - name: App unit tests, lint and debug build
+        run: ./gradlew :app:testDebugUnitTest :app:lintDebug :app:assembleDebug

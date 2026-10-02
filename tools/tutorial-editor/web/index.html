@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GridRacer tutorial editor</title>
+  <link rel="stylesheet" href="editor.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>GridRacer <span>tutorial editor</span></h1>
+    <label class="field inline">
+      <span>Rule</span>
+      <select id="project-select" title="The walkthrough page you are editing"></select>
+    </label>
+    <button id="btn-new" title="Start an empty walkthrough">New</button>
+    <button id="btn-duplicate" title="Copy this walkthrough under a new id">Duplicate</button>
+    <button id="btn-delete" class="danger" title="Delete this project file">Delete</button>
+    <span class="spacer"></span>
+    <button id="btn-revert" title="Throw away unsaved changes and reload from disk">Revert</button>
+    <button id="btn-save" class="primary" title="Write the project JSON (Ctrl+S)">Save</button>
+    <button id="btn-export" title="Generate Kotlin into tools/tutorial-editor/out/">Export Kotlin</button>
+    <button id="btn-install" class="danger" title="Generate straight into the app, replacing the animation file that is there">Install into app</button>
+  </header>
+
+  <main class="workspace">
+    <!-- ---------------------------------------------------------- left -->
+    <aside class="panel left">
+      <section>
+        <h2>Frames <small>what the arrows step through</small></h2>
+        <ol id="frame-list" class="frame-list"></ol>
+        <div class="row">
+          <button id="btn-add-frame" title="Add a frame at the current phase">+ Frame here</button>
+          <button id="btn-sort-frames" title="Sort frames by phase">Sort</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Elements <small>drawn top to bottom</small></h2>
+        <ul id="element-list" class="element-list"></ul>
+        <div class="row">
+          <select id="add-element-type" title="What to add"></select>
+          <button id="btn-add-element">+ Add</button>
+        </div>
+        <p id="element-help" class="help"></p>
+      </section>
+    </aside>
+
+    <!-- -------------------------------------------------------- centre -->
+    <section class="stage">
+      <div class="stage-toolbar">
+        <button id="btn-frame-prev" title="Previous frame">◀</button>
+        <button id="btn-play" title="Play the whole animation">▶ Play</button>
+        <button id="btn-frame-next" title="Next frame">▶</button>
+        <label class="field inline grow">
+          <span>Phase</span>
+          <input id="phase-slider" type="range" min="0" max="1" step="0.001" value="0">
+        </label>
+        <output id="phase-readout" class="readout">0.000</output>
+        <label class="field inline">
+          <span>Canvas</span>
+          <select id="aspect-select" title="Match the shape the animation gets in the app"></select>
+        </label>
+        <label class="field inline checkbox">
+          <input id="toggle-handles" type="checkbox" checked>
+          <span>Handles</span>
+        </label>
+        <label class="field inline checkbox">
+          <input id="toggle-step" type="checkbox" checked>
+          <span>Ease between frames</span>
+        </label>
+      </div>
+
+      <div class="canvas-wrap">
+        <canvas id="preview" width="900" height="700"></canvas>
+        <div id="canvas-hint" class="canvas-hint"></div>
+      </div>
+
+      <!-- A copy of the app's info panel, so the text is judged in its real setting. -->
+      <div class="info-preview">
+        <div class="caption-box"><span id="preview-caption"></span></div>
+        <div class="preview-title" id="preview-title"></div>
+        <div class="preview-body" id="preview-body"></div>
+      </div>
+    </section>
+
+    <!-- --------------------------------------------------------- right -->
+    <aside class="panel right">
+      <nav class="tabs">
+        <button class="tab active" data-tab="inspector">Element</button>
+        <button class="tab" data-tab="scene">Scene</button>
+        <button class="tab" data-tab="text">Text</button>
+        <button class="tab" data-tab="json">JSON</button>
+      </nav>
+
+      <div class="tab-body" id="tab-inspector">
+        <div id="inspector"></div>
+      </div>
+
+      <div class="tab-body hidden" id="tab-scene">
+        <div id="scene-form"></div>
+        <h3>Groups <small>a shared fade for several elements</small></h3>
+        <div id="group-form"></div>
+      </div>
+
+      <div class="tab-body hidden" id="tab-text">
+        <div id="text-form"></div>
+      </div>
+
+      <div class="tab-body hidden" id="tab-json">
+        <p class="help">The project file, as it will be saved. Edit and press Apply to load it back.</p>
+        <textarea id="json-view" spellcheck="false"></textarea>
+        <div class="row"><button id="btn-apply-json" class="primary">Apply</button></div>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="statusbar">
+    <span id="status">Loading…</span>
+    <span class="spacer"></span>
+    <span id="dirty" class="dirty hidden">unsaved changes</span>
+  </footer>
+
+  <!-- The server replaces this with the meta and the first project, so the editor opens
+       without a round trip. Served as a plain file (no server), the editor fetches instead. -->
+  <script id="bootstrap" type="application/json">null</script>
+  <script type="module" src="editor.js"></script>
+</body>
+</html>
