@@ -1,0 +1,478 @@
+{
+  "id": "nails",
+  "symbol": "Nails",
+  "name": "Nails",
+  "title": "Nails",
+  "titleRes": "how_to_play_step5_title",
+  "bodyRes": "how_to_play_step5_body",
+  "body": "Nails force a slowdown. At speed, only the three hardest-braking moves remain. If you are slow, you are not forced to stop, but you cannot accelerate.",
+  "notes": "Eight-frame walkthrough of nails, following GameEngine.nailAllowedSet: a move whose path touches the nails limits the *next* move to a slow-down. At speed above one that is the three candidates nearest the car (the smallest resulting speed); at speed one it is stopping, rolling straight on, or moving to either side.\n\nBoth restricted sets are centred on the coast point, not on the car.",
+  "grid": {
+    "cols": 9,
+    "rows": 5,
+    "cellMode": "fit",
+    "cellScale": 0.85,
+    "cellDivisor": 7,
+    "originMode": "points"
+  },
+  "groups": {},
+  "frames": [
+    {
+      "phase": 0,
+      "caption": "The orange patch ahead is a strip of nails, and your coast point lies on it."
+    },
+    {
+      "phase": 0.12,
+      "caption": "Driving onto nails..."
+    },
+    {
+      "phase": 0.36,
+      "caption": "At speed, only the three hardest-braking points are offered: the three nearest your car."
+    },
+    {
+      "phase": 0.48,
+      "caption": "You have to break. That move started on the nails, so they act once more."
+    },
+    {
+      "phase": 0.6,
+      "caption": "At speed one you are restricted to the four nearest points."
+    },
+    {
+      "phase": 0.72,
+      "caption": "You drive on, clear of the nails."
+    },
+    {
+      "phase": 0.85,
+      "caption": "That move touched no nails, so all nine points are available again."
+    }
+  ],
+  "elements": [
+    {
+      "id": "strip",
+      "type": "hazard",
+      "color": "nails",
+      "corners": [
+        [
+          3.15,
+          1.7
+        ],
+        [
+          3.35,
+          1.2
+        ],
+        [
+          4.1,
+          1.1
+        ],
+        [
+          4.8,
+          1.35
+        ],
+        [
+          4.85,
+          2.3
+        ],
+        [
+          4.5,
+          2.85
+        ],
+        [
+          3.6,
+          2.9
+        ],
+        [
+          3.1,
+          2.4
+        ]
+      ]
+    },
+    {
+      "id": "trail_in",
+      "type": "trail",
+      "kind": "static",
+      "from": [
+        0,
+        2
+      ],
+      "to": [
+        2,
+        2
+      ]
+    },
+    {
+      "id": "trail_onto_nails",
+      "type": "trail",
+      "kind": "follow",
+      "car": "car",
+      "move": 0
+    },
+    {
+      "id": "trail_brake",
+      "type": "trail",
+      "kind": "follow",
+      "car": "car",
+      "move": 1
+    },
+    {
+      "id": "trail_roll",
+      "type": "trail",
+      "kind": "follow",
+      "car": "car",
+      "move": 2
+    },
+    {
+      "id": "projector_1",
+      "type": "projector",
+      "from": [
+        2,
+        2
+      ],
+      "to": [
+        4,
+        2
+      ],
+      "color": "legal",
+      "alpha": {
+        "out": [
+          0.13,
+          0.18
+        ]
+      }
+    },
+    {
+      "id": "pickers_1",
+      "type": "pickers",
+      "style": "offered",
+      "around": [
+        4,
+        2
+      ],
+      "alpha": {
+        "in": [
+          0.02,
+          0.09
+        ],
+        "out": [
+          0.13,
+          0.18
+        ]
+      }
+    },
+    {
+      "id": "ring_1",
+      "type": "pickRing",
+      "at": [
+        4,
+        2
+      ],
+      "alpha": {
+        "in": [
+          0.09,
+          0.12
+        ],
+        "out": [
+          0.13,
+          0.18
+        ]
+      }
+    },
+    {
+      "id": "projector_2",
+      "type": "projector",
+      "from": [
+        4,
+        2
+      ],
+      "to": [
+        6,
+        2
+      ],
+      "color": "legal",
+      "alpha": {
+        "in": [
+          0.22,
+          0.24
+        ],
+        "out": [
+          0.38,
+          0.42
+        ]
+      }
+    },
+    {
+      "id": "pickers_brake",
+      "type": "pickers",
+      "style": "offered",
+      "points": [
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          3
+        ]
+      ],
+      "alpha": {
+        "in": [
+          0.26,
+          0.33
+        ],
+        "out": [
+          0.38,
+          0.42
+        ]
+      }
+    },
+    {
+      "id": "pickers_brake_withheld",
+      "type": "pickers",
+      "style": "withheld",
+      "around": [
+        6,
+        2
+      ],
+      "exclude": [
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          3
+        ]
+      ],
+      "alpha": {
+        "in": [
+          0.26,
+          0.33
+        ],
+        "out": [
+          0.38,
+          0.42
+        ]
+      }
+    },
+    {
+      "id": "ring_2",
+      "type": "pickRing",
+      "at": [
+        5,
+        2
+      ],
+      "alpha": {
+        "in": [
+          0.33,
+          0.36
+        ],
+        "out": [
+          0.38,
+          0.42
+        ]
+      }
+    },
+    {
+      "id": "projector_3",
+      "type": "projector",
+      "from": [
+        5,
+        2
+      ],
+      "to": [
+        6,
+        2
+      ],
+      "color": "legal",
+      "alpha": {
+        "in": [
+          0.46,
+          0.48
+        ],
+        "out": [
+          0.62,
+          0.66
+        ]
+      }
+    },
+    {
+      "id": "pickers_crawl",
+      "type": "pickers",
+      "style": "offered",
+      "points": [
+        [
+          5,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          3
+        ]
+      ],
+      "alpha": {
+        "in": [
+          0.5,
+          0.57
+        ],
+        "out": [
+          0.62,
+          0.66
+        ]
+      }
+    },
+    {
+      "id": "pickers_crawl_withheld",
+      "type": "pickers",
+      "style": "withheld",
+      "around": [
+        6,
+        2
+      ],
+      "exclude": [
+        [
+          5,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          3
+        ]
+      ],
+      "alpha": {
+        "in": [
+          0.5,
+          0.57
+        ],
+        "out": [
+          0.62,
+          0.66
+        ]
+      }
+    },
+    {
+      "id": "ring_3",
+      "type": "pickRing",
+      "at": [
+        6,
+        2
+      ],
+      "alpha": {
+        "in": [
+          0.57,
+          0.6
+        ],
+        "out": [
+          0.62,
+          0.66
+        ]
+      }
+    },
+    {
+      "id": "projector_4",
+      "type": "projector",
+      "from": [
+        6,
+        2
+      ],
+      "to": [
+        7,
+        2
+      ],
+      "color": "legal",
+      "alpha": {
+        "in": [
+          0.72,
+          0.76
+        ]
+      }
+    },
+    {
+      "id": "pickers_free",
+      "type": "pickers",
+      "style": "offered",
+      "around": [
+        7,
+        2
+      ],
+      "alpha": {
+        "in": [
+          0.76,
+          0.85
+        ]
+      }
+    },
+    {
+      "id": "car",
+      "type": "car",
+      "rest": [
+        2,
+        2
+      ],
+      "restHeading": [
+        1,
+        0
+      ],
+      "moves": [
+        {
+          "to": [
+            4,
+            2
+          ],
+          "start": 0.14,
+          "end": 0.23,
+          "heading": [
+            1,
+            0
+          ]
+        },
+        {
+          "to": [
+            5,
+            2
+          ],
+          "start": 0.38,
+          "end": 0.46,
+          "heading": [
+            1,
+            0
+          ]
+        },
+        {
+          "to": [
+            6,
+            2
+          ],
+          "start": 0.62,
+          "end": 0.7,
+          "heading": [
+            1,
+            0
+          ]
+        }
+      ]
+    }
+  ]
+}

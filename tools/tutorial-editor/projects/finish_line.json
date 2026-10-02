@@ -1,0 +1,160 @@
+{
+  "id": "finish_line",
+  "symbol": "FinishLine",
+  "name": "Finish line and laps",
+  "title": "Finish line and laps",
+  "titleRes": "how_to_play_step3_title",
+  "bodyRes": "how_to_play_step3_body",
+  "body": "Cross the finish line in the direction of its arrow to complete a lap. Whoever completes all laps first wins. Crossing the line against the arrow crashes you instead.",
+  "notes": "Three-frame walkthrough of crossing the finish line the right way: you approach at speed (2,0), all nine candidates are offered, you pick the point beyond the line and the lap counter ticks over. A copy of the in-race status frame shows the lap counter of a two-lap race.\n\nThe wrong-way half (creeping back over the line into a crash) was cut with its frames; the app still ships it in the hand-written FinishLineAnimation.kt. Re-authoring it here means adding frames past 0.36 again.",
+  "grid": {
+    "cols": 9,
+    "rows": 5,
+    "cellMode": "fit",
+    "cellScale": 0.85,
+    "cellDivisor": 7,
+    "originMode": "points"
+  },
+  "groups": {},
+  "frames": [
+    {
+      "phase": 0,
+      "caption": "The finish line is ahead!"
+    },
+    {
+      "phase": 0.18,
+      "caption": "You have three points beyond the finish line."
+    },
+    {
+      "phase": 0.36,
+      "caption": "You cross the line: one lap done. The lap counter in your status frame ticks up."
+    }
+  ],
+  "elements": [
+    {
+      "id": "line",
+      "type": "finishLine",
+      "x": 4.5,
+      "y0": -0.35,
+      "y1": 4.35,
+      "width": 0.12,
+      "arrow": {
+        "y": 2,
+        "direction": 1
+      }
+    },
+    {
+      "id": "trail_right_in",
+      "type": "trail",
+      "kind": "static",
+      "from": [
+        0,
+        3
+      ],
+      "to": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "trail_right",
+      "type": "trail",
+      "kind": "follow",
+      "car": "car_right",
+      "move": 0
+    },
+    {
+      "id": "projector_right",
+      "type": "projector",
+      "from": [
+        2,
+        3
+      ],
+      "to": [
+        4,
+        3
+      ],
+      "color": "legal",
+      "alpha": {
+        "out": [
+          0.18,
+          0.26
+        ]
+      }
+    },
+    {
+      "id": "pickers_right",
+      "type": "pickers",
+      "style": "offered",
+      "around": [
+        4,
+        3
+      ],
+      "alpha": {
+        "in": [
+          0.04,
+          0.14
+        ],
+        "out": [
+          0.18,
+          0.26
+        ]
+      }
+    },
+    {
+      "id": "ring_right",
+      "type": "pickRing",
+      "at": [
+        5,
+        3
+      ],
+      "alpha": {
+        "in": [
+          0.14,
+          0.18
+        ],
+        "out": [
+          0.18,
+          0.26
+        ]
+      }
+    },
+    {
+      "id": "car_right",
+      "type": "car",
+      "rest": [
+        2,
+        3
+      ],
+      "restHeading": [
+        1,
+        0
+      ],
+      "moves": [
+        {
+          "to": [
+            5,
+            3
+          ],
+          "start": 0.2,
+          "end": 0.34,
+          "heading": [
+            1,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "status",
+      "type": "statusFrame",
+      "lap": "1/2",
+      "lapAfter": "2/2",
+      "switch": {
+        "kind": "carPastX",
+        "car": "car_right",
+        "x": 4.5
+      }
+    }
+  ]
+}

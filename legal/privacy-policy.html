@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Grid Racer - Grid Racer</title>
+<style>
+  body { font-family: -apple-system, Segoe UI, Roboto, sans-serif; max-width: 40rem;
+         margin: 2rem auto; padding: 0 1rem; line-height: 1.5; color: #1a1a1a; }
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.15rem; margin-top: 2rem; }
+  h3 { font-size: 1rem; margin-top: 1.4rem; }
+  ul { padding-left: 1.3rem; }
+  code { background: #f5f5f5; padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.9em; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #16181c; color: #e6e6e6; }
+    code { background: #22252b; }
+    a { color: #7fb0ff; }
+  }
+</style>
+</head>
+<body>
+<h1>Privacy Policy — Grid Racer</h1>
+<p><strong>Effective date: 2026-10-02</strong></p>
+<p><strong>Published at:</strong> <a href="https://piepgras.info/legal/grid-racer/privacy-policy/" target="_blank" rel="noopener">https://piepgras.info/legal/grid-racer/privacy-policy/</a></p>
+<h2>Who we are</h2>
+<p>Grid Racer is developed by Martin Kruse (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;), operator of the website <a href="https://piepgras.info" target="_blank" rel="noopener">https://piepgras.info</a>. You can reach us via <a href="mailto:apps@piepgras.info">apps@piepgras.info</a>. Our postal address is listed at <a href="https://piepgras.info/imprint/" target="_blank" rel="noopener">https://piepgras.info/imprint/</a>.</p>
+<h2>Overview</h2>
+<p>Grid Racer has two modes:</p>
+<ul>
+<li><strong>Local play</strong> — single-player, hot-seat, and AI races. Everything here stays on your device.</li>
+<li><strong>Online play</strong> — multiplayer races, accounts, a server-side rating leaderboard, and a shared custom-track library. These features connect to our server at <code>gridracer.piepgras.info</code> over an encrypted connection and transmit the data described below. You can also point the app at a server someone else runs, such as one on your own home network; see <em>Servers you choose yourself</em>.</li>
+</ul>
+<p>You can use the app entirely in local mode without ever creating an account or connecting to the server. Online features are opt-in: the app does not connect to the server until you enter the multiplayer race setup screen, and accounts are created only if you choose to register.</p>
+<h2>What Grid Racer stores on your device</h2>
+<p>The following data is written to files in the app&#x27;s private storage on your device and never transmitted anywhere:</p>
+<ul>
+<li><strong>Settings</strong> — your preferences (player name, server URL, sound toggle, crash-reporting toggle, language, placement order).</li>
+<li><strong>Local leaderboard</strong> — race results from local games.</li>
+<li><strong>Custom tracks</strong> — tracks you design in the in-app track editor.</li>
+<li><strong>Replays</strong> — recordings of your finished local races (up to approximately 20, retained newest-first).</li>
+</ul>
+<p>Uninstalling the app removes all of this data from the device.</p>
+<h2>What Grid Racer sends to the server</h2>
+<p>When you use online features, the app connects to our multiplayer server at <code>gridracer.piepgras.info</code> over an encrypted WebSocket connection (see <em>Encryption in transit</em> below) and sends the following:</p>
+<h3>Account data</h3>
+<p>If you create an account, the app sends:</p>
+<ul>
+<li><strong>Username</strong> — the name you choose. Must be unique. Stored on the server. <strong>Your username is public</strong>: it is shown to other players next to any track you upload (see <em>Custom track uploads</em>), so choose one you are comfortable being seen.</li>
+<li><strong>Password</strong> — sent when you register, log in, or delete your account, over the encrypted connection. The server hashes it with PBKDF2 and never stores it in plaintext. Only the hash is kept on the server.</li>
+<li><strong>Display name</strong> — the name shown to other players in multiplayer lobbies and on the leaderboard. Defaults to your username if you don&#x27;t set one.</li>
+</ul>
+<p>You do not need an account to play multiplayer as a guest, but accounts are required to upload shared tracks and to appear on the rating leaderboard.</p>
+<h3>Session token</h3>
+<p>After registration or login, the server issues a session token that the app stores on your device and presents on future connections so you don&#x27;t have to re-enter your password. The token is valid for 90 days. Logging out invalidates it immediately.</p>
+<p>A token belongs to the server that issued it. If you change the server address in Settings, the app discards the stored token rather than presenting it to the other server, and you log in again when you switch back.</p>
+<h3>Multiplayer game data</h3>
+<p>During online races, the app sends:</p>
+<ul>
+<li><strong>Player name</strong> — shown to other players in the lobby.</li>
+<li><strong>Game moves</strong> — the target points you choose for your turns. These are validated by the authoritative server and broadcast to other players in the same room.</li>
+<li><strong>Room interactions</strong> — joining, leaving, ready status, and (for hosts) track selection, lap count, seat count, turn timeout, and race start.</li>
+</ul>
+<h3>Custom track uploads</h3>
+<p>When you upload a custom track to share with other players, the app sends:</p>
+<ul>
+<li><strong>Track name</strong> — the name you gave the track in the editor.</li>
+<li><strong>Track geometry</strong> — the walls, boundaries, obstacles, and finish line that define the track. The server rebuilds the playable track from your design data; it does not accept a pre-compiled track, so a crafted track whose geometry disagrees with its design cannot be uploaded.</li>
+</ul>
+<p>Uploaded tracks are public: any other player can browse, download, and play them. <strong>Both your username and your display name</strong> are recorded as the author and shown to other players, alongside the name of the server the track lives on. Uploading is the point at which your username becomes visible to people you have not played against.</p>
+<h3>Track ratings</h3>
+<p>If you rate a shared track, the app sends:</p>
+<ul>
+<li><strong>The track&#x27;s public ID.</strong></li>
+<li><strong>Your score</strong> (1 to 5).</li>
+<li><strong>Your account ID</strong> (rating requires an account).</li>
+</ul>
+<p>One rating is kept per account per track; rating a track again replaces your previous score. Other players see only the <em>average</em> score and the number of ratings — never who gave which score. You can see your own score on the track&#x27;s info screen.</p>
+<h3>Track reports</h3>
+<p>If you report a shared track for inappropriate content, the app sends:</p>
+<ul>
+<li><strong>The track&#x27;s public ID.</strong></li>
+<li><strong>The reason you give</strong> (free text).</li>
+<li><strong>Your account ID</strong> (reports require an account).</li>
+</ul>
+<h3>Encryption in transit</h3>
+<p>From version 1.3, the app reaches our server over TLS (<code>wss://gridracer.piepgras.info/play</code>), the same encryption HTTPS uses, and checks the server&#x27;s certificate before it sends anything. Everything listed in this section, your password and session token included, is encrypted between your device and our server. The encrypted connection ends at a web server (Caddy) running on the same machine as the game server, which passes it on locally; nothing in between can read it.</p>
+<p>Versions before 1.3 connected without encryption, on port 5521. We keep that port open so those versions go on working until they are updated, and what they send, including the password at registration, login and account deletion, crosses the network unencrypted. Updating the app moves you to the encrypted connection; you do not need to change anything in Settings.</p>
+<h2>Servers you choose yourself</h2>
+<p>Settings lets you replace our server&#x27;s address with another one, for example a Grid Racer server you run on your own home network. Such a server is run by whoever operates it, not by us, and this policy does not cover what it does with your data. The app sends it the same kinds of data listed above.</p>
+<p>Encryption is optional on such a server:</p>
+<ul>
+<li>An address beginning with <code>wss://</code> is encrypted, and the app checks the server&#x27;s certificate exactly as it does for ours.</li>
+<li>An address beginning with <code>ws://</code> is <strong>not encrypted</strong>. Your password, session token and game data cross the network in plain text, readable by anyone on the network between you and that server. While such an address is set, the app warns you in the Server section of Settings, above the login form, and again in the account-deletion dialog. Use one only on a network you trust.</li>
+</ul>
+<p>The app shows a padlock beside the connection status only once an encrypted connection is established, and an open padlock for an unencrypted one.</p>
+<h2>What the server stores</h2>
+<p>The server keeps a SQLite database with the following tables:</p>
+<ul>
+<li><strong>Accounts</strong> — username (unique), password hash, display name, Elo rating, match count, win count, and creation date.</li>
+<li><strong>Sessions</strong> — session tokens with a 90-day expiry, linked to accounts.</li>
+<li><strong>Shared tracks</strong> — track name, author account ID, author display name, track design data, and upload timestamp.</li>
+<li><strong>Track ratings</strong> — track ID, rater account ID, score (1–5), and timestamp. One row per account per track.</li>
+<li><strong>Track reports</strong> — reported track ID, reporter account ID, reason, and timestamp. Used for manual review of reported content.</li>
+</ul>
+<p>The server also keeps active game state (rooms, players, current race positions) in memory during active games. This is not persisted to disk and is discarded when a room closes.</p>
+<h3>Race logs</h3>
+<p><strong>This is new. Please read it even if you have read this policy before.</strong></p>
+<p>When an online race finishes, the server writes a record of it to a file so the race can be replayed afterwards. A race log contains:</p>
+<ul>
+<li>the room code and the track that was raced;</li>
+<li>the display name of each player, and whether that seat was a human, a guest or an AI opponent;</li>
+<li>for players with accounts, the account&#x27;s public ID — the same opaque identifier used by the leaderboard. <strong>Never</strong> your password, your session token, or the server&#x27;s internal database ID for your account;</li>
+<li>every move made in the race, with the time it was made;</li>
+<li>the final standings.</li>
+</ul>
+<p><strong>Why we keep it.</strong> A race that nobody recorded cannot be settled afterwards. Race logs let us investigate a disputed result, look into suspected cheating or rating manipulation, and diagnose a bug report that says &quot;the game showed me the wrong thing&quot; — none of which is possible from the leaderboard totals alone.</p>
+<p><strong>How long.</strong> Race logs are deleted automatically after 30 days by default. The operator of a server can change this window, or turn race logging off entirely, through the server&#x27;s configuration. On our server at <code>gridracer.piepgras.info</code> the retention period is 30 days.</p>
+<p><strong>Who sees them.</strong> Nobody outside the provider. Race logs are not published, not listed anywhere in the app, and not shared with third parties. A player can ask for a copy of a race they took part in.</p>
+<p><strong>Local play is never logged.</strong> Races you play on your own device never reach the server at all.</p>
+<p><strong>Legal basis (GDPR Art. 6(1)(f)):</strong> our legitimate interest in operating a fair multiplayer service that can be debugged and whose results can be verified. If you object to your races being logged, you can play locally, or play on a server whose operator has disabled logging.</p>
+<h3>Server logs</h3>
+<p>The server logs IP addresses in its application log for rate limiting and abuse prevention. Your address is used to bound how much traffic, how many login attempts, and how many simultaneous connections can come from one place — a limit that applies per <em>address</em> rather than per connection, because a limit per connection is bypassed by opening another one. This means your IP address is held in memory for as long as those limits are being counted (minutes), and appears in the application log when a limit is hit.</p>
+<p>These logs are rotated as part of normal server operation, are not stored in the database, and are not linked to your account.</p>
+<h2>Elo rating leaderboard</h2>
+<p>When you finish a multiplayer race with an account, the server updates your Elo rating based on the finishing order of all account-holding players in that race. The public leaderboard shows:</p>
+<ul>
+<li>Display name</li>
+<li>Rating (a number, starting at 1000)</li>
+<li>Matches played</li>
+<li>Wins</li>
+</ul>
+<p>Guest players and AI players are not rated and do not appear on the leaderboard.</p>
+<h2>Crash reporting</h2>
+<p>Crash reporting is off by default. If you turn it on in Settings, the app sends a crash report to Bugsink, our self-hosted error-tracking service, at piepgras.bugsink.com, whenever it crashes or hits an unexpected error. A report contains:</p>
+<ul>
+<li>the error message and stack trace,</li>
+<li>your device model and OS version,</li>
+<li>the app&#x27;s version.</li>
+</ul>
+<p>It does not include your name, email, account credentials, or anything you&#x27;ve typed or created in the app. The Sentry SDK is configured to strip user identifiers, server names, screenshots, view hierarchies, and interaction breadcrumbs before sending. As with any network request, the report does expose your device&#x27;s IP address to that server. Crash reports are transmitted over an encrypted HTTPS connection. You can turn crash reporting back off at any time in Settings; until you turn it on, no crash reports are sent anywhere.</p>
+<ul>
+<li><strong>Server location:</strong> the Netherlands. The data therefore stays within the European Union, and no transfer to a third country takes place.</li>
+<li><strong>Retention:</strong> crash reports are kept no longer than needed to diagnose the fault, and at most one year, after which they are deleted.</li>
+<li><strong>Recipients:</strong> nobody outside the provider. The instance is self-hosted; the reports are not passed to an analytics provider or advertiser.</li>
+<li><strong>Legal basis (GDPR Art. 6(1)(a)):</strong> your consent, given by turning crash reporting on.</li>
+</ul>
+<h2>Notifications</h2>
+<p>If you are in an online multiplayer race and background the app while it is your turn, Grid Racer can show a local notification reminding you before the room&#x27;s turn timer forfeits your move. On Android 13 and newer this requires the notification permission, requested once on first launch — see <a href="permissions.html">permissions.md</a> for what happens if you decline it.</p>
+<p>This notification is generated entirely on your device from the race state the app already holds because it is connected to the room. No additional data is collected or sent anywhere to produce it, it is not logged, and nothing about it is retained once it has been shown or dismissed.</p>
+<h2>Third-party software</h2>
+<p>The following third-party software components are involved in data transmission or storage:</p>
+<ul>
+<li><strong>Sentry Android SDK</strong> (<code>io.sentry:sentry-android-core</code>) — used to send crash reports to the provider&#x27;s self-hosted Bugsink instance. The SDK is included in the app; the data it sends goes to the provider&#x27;s own server, not to Sentry&#x27;s hosted service. The Sentry SDK&#x27;s privacy practices are described in the Sentry Privacy Policy: <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">https://sentry.io/privacy/</a></li>
+<li><strong>Ktor</strong> (<code>io.ktor</code>) — the framework running the multiplayer server and the client&#x27;s WebSocket connection, including its encryption. Ktor does not collect or transmit any data of its own.</li>
+<li><strong>Caddy</strong> — the web server in front of the multiplayer server, on the same machine. It holds the server&#x27;s TLS certificate, decrypts the connection and passes it to the game server. It does not collect or transmit any data of its own.</li>
+<li><strong>SQLite</strong> (<code>org.xerial:sqlite-jdbc</code>) — the database engine used by the server for persistent storage. SQLite does not collect or transmit any data of its own.</li>
+</ul>
+<p>No advertising networks, analytics providers, or attribution SDKs are integrated into the app or the server.</p>
+<h2>Your rights under the GDPR</h2>
+<p>You have the right to access, rectify, erase, restrict, and port your personal data, and to object to its processing — contact us at <a href="mailto:apps@piepgras.info">apps@piepgras.info</a>.</p>
+<p>For account data, you can erase everything yourself in the app under <strong>Settings → Delete account…</strong>; we can also identify you by your username and delete your account, sessions, uploaded tracks, track ratings and rating history on request, and remove your name from any race log naming you. For crash reports, we generally cannot tell which reports came from you; tell us what you can (e.g. roughly when it happened) and we&#x27;ll help however that makes possible.</p>
+<p>You always have the right to lodge a complaint with your local data protection supervisory authority if you believe your rights have been violated.</p>
+<p>We do not perform automated decision-making or profiling.</p>
+<h3>Legal basis for processing</h3>
+<ul>
+<li><strong>Account data and multiplayer game data (GDPR Art. 6(1)(b)):</strong> necessary to provide the online multiplayer service you requested.</li>
+<li><strong>Shared tracks and track reports (GDPR Art. 6(1)(b) / Art. 6(1)(f)):</strong> necessary to provide the track-sharing feature, and our legitimate interest in reviewing reported content.</li>
+<li><strong>Elo ratings and leaderboard (GDPR Art. 6(1)(b) / Art. 6(1)(f)):</strong> necessary to provide the rating service, and our legitimate interest in operating a competitive leaderboard.</li>
+<li><strong>Track ratings (GDPR Art. 6(1)(b)):</strong> necessary to provide the rating feature you asked for.</li>
+<li><strong>Race logs (GDPR Art. 6(1)(f)):</strong> our legitimate interest in operating a fair multiplayer service whose results can be verified and whose faults can be diagnosed. See <em>Race logs</em> above.</li>
+<li><strong>Server logs and rate limiting (GDPR Art. 6(1)(f)):</strong> our legitimate interest in protecting the service from abuse.</li>
+<li><strong>Crash reports (GDPR Art. 6(1)(a)):</strong> your consent, given by turning crash reporting on.</li>
+</ul>
+<h2>Device backups</h2>
+<p>The app allows Android&#x27;s standard backup. If backup is enabled in your device settings, a copy of the app&#x27;s local data — including your settings, local leaderboard, custom tracks, and replays — may be stored in your Google account under Google&#x27;s terms. Server-side data (accounts, shared tracks, ratings) is not part of this backup. You can prevent local-data backup in your device&#x27;s backup settings, and remove existing copies there.</p>
+<h2>Data retention and deletion</h2>
+<ul>
+<li><strong>Local data on your device:</strong> kept until you delete it. Uninstalling the app removes all local data from the device.</li>
+<li><strong>Account data:</strong> kept until you delete the account. You can delete it yourself in the app under <strong>Settings → Delete account…</strong>, which removes your account, sessions, uploaded tracks, track ratings and rating history immediately, or write to <a href="mailto:apps@piepgras.info">apps@piepgras.info</a> and we will do it for you. Your name and account handle are removed from stored race logs at the same time; the races themselves are kept for the other drivers and expire on their own within 30 days. Full instructions: <a href="https://piepgras.info/legal/grid-racer/delete-account/" target="_blank" rel="noopener">https://piepgras.info/legal/grid-racer/delete-account/</a></li>
+<li><strong>Session tokens:</strong> expire automatically after 90 days of inactivity, and are deleted on logout.</li>
+<li><strong>Shared tracks:</strong> kept until you delete them or until we remove them following a report review. Deleting your account also deletes your uploaded tracks.</li>
+<li><strong>Track ratings:</strong> kept until you delete your account, or until the track is removed.</li>
+<li><strong>Track reports:</strong> kept until the reported track is reviewed and acted upon, then deleted.</li>
+<li><strong>Race logs:</strong> deleted automatically after 30 days on our server, index included. Deleting your account removes your name and account handle from the logs kept in the meantime. Ask us if you want a copy of a race you played in, or want one removed sooner.</li>
+<li><strong>Server logs:</strong> rotated as part of normal server operation; not kept indefinitely.</li>
+<li><strong>Device backups:</strong> clear the app&#x27;s backup data in your operating system&#x27;s backup settings.</li>
+<li><strong>Crash reports:</strong> see above. To have reports relating to your device deleted, write to <a href="mailto:apps@piepgras.info">apps@piepgras.info</a>.</li>
+</ul>
+<h2>Children&#x27;s privacy</h2>
+<p>Grid Racer is a game and not directed at children under 13 (or the age of digital consent in your country). The app does not knowingly collect personal data from children. Account registration requires a username and password but does not collect age information; if you believe a child under the applicable age has created an account, contact us and we will delete it.</p>
+<h2>Permissions</h2>
+<p>The app declares the following permissions. A plain-language explanation of each is in <a href="permissions.html">permissions.md</a>.</p>
+<p>| Permission | Why |</p>
+<p>| --- | --- |</p>
+<p>| Internet (<code>INTERNET</code>) | Used for multiplayer connectivity, account login, track sharing, and crash reporting (when enabled). Local play does not require this permission. |</p>
+<p>| Notifications (<code>POST_NOTIFICATIONS</code>) | Used to remind you it&#x27;s your turn in an online race if you background the app. Requires your approval on Android 13+; see <a href="permissions.html">permissions.md</a>. |</p>
+<p>The app requests no access to your location, camera, microphone, contacts, calendar, call history, SMS or files outside its own storage.</p>
+<h2>Changes to this policy</h2>
+<p>If Grid Racer&#x27;s data practices change, this policy will be updated to describe them before the change takes effect, and the effective date above revised.</p>
+<h2>Contact</h2>
+<p>Contact: <a href="mailto:apps@piepgras.info">apps@piepgras.info</a></p>
+</body>
+</html>

@@ -1,0 +1,508 @@
+<resources>
+    <string name="app_name">Grid Racer</string>
+
+    <string name="action_back">Назад</string>
+    <string name="action_main_menu">Главное меню</string>
+    <string name="action_cancel">Отмена</string>
+    <string name="action_ok">OK</string>
+    <string name="action_continue">Продолжить</string>
+
+    <string name="editor_title">Редактор трасс</string>
+    <string name="editor_step_inner">Проведите по внутренней петле. Она замыкается и выпрямляется автоматически, когда вы отпускаете палец.</string>
+    <string name="editor_step_outer">Теперь проведите по внешней границе, снаружи внутренней.</string>
+    <string name="editor_step_obstacles">При желании проведите замкнутые петли внутри трассы: выберите тип препятствия ниже. Барьер блокирует машины (и сливается с границей, если касается её); масляное пятно и гвозди — это препятствия, по которым машины всё ещё могут ехать. Нажмите на инструмент «Финишная линия» выше, когда будете готовы продолжить.</string>
+    <string name="editor_step_finish_line">Проведите примерно через трассу, чтобы разместить финишную линию — она автоматически прилипает к краям трассы.</string>
+    <string name="editor_step_review">Проверьте свою трассу и дайте ей название.</string>
+    <string name="editor_undo">Отменить</string>
+    <string name="editor_close">Закрыть редактор</string>
+    <string name="editor_tool_inner">Внутренняя граница</string>
+    <string name="editor_tool_outer">Внешняя граница</string>
+    <string name="editor_tool_obstacle">Препятствие</string>
+    <string name="editor_tool_finish_line">Финишная линия</string>
+    <string name="editor_pick_direction">В каком направлении машины пересекают линию?</string>
+    <string name="editor_direction_a_description">Направление A</string>
+    <string name="editor_direction_b_description">Направление B</string>
+    <string name="editor_redraw_finish_line">Перерисовать финишную линию</string>
+    <string name="editor_track_name_label">Название трассы</string>
+    <string name="editor_save">Сохранить трассу</string>
+    <string name="editor_start_over">Начать заново</string>
+    <string name="editor_start_over_confirm_title">Начать заново?</string>
+    <string name="editor_start_over_confirm_body">Это отбрасывает всю трассу и не может быть отменено.</string>
+    <string name="editor_default_track_name">Пользовательская трасса</string>
+    <string name="editor_draw_kind_obstacle">Барьер</string>
+    <string name="editor_draw_kind_oil_spill">Масляное пятно</string>
+    <string name="editor_draw_kind_nails">Гвозди</string>
+    <string name="editor_pan_zoom_hint">Сведите пальцы для масштабирования, перетаскивайте двумя пальцами для перемещения.</string>
+    <string name="editor_auto_fix">Авто-исправление</string>
+    <string name="editor_tidying_up">Фигура выравнивается…</string>
+
+    <string name="menu_start_race">Начать гонку</string>
+    <string name="menu_tracks">Трассы</string>
+    <string name="menu_leaderboard">Таблица лидеров</string>
+    <string name="menu_settings">Настройки</string>
+    <string name="menu_how_to_play">Как играть</string>
+
+    <string name="account_logged_in_as">Вы вошли как %1$s</string>
+    <string name="account_rating_label">Рейтинг</string>
+    <string name="account_matches_label">Матчи</string>
+    <string name="account_wins_label">Победы</string>
+    <string name="account_logout">Выйти</string>
+    <string name="account_delete">Удалить аккаунт…</string>
+    <string name="account_delete_title">Удалить аккаунт?</string>
+    <string name="account_delete_body">Аккаунт на этом сервере будет удалён безвозвратно: имя пользователя, отображаемое имя, рейтинг и статистика матчей, опубликованные вами трассы, а также ваши оценки и жалобы. Ваше имя также будет удалено из сохранённых журналов гонок — сами гонки останутся в повторах других игроков, но уже без вашего имени. Отменить это нельзя.</string>
+    <string name="account_delete_local_note">Трассы, повторы и настройки на этом устройстве не затрагиваются; они удаляются вместе с приложением.</string>
+    <string name="account_delete_password_label">Подтвердите пароль</string>
+    <string name="account_delete_confirm">Удалить аккаунт</string>
+    <string name="account_delete_unsupported">Этот сервер не умеет удалять аккаунты из приложения. Напишите на apps@piepgras.info, указав своё имя пользователя, и мы удалим его.</string>
+    <string name="account_delete_done">Ваш аккаунт и все его данные удалены.</string>
+    <string name="account_error_in_room">Сначала выйдите из гонки, а затем удаляйте аккаунт.</string>
+    <string name="account_error_delete_failed">Не удалось удалить аккаунт. Попробуйте ещё раз.</string>
+    <string name="account_login_tab">Вход</string>
+    <string name="account_register_tab">Регистрация</string>
+    <string name="account_username">Имя пользователя</string>
+    <string name="account_password">Пароль</string>
+    <string name="account_display_name_optional">Отображаемое имя (необязательно)</string>
+    <string name="account_login_button">Войти</string>
+    <string name="account_register_button">Зарегистрироваться</string>
+    <string name="account_not_connected">Подключение к серверу…</string>
+    <string name="account_server_no_accounts">Этот сервер не поддерживает аккаунты.</string>
+    <string name="account_error_generic">Не удалось выполнить запрос.</string>
+    <string name="account_error_invalid_username">Такое имя пользователя недопустимо. %1$s</string>
+    <string name="account_error_invalid_password">Такой пароль слишком короткий. %1$s</string>
+    <string name="account_error_invalid_display_name">Такое отображаемое имя недопустимо. Попробуйте более короткое и без необычных символов.</string>
+    <string name="account_error_username_taken">Это имя пользователя уже занято.</string>
+    <string name="account_error_no_such_user">Аккаунта с таким именем пользователя нет.</string>
+    <string name="account_error_wrong_password">Неверный пароль.</string>
+    <string name="account_error_rate_limited">Слишком много попыток. Подождите минуту и попробуйте снова.</string>
+    <string name="account_hint_username">%1$d–%2$d букв, цифр или подчёркиваний; должно начинаться с буквы.</string>
+    <string name="account_hint_password">Не менее %1$d символов.</string>
+    <string name="account_dismiss_error">Закрыть</string>
+
+    <string name="multiplayer_disconnected">Нет подключения</string>
+    <string name="multiplayer_connecting">Подключение…</string>
+    <string name="multiplayer_reconnecting">Переподключение…</string>
+    <string name="multiplayer_connected">Подключено</string>
+    <string name="multiplayer_error">Ошибка подключения</string>
+    <string name="multiplayer_encrypted">Зашифровано</string>
+    <string name="multiplayer_encrypted_description">Зашифрованное соединение</string>
+    <string name="multiplayer_unencrypted_description">Незашифрованное соединение</string>
+    <string name="multiplayer_unencrypted_warning">Без шифрования: ваш пароль и всё остальное, что вы отправляете на этот сервер, передаётся по сети открытым текстом. Используйте сервер без wss:// только в сети, которой доверяете, например в своей домашней сети.</string>
+    <string name="multiplayer_unencrypted_password">Это соединение не зашифровано: пароль будет отправлен открытым текстом.</string>
+    <string name="multiplayer_host">Создать гонку</string>
+    <string name="multiplayer_join">Присоединиться к гонке</string>
+    <string name="multiplayer_no_rooms">Нет открытых комнат</string>
+    <string name="multiplayer_max_players">Макс. игроков</string>
+    <string name="multiplayer_laps">Круги: %1$d</string>
+    <string name="multiplayer_room_settings_summary">Макс. игроков: %1$d · Лимит на ход: %2$d с</string>
+    <string name="multiplayer_player_name">Ваше имя</string>
+    <string name="multiplayer_room_password">Пароль комнаты</string>
+    <string name="multiplayer_room_password_optional">Пароль (необязательно)</string>
+    <string name="multiplayer_room_private">Приватная комната</string>
+    <string name="multiplayer_room_code">Код комнаты</string>
+    <string name="multiplayer_ready_header">Готовы?</string>
+    <string name="multiplayer_players">Игроки</string>
+    <string name="multiplayer_start_race">Начать гонку</string>
+    <string name="multiplayer_leave">Выйти</string>
+    <string name="multiplayer_race_settings">Настройки гонки…</string>
+    <string name="multiplayer_turn_timeout_label">Лимит на ход</string>
+    <string name="multiplayer_seat_empty">Не подключён</string>
+    <string name="multiplayer_seat_ai">Компьютер</string>
+    <string name="multiplayer_seat_ai_level">Компьютер · %1$s</string>
+    <string name="multiplayer_change_ai_level">изменить уровень</string>
+    <string name="multiplayer_seat_you">%1$s (вы)</string>
+    <string name="multiplayer_seat_host">Хост</string>
+    <string name="multiplayer_seat_disconnected">Отключён</string>
+    <string name="multiplayer_kick_player">Исключить игрока</string>
+    <string name="multiplayer_kick_title">Исключить этого игрока?</string>
+    <string name="multiplayer_kick_message">%1$s будет удалён из комнаты, и его придётся пригласить заново.</string>
+    <string name="multiplayer_kick_unnamed">Этот игрок</string>
+    <string name="multiplayer_add_ai">Добавить ИИ</string>
+    <string name="multiplayer_remove_ai">Убрать ИИ</string>
+    <string name="multiplayer_remove_ai_title">Убрать этого гонщика-ИИ?</string>
+    <string name="multiplayer_remove_ai_message">%1$s покидает стартовую решётку, и место снова освобождается.</string>
+    <string name="multiplayer_leave_title">Покинуть эту комнату?</string>
+    <string name="multiplayer_leave_message">Вы потеряете своё место. Если гонка идёт, выход означает отказ от неё.</string>
+    <string name="multiplayer_room_code_copied">Код комнаты скопирован</string>
+    <string name="multiplayer_room_code_share">Заходи в мою комнату Grid Racer по коду %1$s</string>
+    <string name="action_copy">Копировать</string>
+    <string name="action_share">Поделиться</string>
+    <string name="lobby_hazards_on">⚡ Опасности вкл.</string>
+    <string name="lobby_hazards_off">⚡ Опасности выкл.</string>
+    <string name="lobby_gravel_on">Гравийная ловушка вкл.</string>
+    <string name="lobby_gravel_off">Гравийная ловушка выкл.</string>
+    <string name="error_title">Ошибка</string>
+    <string name="action_load_more">Загрузить ещё</string>
+    <string name="action_refresh">Обновить</string>
+
+    <string name="how_to_play_title">Как играть</string>
+    <string name="how_to_play_back">В меню</string>
+    <string name="how_to_play_swipe_hint">Свайп влево/вправо для следующего/предыдущего правила</string>
+    <string name="how_to_play_step1_title">Выбор хода</string>
+    <string name="how_to_play_step1_body">Каждый ход вы проецируете свою текущую скорость вперёд. Из этой позиции наката вы должны выбрать любую из 8 соседних позиций или сам накат как ваш следующий ход.</string>
+    <string name="how_to_play_step2_title">Стены и аварии</string>
+    <string name="how_to_play_step2_body">Стены блокируют любой ход, путь которого их пересекает. Если ваш накат уходит за стену и любой ход её пересечёт, вы попадаете в аварию и выбываете из гонки. Планируйте торможение заранее: чем быстрее вы едете, тем дольше приходится сбрасывать скорость.</string>
+    <string name="how_to_play_step3_title">Финишная линия и круги</string>
+    <string name="how_to_play_step3_body">Пересеките финишную линию в направлении её стрелки, чтобы завершить круг. Побеждает тот, кто первым завершит все круги. Пересечение линии против стрелки вместо этого приводит к аварии.</string>
+    <string name="how_to_play_step4_title">Масляные пятна</string>
+    <string name="how_to_play_step4_body">Наезд на масляное пятно лишает вас руления на следующий ход. Предлагаются только точка наката и две случайно выбранные соседние точки — выбор есть, но не обычный. Сбросьте скорость перед масляным пятном или объедьте его.</string>
+    <string name="how_to_play_step5_title">Гвозди</string>
+    <string name="how_to_play_step5_body">Гвозди заставляют сбросить скорость. На скорости остаются только три хода с самым сильным торможением. На скорости один или меньше можно остановиться, катиться прямо дальше или сместиться вбок — но не ускоряться. Выбирайте траекторию осторожно, прежде чем заехать на гвозди.</string>
+    <string name="how_to_play_step6_title">Гравийная ловушка</string>
+    <string name="how_to_play_step6_body">За внешней стеной лежит гравийная ловушка. Когда она включена, вылет за стену — не авария: машина тормозит на каждом ходу из гравия и ещё два хода после. Барьер у её дальнего края останавливает, как стена. Когда она выключена, вас, как и раньше, останавливает внешняя стена.</string>
+
+    <string name="settings_placement_order_label">Порядок стартовой позиции</string>
+    <string name="settings_placement_sequential">По порядку</string>
+    <string name="settings_placement_random">Случайно</string>
+    <string name="settings_sound_label">Звуковые эффекты</string>
+    <string name="settings_dark_mode_label">Тёмная тема</string>
+    <string name="settings_dark_mode_description">Затемняет всё приложение, включая гоночную трассу. По умолчанию включено.</string>
+    <string name="settings_crash_reporting_label">Отчёты об ошибках</string>
+    <string name="settings_language_label">Язык</string>
+    <string name="settings_multiplayer_server_label">Сервер мультиплеера</string>
+    <string name="settings_gameplay_section">Игровой процесс</string>
+    <string name="settings_privacy_section">Конфиденциальность</string>
+    <string name="settings_placement_order_description">Кто первым выбирает стартовое место.</string>
+    <string name="settings_crash_reporting_description">Отправлять анонимные отчёты об ошибках, чтобы неполадки можно было исправить. Никогда не включает ваше имя, аккаунт или что-либо созданное вами.</string>
+    <string name="settings_server_section">Сервер</string>
+    <string name="settings_app_info_label">Информация о приложении</string>
+    <string name="nav_permissions">Разрешения</string>
+    <string name="nav_about">О приложении</string>
+
+    <string name="permissions_intro">Grid Racer запрашивает два разрешения и намеренно избегает нескольких других — вот точно, что делает каждое из них и предоставило ли его ваше устройство.</string>
+    <string name="permissions_never_title">Не требуется</string>
+    <string name="permission_status_granted">Предоставлено</string>
+    <string name="permission_status_denied">Отклонено</string>
+    <string name="permission_status_not_requested">Не запрашивается</string>
+    <string name="permission_grant_install_time">Выдано при установке приложения. Android не показывает его среди разрешений, которые можно отключить.</string>
+    <string name="permission_grant_runtime_granted">Вы разрешили это.</string>
+    <string name="permission_grant_runtime_denied">Вы не разрешили это.</string>
+    <string name="permission_grant_notifications_on">Уведомления для этого приложения включены.</string>
+    <string name="permission_grant_notifications_off">Уведомления для этого приложения выключены.</string>
+    <string name="permission_grant_never_requested">Grid Racer никогда его не запрашивает, поэтому оно не может быть предоставлено</string>
+    <string name="permission_tap_to_revoke">Нажмите, чтобы отозвать в настройках Android</string>
+    <string name="permission_tap_to_allow">Нажмите, чтобы разрешить в настройках Android</string>
+    <string name="permission_notifications_title">Уведомления</string>
+    <string name="permission_notifications_body">Используется, чтобы сообщить, что настала ваша очередь в сетевой гонке, пока Grid Racer работает в фоне. Больше ничего не отправляется, а отказ ничего не меняет в самой игре.</string>
+    <string name="permission_notifications_granted">Grid Racer может уведомлять вас, когда настанет ваша очередь.</string>
+    <string name="permission_notifications_denied">Выключено — вы не получите уведомление, когда настанет ваша очередь в сетевой гонке.</string>
+    <string name="permission_internet_title">Доступ в интернет</string>
+    <string name="permission_internet_body">Используется для сетевых гонок и — только если вы включите это в Настройках — для отправки отчётов об ошибках в Bugsink. Для сетевой игры нужно подключение к сети; отчёты об ошибках по умолчанию выключены, и игра работает точно так же без них.</string>
+    <string name="permission_internet_granted">Предоставляется автоматически при установке. Android не показывает его среди разрешений, которыми вы управляете, поэтому здесь нечего выключать.</string>
+    <string name="permission_internal_broadcasts_title">Защита внутренних сообщений</string>
+    <string name="permission_internal_broadcasts_body">Мы этого не запрашиваем: инструменты сборки Android создают это разрешение для приложения и выдают его только самому приложению, чтобы приёмники, зарегистрированные во время работы, не могли быть вызваны другими приложениями. Оно не даёт доступа ни к чему и не видно вам как функция.</string>
+    <string name="permission_internal_broadcasts_granted">Выдано при установке и доступно только самому Grid Racer.</string>
+    <string name="permission_camera_title">Камера</string>
+    <string name="permission_camera_body">Grid Racer не нуждается в вашей камере и никогда не запрашивает доступ к ней.</string>
+    <string name="permission_microphone_title">Микрофон</string>
+    <string name="permission_microphone_body">Grid Racer не нуждается в вашем микрофоне и никогда не запрашивает доступ к нему.</string>
+    <string name="permission_location_title">Местоположение</string>
+    <string name="permission_location_body">Grid Racer не нуждается в вашем местоположении и никогда не запрашивает доступ к нему.</string>
+    <string name="permission_contacts_title">Контакты</string>
+    <string name="permission_contacts_body">Grid Racer не нуждается в ваших контактах и никогда не запрашивает доступ к ним.</string>
+
+    <string name="about_version">Версия %1$s</string>
+    <string name="about_description">Grid Racer — это пошаговая игра в векторные гонки на сетке, разработанная на piepgras.info.</string>
+    <string name="about_website">https://piepgras.info</string>
+    <string name="about_copyright">© piepgras.info. Контакт: apps@piepgras.info</string>
+    <string name="about_privacy_policy_url" translatable="false">https://piepgras.info/legal/grid-racer/privacy-policy/</string>
+    <string name="about_terms_url" translatable="false">https://piepgras.info/legal/grid-racer/terms-of-service/</string>
+    <string name="about_permissions_url" translatable="false">https://piepgras.info/legal/grid-racer/permissions/</string>
+    <string name="about_delete_account_url" translatable="false">https://piepgras.info/legal/grid-racer/delete-account/</string>
+    <string name="about_view_privacy_policy">Открыть политику конфиденциальности онлайн</string>
+    <string name="about_view_terms">Открыть условия использования онлайн</string>
+    <string name="about_view_permissions">Открыть описание разрешений онлайн</string>
+    <string name="about_view_delete_account">Запросить удаление аккаунта онлайн</string>
+    <string name="about_view_source">Открыть исходный код</string>
+    <string name="about_source_url" translatable="false">https://github.com/piepgrasInfo/gridracer</string>
+    <string name="about_license">Программа с открытым исходным кодом под лицензией MIT. Полный исходный код опубликован; вы можете использовать, изучать, изменять и распространять его, в том числе в коммерческих целях.</string>
+
+    <string name="legal_disclaimer_title">Условия использования</string>
+    <string name="legal_disclaimer_body">Grid Racer предоставляется «как есть», в той мере, в какой это допускается применимым законодательством. Ваши настройки, таблица лидеров и пользовательские трассы хранятся только на этом устройстве.</string>
+    <string name="legal_disclaimer_read_full">Политика конфиденциальности &amp; Условия</string>
+    <string name="legal_disclaimer_storage_note">Пользовательские трассы находятся на этом устройстве и нигде не резервируются. Удаление приложения удаляет их.</string>
+    <string name="legal_disclaimer_privacy_note">Конфиденциальность: никакой аналитики, никакой рекламы, никаких аккаунтов. При локальной игре всё остаётся на этом устройстве. Если вы создаёте сетевую гонку или присоединяетесь к ней, ваше имя игрока, выбранные ходы и текущее состояние гонки отправляются на сервер, к которому вы подключаетесь; эти данные используются только для проведения гонки и не хранятся постоянно.</string>
+    <string name="legal_disclaimer_checkbox">Я прочитал(а) Политику конфиденциальности и Условия использования и принимаю их</string>
+    <string name="legal_disclaimer_continue">Продолжить</string>
+
+    <string name="crash_consent_title">Отчёты об ошибках</string>
+    <string name="crash_consent_body">Вы можете помочь улучшить Grid Racer, отправляя анонимные отчёты об ошибках. Отчёт отправляется только после того, как приложение действительно аварийно завершается или зависает, и только если вы включите это ниже. Он содержит ошибку, модель устройства и версию Android, чтобы проблему можно было найти и исправить.</string>
+    <string name="crash_consent_permission_note">Включение этого активирует сетевую связь и использует разрешение Internet. Ваши пользовательские трассы, имена игроков и результаты гонок никогда не включаются в отчёт об ошибке и никогда не передаются.</string>
+    <string name="crash_consent_change_later">Вы можете изменить этот выбор в любое время в Настройках. По умолчанию он выключен, поэтому никакая информация не покидает ваше устройство, если вы явно не согласитесь.</string>
+    <string name="crash_consent_toggle">Отправлять отчёты об ошибках</string>
+    <string name="crash_consent_continue">Продолжить</string>
+
+    <string name="setup_players_label">Игроки</string>
+    <string name="setup_human">Человек</string>
+    <string name="setup_ai">ИИ</string>
+    <string name="setup_ai_with_level">ИИ: %1$s</string>
+    <string name="ai_level_easy">Лёгкий</string>
+    <string name="ai_level_normal">Обычный</string>
+    <string name="ai_level_best">Идеальный</string>
+    <string name="ai_level_option">%1$s – %2$s</string>
+    <string name="ai_level_easy_description">прежний соперник</string>
+    <string name="ai_level_normal_description">планирует траекторию, иногда ошибается</string>
+    <string name="ai_level_best_description">едет по самой быстрой траектории</string>
+    <string name="setup_gravel_label">Гравийная ловушка</string>
+    <string name="setup_gravel_description">Вылет за внешнюю стену в гравий тормозит машину вместо аварии.</string>
+    <string name="setup_track_label">Трасса</string>
+    <string name="setup_laps_label">Круги</string>
+    <string name="setup_modifiers_label">Опасности (масло и гвозди)</string>
+    <string name="setup_start_race">Начать гонку</string>
+    <string name="setup_duplicate_names_warning">Игроки-люди должны иметь уникальные имена.</string>
+    <string name="setup_track_no_start_positions">У этой трассы нет действительных стартовых позиций, и на ней нельзя гонять. Попробуйте отредактировать или удалить её.</string>
+    <string name="setup_track_not_raceable">Стартовая решётка в эту сторону невозможна</string>
+
+    <string name="track_dimensions">%1$d × %2$d сетка</string>
+    <string name="tracks_custom_section">Пользовательские трассы</string>
+    <string name="tracks_new_track">+ Новая трасса</string>
+    <string name="action_edit">Изменить</string>
+    <string name="action_delete">Удалить</string>
+
+    <string name="shared_tracks_title">Общие трассы</string>
+    <string name="shared_tracks_refresh">Обновить</string>
+    <string name="shared_tracks_empty">Общих трасс пока нет. Станьте первым, кто загрузит трассу из редактора!</string>
+    <string name="shared_tracks_download">Скачать</string>
+    <string name="shared_tracks_upload">Поделиться трассой</string>
+    <string name="shared_tracks_uploaded">Трасса успешно опубликована!</string>
+    <string name="shared_tracks_login_required">Войдите, чтобы делиться трассами.</string>
+    <string name="shared_tracks_upload_failed">Не удалось загрузить: %1$s</string>
+    <string name="shared_tracks_download_saved">Трасса сохранена в ваши трассы.</string>
+    <string name="shared_tracks_download_failed">Не удалось скачать: %1$s</string>
+    <string name="shared_tracks_reported">Трасса отправлена на проверку.</string>
+    <string name="shared_tracks_not_connected">Нет подключения к серверу.</string>
+    <string name="shared_tracks_loading">Загрузка общих трасс…</string>
+    <string name="shared_tracks_open_settings">Открыть настройки сервера</string>
+    <string name="shared_tracks_rating_summary">★ %1$.1f (%2$d)</string>
+
+    <string name="track_info_not_found">Трасса не найдена.</string>
+    <string name="track_info_rating_aggregate">★ %1$.1f по %2$d оценкам</string>
+    <string name="track_info_no_ratings">Оценок пока нет.</string>
+    <string name="track_info_your_rating">Ваша оценка: %1$d</string>
+    <string name="track_info_rate_label">Оценить эту трассу</string>
+    <string name="track_info_sign_in_to_rate">Войдите, чтобы оценить эту трассу.</string>
+    <string name="track_info_uuid">UUID</string>
+    <string name="track_info_server_id">ID сервера</string>
+    <string name="track_info_user_id">Автор</string>
+    <string name="track_info_shared_id">ID общей трассы</string>
+    <string name="track_info_not_applicable">н/д</string>
+    <string name="track_info_builtin_description">Это встроенная трасса. У неё нет серверного идентификатора, её нельзя изменить или загрузить.</string>
+    <string name="track_info_report">Пожаловаться на трассу</string>
+    <string name="track_info_report_title">Пожаловаться на эту трассу?</string>
+    <string name="track_info_report_message">Расскажите, что не так с «%1$s». Модератор это проверит.</string>
+    <string name="track_info_report_reason">Причина</string>
+    <string name="track_info_report_submit">Отправить жалобу</string>
+    <string name="track_info_sign_in_to_report">Войдите, чтобы пожаловаться на эту трассу.</string>
+    <string name="tracks_downloaded_marker">Скачано с сервера</string>
+    <string name="tracks_delete_title">Удалить эту трассу?</string>
+    <string name="tracks_delete_message">«%1$s» будет удалена с этого устройства. Это нельзя отменить.</string>
+
+    <string name="placement_choose_prompt">%1$s, выберите вашу стартовую позицию</string>
+    <string name="placement_choosing_ai">%1$s выбирает стартовую позицию…</string>
+
+    <string name="race_turn_label">Ход %1$s</string>
+    <string name="race_turn_label_ai">Ход %1$s (ИИ)</string>
+    <string name="race_round_label">Раунд %1$d</string>
+    <string name="race_player_count">игроков: %1$d · ИИ: %2$d</string>
+    <string name="race_turn_seconds_remaining">⏱ осталось %1$d с</string>
+
+    <string name="turn_notification_channel_name">Напоминания о ходе</string>
+    <string name="turn_notification_title">Ваш ход в Grid Racer</string>
+    <string name="turn_notification_text">%1$d с до потери хода</string>
+
+    <string name="replay_import">Импорт…</string>
+    <string name="replay_row_summary">ходов: %1$d — %2$s</string>
+    <string name="replay_row_server">С %1$s · комната %2$s</string>
+    <string name="replay_row_unknown_server">сервера</string>
+    <string name="replay_truncated">Этот повтор обрывается раньше: один из ходов не удалось воспроизвести.</string>
+    <string name="replay_delete_title">Удалить этот повтор?</string>
+    <string name="replay_delete_message">Повтор «%1$s» будет удалён с этого устройства. Это нельзя отменить.</string>
+    <string name="replay_import_done">Повтор импортирован.</string>
+    <string name="replay_import_duplicate">У вас уже есть этот повтор.</string>
+    <string name="replay_import_failed">Этот файл не является читаемым повтором Grid Racer.</string>
+    <string name="race_quit">Выйти</string>
+    <string name="race_quit_title">Выйти из этой гонки?</string>
+    <string name="race_quit_message_local">Гонка будет прервана. Ваш прогресс не сохраняется.</string>
+    <string name="race_quit_message_online">Выход означает отказ от гонки — вы снимаетесь, а остальные продолжают без вас.</string>
+
+    <string name="results_title">Результаты гонки</string>
+    <string name="results_finished_label">Финишировал</string>
+    <string name="results_crashed_label">Разбился</string>
+    <string name="results_dnf_label">Не финишировал (лимит времени)</string>
+    <string name="results_race_again">Гонять снова</string>
+    <string name="results_rematch">Начать новую гонку</string>
+    <string name="results_waiting_for_host">Ожидание, пока хост начнёт новую гонку…</string>
+    <string name="results_leave">Покинуть комнату</string>
+    <string name="results_host_promoted_title">Теперь вы хост</string>
+    <string name="results_host_promoted_body">Предыдущий хост вышел. Теперь вы хост этой комнаты — вам решать, когда начать следующую гонку, как только все будут готовы.</string>
+
+    <string name="leaderboard_empty">Гонок пока не записано.</string>
+    <string name="leaderboard_points">%1$d очк · %2$d гонок · %3$d побед</string>
+
+    <string name="race_mode_single">Одиночная гонка</string>
+    <string name="race_mode_tournament">Турнир</string>
+
+    <string name="setup_mode_label">Режим</string>
+    <string name="setup_format_label">Формат</string>
+    <string name="setup_mode_local">Локально</string>
+    <string name="setup_mode_host">Создать онлайн</string>
+    <string name="setup_mode_join">Присоединиться</string>
+    <string name="setup_tap_room_hint">Нажмите на комнату, чтобы подставить её код</string>
+    <string name="multiplayer_room_unavailable">Заполнена или уже идёт гонка</string>
+
+    <string name="setup_direction_normal">Обычное</string>
+    <string name="setup_direction_reversed">Обратное</string>
+
+    <string name="tournament_available_tracks_label">Выберите направление, затем нажмите на трассу, чтобы добавить её в маршрут</string>
+    <string name="tournament_itinerary_label">Маршрут: %1$d трасс (нужно %2$d–%3$d)</string>
+    <string name="tournament_start">Начать турнир</string>
+    <string name="tournament_track_progress">Трасса %1$d из %2$d завершена</string>
+    <string name="tournament_complete_title">Турнир завершён</string>
+    <string name="tournament_standings_label">Положение</string>
+    <string name="tournament_standings_row">%1$d. %2$s%3$s — %4$d очк</string>
+
+    <string name="multiplayer_host_tournament">Создать турнир</string>
+    <string name="multiplayer_spectate">Наблюдать</string>
+    <string name="multiplayer_ratings">Рейтинг</string>
+    <string name="multiplayer_read_only">Наблюдатель (только просмотр)</string>
+
+    <string name="tournament_lobby_waiting">Ожидание хоста…</string>
+    <string name="tournament_standings_title">Положение в турнире</string>
+    <string name="tournament_standings_start_next">Начать следующую гонку</string>
+
+    <string name="ratings_title">Рейтинг</string>
+    <string name="ratings_empty">Рейтинг недоступен.</string>
+    <string name="ratings_row">%1$d матчей · %2$d побед</string>
+
+    <string name="setup_none">Нет</string>
+    <string name="setup_not_enough_players">Для гонки нужно минимум две машины.</string>
+
+    <string name="results_watch_replay">Смотреть повтор</string>
+    <string name="action_save_replay">Сохранить повтор</string>
+    <string name="menu_replay_browser">Повторы</string>
+    <string name="replay_empty">Сохранённых повторов пока нет. Завершите гонку, чтобы записать повтор.</string>
+    <string name="replay_play">Воспроизвести</string>
+    <string name="replay_export">Экспорт</string>
+    <string name="replay_delete">Удалить</string>
+    <string name="replay_export_subject">Повтор GridRacer</string>
+    <string name="replay_export_error">Не удалось экспортировать повтор.</string>
+
+    <string name="how_to_play_velocity_rule_caption_1">Ваша машина стоит на месте.</string>
+    <string name="how_to_play_velocity_rule_caption_2">Вы ещё не двигались, поэтому точка наката — ваша текущая позиция.</string>
+    <string name="how_to_play_velocity_rule_caption_3">Выберите любую из 9 отмеченных позиций.</string>
+    <string name="how_to_play_velocity_rule_caption_4">Вы едете к выбранной позиции.</string>
+    <string name="how_to_play_velocity_rule_caption_5">Новая точка наката определяется вашей текущей скоростью — на один узел сетки вперёд.</string>
+    <string name="how_to_play_velocity_rule_caption_6">Выберите любую из 9 отмеченных позиций.</string>
+    <string name="how_to_play_velocity_rule_caption_7">Вы едете к выбранной позиции.</string>
+
+    <string name="how_to_play_wall_crash_caption_1">Ваш накат направлен на стену.</string>
+    <string name="how_to_play_wall_crash_caption_2">Зелёные точки разрешены; тусклые точки пересекли бы стену.</string>
+    <string name="how_to_play_wall_crash_caption_3">Вы тормозите и поворачиваете на (4,2), но новый накат всё равно пересекает стену.</string>
+    <string name="how_to_play_wall_crash_caption_4">Вы врезаетесь в стену и выбываете из гонки.</string>
+
+    <string name="how_to_play_finish_line_caption_1">Впереди финишная линия. Её стрелка показывает, в каком направлении нужно её пересекать.</string>
+    <string name="how_to_play_finish_line_caption_2">Все девять точек предлагаются как обычно. Три за линией пересекли бы её в правильном направлении.</string>
+    <string name="how_to_play_finish_line_caption_3">Вы пересекаете линию: круг пройден. Счётчик кругов в вашей панели состояния увеличивается.</string>
+    <string name="how_to_play_finish_line_caption_4">Позже вы возвращаетесь к линии, двигаясь против её стрелки.</string>
+    <string name="how_to_play_finish_line_caption_5">Точки за линией по-прежнему предлагаются, но пересечение против стрелки — это авария.</string>
+    <string name="how_to_play_finish_line_caption_6">Вы пересекаете линию не в ту сторону, сгораете на ней и выбываете из гонки.</string>
+
+    <string name="how_to_play_oil_spill_caption_1">Тёмное пятно впереди — масляное пятно, и ваша точка наката лежит прямо на нём.</string>
+    <string name="how_to_play_oil_spill_caption_2">Масло вас не блокирует: все девять точек предлагаются как обычно. Вы сохраняете скорость и берёте накат.</string>
+    <string name="how_to_play_oil_spill_caption_3">Вы на масле. Проезд по нему лишает вас руления на следующем ходу.</string>
+    <string name="how_to_play_oil_spill_caption_4">Предлагаются только точка наката и две случайные точки рядом с ней. Остальные шесть закрыты.</string>
+    <string name="how_to_play_oil_spill_caption_5">Вы выбираете одну из трёх и скользите туда. Пятно — это потеря управления, а не авария.</string>
+    <string name="how_to_play_oil_spill_caption_6">Этот ход не задел масло, поэтому снова предлагаются все девять точек.</string>
+
+    <string name="how_to_play_nails_caption_1">Оранжевое пятно впереди — полоса гвоздей, и ваша точка наката лежит на ней.</string>
+    <string name="how_to_play_nails_caption_2">Гвозди вас не блокируют: все девять точек предлагаются как обычно. Вы сохраняете скорость и берёте накат.</string>
+    <string name="how_to_play_nails_caption_3">Вы на гвоздях. Проезд по ним заставляет сбросить скорость на следующем ходу.</string>
+    <string name="how_to_play_nails_caption_4">На скорости предлагаются только три точки с самым сильным торможением: три ближайшие к вашей машине.</string>
+    <string name="how_to_play_nails_caption_5">Вы тормозите до скорости один. Этот ход начался на гвоздях, поэтому они действуют ещё раз.</string>
+    <string name="how_to_play_nails_caption_6">На скорости один можно остановиться, катиться прямо дальше или сместиться вбок, но не ускоряться.</string>
+    <string name="how_to_play_nails_caption_7">Вы катитесь дальше и сходите с гвоздей.</string>
+    <string name="how_to_play_nails_caption_8">Этот ход не задел гвозди, поэтому снова предлагаются все девять точек.</string>
+
+    <string name="editor_error_boundary_too_few_points">Границе нужно не менее 3 точек.</string>
+    <string name="editor_error_shape_too_few_points">Фигуре нужно не менее 3 точек.</string>
+    <string name="editor_error_obstacle_crosses_both">Препятствие пересекает обе границы — нарисуйте его только в одной петле.</string>
+    <string name="editor_error_no_auto_placement">Не удалось найти автоматическое размещение — перерисуйте финишную линию вручную.</string>
+    <string name="editor_error_outer_too_few_points">Внешней границе нужно не менее 3 точек.</string>
+    <string name="editor_error_inner_too_few_points">Внутренней границе нужно не менее 3 точек.</string>
+    <string name="editor_error_outer_not_simple">Края внешней границы пересекают сами себя.</string>
+    <string name="editor_error_inner_not_simple">Края внутренней границы пересекают сами себя.</string>
+    <string name="editor_error_outer_too_small">Петля трассы слишком мала — сделайте её больше.</string>
+    <string name="editor_error_inner_not_nested">Внутренняя граница должна полностью лежать внутри внешней.</string>
+    <string name="editor_error_corridor_too_narrow">Где-то трасса слишком узкая — увеличьте зазор между границами.</string>
+    <string name="editor_error_obstacle_not_simple">Фигура препятствия пересекает саму себя.</string>
+    <string name="editor_error_obstacle_touches_boundary">Препятствие касается границы трассы — отодвиньте его.</string>
+    <string name="editor_error_obstacle_narrows_corridor">Препятствие оставляет слишком мало места для проезда — отодвиньте его от стен.</string>
+    <string name="editor_error_obstacle_not_in_track">Препятствие должно находиться внутри коридора трассы.</string>
+    <string name="editor_error_modifier_not_simple">Опасная зона пересекает саму себя.</string>
+    <string name="editor_error_modifier_not_in_track">Опасная зона должна находиться внутри коридора трассы.</string>
+    <string name="editor_error_finish_line_missing">Разместите финишную линию.</string>
+    <string name="editor_error_finish_line_too_short">Финишная линия слишком короткая — протяните её дальше через трассу.</string>
+    <string name="editor_error_finish_line_not_across">Направление финиша должно пересекать финишную линию, а не идти вдоль неё.</string>
+    <string name="editor_error_start_positions_invalid">Стартовые позиции оказались бы за пределами трассы — измените финишную линию.</string>
+
+    <string name="multiplayer_error_connect">Не удалось подключиться</string>
+    <string name="multiplayer_error_room_list">Не удалось получить список комнат</string>
+    <string name="multiplayer_error_send">Не удалось отправить</string>
+    <string name="multiplayer_error_protocol_too_old">Это приложение слишком старое для этого сервера — обновите его</string>
+
+    <string name="player_ai_tag">\u0020(ИИ)</string>
+    <string name="results_rank_row">%1$d. %2$s%3$s — %4$d очк</string>
+    <string name="results_name_row">%1$s%2$s</string>
+    <string name="results_no_points_row">%1$s%2$s — 0 очк</string>
+    <string name="lobby_tournament_header">Турнир — трасс: %1$d</string>
+    <string name="lobby_standings_row">%1$s: %2$d очк</string>
+    <string name="setup_laps_custom">Своё</string>
+    <string name="multiplayer_turn_timeout_seconds">%1$d с</string>
+
+    <string name="race_ordinal_st">.</string>
+    <string name="race_ordinal_nd">.</string>
+    <string name="race_ordinal_rd">.</string>
+    <string name="race_ordinal_th">.</string>
+
+    <string name="replay_step_backward">Шаг назад</string>
+    <string name="replay_step_forward">Шаг вперёд</string>
+    <string name="replay_pause">Пауза</string>
+    <string name="replay_speed_multiplier">%1$sx</string>
+
+    <string name="a11y_race_track">Гоночная трасса</string>
+    <string name="a11y_race_track_moves">Гоночная трасса, доступно ходов: %1$d</string>
+    <string name="a11y_move_coast">Катиться прямо в (%1$d, %2$d)</string>
+    <string name="a11y_move_accelerate">Ускориться %1$s в (%2$d, %3$d)</string>
+    <string name="a11y_direction_up">вверх</string>
+    <string name="a11y_direction_down">вниз</string>
+    <string name="a11y_direction_left">влево</string>
+    <string name="a11y_direction_right">вправо</string>
+    <string name="a11y_direction_diagonal">%1$s-%2$s</string>
+    <string name="a11y_player">%1$s, круг %2$d из %3$d</string>
+    <string name="a11y_player_crashed">%1$s, круг %2$d из %3$d, авария</string>
+    <string name="a11y_player_hazards">%1$s, опасности: %2$s</string>
+    <string name="a11y_hazard_nails">гвозди</string>
+    <string name="a11y_hazard_oil">масло</string>
+    <string name="a11y_hazard_gravel">тормозит в гравии</string>
+
+    <plurals name="multiplayer_empty_seat_notice">
+        <item quantity="one">%1$d свободное место не участвует в гонке.</item>
+        <item quantity="few">%1$d свободных места не участвуют в гонке.</item>
+        <item quantity="many">%1$d свободных мест не участвуют в гонке.</item>
+        <item quantity="other">%1$d свободных мест не участвуют в гонке.</item>
+    </plurals>
+    <plurals name="multiplayer_empty_seat_notice_host">
+        <item quantity="one">%1$d свободное место не участвует в гонке — добавьте гонщика-ИИ, чтобы его заполнить.</item>
+        <item quantity="few">%1$d свободных места не участвуют в гонке — добавьте гонщиков-ИИ, чтобы их заполнить.</item>
+        <item quantity="many">%1$d свободных мест не участвуют в гонке — добавьте гонщиков-ИИ, чтобы их заполнить.</item>
+        <item quantity="other">%1$d свободных мест не участвуют в гонке — добавьте гонщиков-ИИ, чтобы их заполнить.</item>
+    </plurals>
+
+    <!-- Captions for the gravel_trap walkthrough, from
+         tools/tutorial-editor/projects/gravel_trap.json. -->
+    <string name="how_to_play_gravel_trap_caption_1">За внешней стеной лежит гравийная ловушка глубиной в два узла сетки, а по её дальнему краю — барьер.</string>
+    <string name="how_to_play_gravel_trap_caption_2">Когда ловушка включена, вылет за стену не считается аварией: точки в гравии — разрешённые ходы.</string>
+    <string name="how_to_play_gravel_trap_caption_3">В гравии машина тормозит: её точка наката отодвигается назад на два узла сетки.</string>
+    <string name="how_to_play_gravel_trap_caption_4">Вы, как обычно, выбираете вокруг заторможенной точки. Точки за барьером закрыты, как за стеной.</string>
+    <string name="how_to_play_gravel_trap_caption_5">Каждый ход из гравия заторможен; на малой скорости можно остановиться или проползти на одну точку в любую сторону.</string>
+    <string name="how_to_play_gravel_trap_caption_6">На трассе торможение действует ещё два хода, после чего можно снова разгоняться.</string>
+</resources>

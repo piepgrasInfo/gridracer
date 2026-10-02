@@ -1,0 +1,22 @@
+<!--
+  Default server logging. Override at runtime with
+  -Dlogback.configurationFile=/path/to/logback.xml (see server/README.md).
+
+  Never log credentials: passwords, session tokens, password hashes, room passwords
+  or player tokens must not reach an appender.
+-->
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Ktor and Netty/CIO are chatty at INFO and drown out our own lines. -->
+    <logger name="io.ktor" level="WARN" />
+    <logger name="io.netty" level="WARN" />
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>

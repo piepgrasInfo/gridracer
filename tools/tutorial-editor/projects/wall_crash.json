@@ -1,0 +1,316 @@
+{
+  "id": "wall_crash",
+  "symbol": "WallCrash",
+  "name": "Walls and crashing",
+  "title": "Walls and crashing",
+  "titleRes": "how_to_play_step2_title",
+  "bodyRes": "how_to_play_step2_body",
+  "body": "Walls block any move whose path crosses them. If your coast projects past a wall and every move would cross it, you crash and are out of the race. Plan your braking early: the faster you go, the longer it takes to slow down.",
+  "notes": "Four-frame walkthrough of walls and crashing. You are already at speed (velocity (3,0)) approaching a wall at x=4.75, so three columns of grid points sit behind it.\n\n1. Your coast projects past the wall; only the car, its trail and the projector show.\n2. The selectors fade in: the points at x=4 are offered, the six behind the wall are withheld.\n3. You brake and steer to (4,2), but the new coast (6,3) still crosses the wall.\n4. Every candidate is behind the wall, so you crash where the projection meets it.",
+  "grid": {
+    "cols": 8,
+    "rows": 5,
+    "cellMode": "fit",
+    "cellScale": 0.85,
+    "cellDivisor": 7.0,
+    "originMode": "cells"
+  },
+  "groups": {},
+  "frames": [
+    {
+      "phase": 0.0,
+      "caption": "Your coast projects toward the wall."
+    },
+    {
+      "phase": 0.25,
+      "caption": "Green points are legal; dim points would cross the wall."
+    },
+    {
+      "phase": 0.55,
+      "caption": "You brake and steer to (4,2), but the new coast still crosses the wall."
+    },
+    {
+      "phase": 0.8,
+      "caption": "You crash into the wall and are out of the race."
+    }
+  ],
+  "elements": [
+    {
+      "id": "wall",
+      "type": "wall",
+      "from": [
+        4.75,
+        -0.3
+      ],
+      "to": [
+        4.75,
+        5.3
+      ],
+      "width": 0.15
+    },
+    {
+      "id": "trail_in",
+      "type": "trail",
+      "kind": "static",
+      "from": [
+        0,
+        1
+      ],
+      "to": [
+        2,
+        1
+      ]
+    },
+    {
+      "id": "trail_move",
+      "type": "trail",
+      "kind": "follow",
+      "car": "car",
+      "move": 0
+    },
+    {
+      "id": "trail_crash",
+      "type": "trail",
+      "kind": "static",
+      "from": [
+        4,
+        2
+      ],
+      "to": [
+        4.75,
+        2.375
+      ],
+      "alpha": {
+        "in": [
+          0.65,
+          0.75
+        ]
+      }
+    },
+    {
+      "id": "projector_1",
+      "type": "projector",
+      "from": [
+        2,
+        1
+      ],
+      "to": [
+        5,
+        1
+      ],
+      "color": "legal",
+      "alpha": {
+        "out": [
+          0.25,
+          0.4
+        ]
+      }
+    },
+    {
+      "id": "projector_2",
+      "type": "projector",
+      "from": [
+        4,
+        2
+      ],
+      "to": [
+        6,
+        3
+      ],
+      "color": "crash",
+      "alpha": {
+        "in": [
+          0.45,
+          0.55
+        ],
+        "out": [
+          0.65,
+          0.75
+        ]
+      }
+    },
+    {
+      "id": "pickers_legal",
+      "type": "pickers",
+      "style": "offered",
+      "around": [
+        5,
+        1
+      ],
+      "exclude": [
+        [
+          5,
+          0
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          2
+        ]
+      ],
+      "alpha": {
+        "in": [
+          0.05,
+          0.2
+        ],
+        "out": [
+          0.25,
+          0.4
+        ]
+      }
+    },
+    {
+      "id": "pickers_blocked",
+      "type": "pickers",
+      "style": "withheld",
+      "points": [
+        [
+          5,
+          0
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          2
+        ]
+      ],
+      "alpha": {
+        "in": [
+          0.05,
+          0.2
+        ],
+        "out": [
+          0.25,
+          0.4
+        ]
+      }
+    },
+    {
+      "id": "ring",
+      "type": "pickRing",
+      "at": [
+        4,
+        2
+      ],
+      "alpha": {
+        "in": [
+          0.25,
+          0.35
+        ],
+        "out": [
+          0.25,
+          0.4
+        ]
+      }
+    },
+    {
+      "id": "pickers_dead_end",
+      "type": "pickers",
+      "style": "withheld",
+      "around": [
+        6,
+        3
+      ],
+      "alpha": {
+        "in": [
+          0.45,
+          0.55
+        ],
+        "out": [
+          0.65,
+          0.75
+        ]
+      }
+    },
+    {
+      "id": "car",
+      "type": "car",
+      "rest": [
+        2,
+        1
+      ],
+      "restHeading": [
+        3,
+        0
+      ],
+      "moves": [
+        {
+          "to": [
+            4,
+            2
+          ],
+          "start": 0.35,
+          "end": 0.45,
+          "heading": [
+            2,
+            1
+          ]
+        }
+      ],
+      "alpha": {
+        "out": [
+          0.65,
+          0.75
+        ]
+      }
+    },
+    {
+      "id": "wreck_car",
+      "type": "car",
+      "rest": [
+        4.75,
+        2.375
+      ],
+      "restHeading": [
+        2,
+        1
+      ],
+      "moves": [],
+      "alpha": {
+        "in": [
+          0.65,
+          0.75
+        ]
+      }
+    },
+    {
+      "id": "wreck",
+      "type": "wreck",
+      "at": [
+        4.75,
+        2.375
+      ],
+      "showFrom": 0.7
+    }
+  ]
+}

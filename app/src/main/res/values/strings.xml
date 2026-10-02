@@ -1,0 +1,538 @@
+<resources>
+    <string name="app_name">Grid Racer</string>
+
+    <string name="action_back">Back</string>
+    <string name="action_main_menu">Main Menu</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_ok">OK</string>
+    <string name="action_continue">Continue</string>
+
+    <string name="editor_title">Track Editor</string>
+    <string name="editor_step_inner">Swipe around the inner loop. It closes and straightens itself automatically when you lift your finger.</string>
+    <string name="editor_step_outer">Now swipe around the outer boundary, outside the inner one.</string>
+    <string name="editor_step_obstacles">Optionally swipe closed loops inside the track: pick a hazard type below. Barrier blocks cars (and merges into a boundary if it touches one); Oil Spill and Nails are hazards cars can still drive over. Tap the Finish Line tool above when you\'re ready to move on.</string>
+    <string name="editor_step_finish_line">Drag roughly across the track to place the finish line - it snaps to the track edges automatically.</string>
+    <string name="editor_step_review">Review your track and give it a name.</string>
+    <string name="editor_undo">Undo</string>
+    <string name="editor_close">Close editor</string>
+    <string name="editor_tool_inner">Inner Boundary</string>
+    <string name="editor_tool_outer">Outer Boundary</string>
+    <string name="editor_tool_obstacle">Obstacle</string>
+    <string name="editor_tool_finish_line">Finish Line</string>
+    <string name="editor_pick_direction">Which way do cars cross the line?</string>
+    <string name="editor_direction_a_description">Direction A</string>
+    <string name="editor_direction_b_description">Direction B</string>
+    <string name="editor_redraw_finish_line">Redraw finish line</string>
+    <string name="editor_track_name_label">Track name</string>
+    <string name="editor_save">Save track</string>
+    <string name="editor_start_over">Start over</string>
+    <string name="editor_start_over_confirm_title">Start over?</string>
+    <string name="editor_start_over_confirm_body">This discards the entire track and can\'t be undone.</string>
+    <string name="editor_default_track_name">Custom Track</string>
+    <string name="editor_draw_kind_obstacle">Barrier</string>
+    <string name="editor_draw_kind_oil_spill">Oil Spill</string>
+    <string name="editor_draw_kind_nails">Nails</string>
+    <string name="editor_pan_zoom_hint">Pinch to zoom, drag with two fingers to pan.</string>
+    <string name="editor_auto_fix">Auto-fix</string>
+    <string name="editor_tidying_up">Tidying up that shape…</string>
+
+    <string name="menu_start_race">Start Race</string>
+    <string name="menu_tracks">Tracks</string>
+    <string name="menu_leaderboard">Leaderboard</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_how_to_play">How to play</string>
+
+    <string name="account_logged_in_as">Logged in as %1$s</string>
+    <string name="account_rating_label">Rating</string>
+    <string name="account_matches_label">Matches</string>
+    <string name="account_wins_label">Wins</string>
+    <string name="account_logout">Log out</string>
+    <!-- Account deletion. Google Play requires an in-app path to it for any app that
+         offers sign-up; legal/delete-account.md is the hosted counterpart. -->
+    <string name="account_delete">Delete account…</string>
+    <string name="account_delete_title">Delete your account?</string>
+    <string name="account_delete_body">This permanently deletes your account on this server: your username, display name, rating and match record, the tracks you shared, and the ratings and reports you filed. Your name is also removed from stored race logs — races you drove stay in the other drivers’ replays, without you named in them. This cannot be undone.</string>
+    <string name="account_delete_local_note">Tracks, replays and settings on this device are not affected; uninstalling the app removes those.</string>
+    <string name="account_delete_password_label">Confirm your password</string>
+    <string name="account_delete_confirm">Delete account</string>
+    <string name="account_delete_unsupported">This server cannot delete accounts from the app. Write to apps@piepgras.info naming your username and we will delete it.</string>
+    <string name="account_delete_done">Your account and its data have been deleted.</string>
+    <string name="account_error_in_room">Leave the race before deleting your account.</string>
+    <string name="account_error_delete_failed">The account could not be deleted. Please try again.</string>
+    <string name="account_login_tab">Log in</string>
+    <string name="account_register_tab">Register</string>
+    <string name="account_username">Username</string>
+    <string name="account_password">Password</string>
+    <string name="account_display_name_optional">Display name (optional)</string>
+    <string name="account_login_button">Log in</string>
+    <string name="account_register_button">Register</string>
+    <string name="account_not_connected">Connecting to the server…</string>
+    <string name="account_server_no_accounts">This server does not support accounts.</string>
+    <string name="account_error_generic">Could not complete the request.</string>
+    <!-- One message per AuthRejection: collapsing them all into the generic string meant
+         "that name is taken" and "wrong password" looked identical to the user. -->
+    <string name="account_error_invalid_username">That username is not allowed. %1$s</string>
+    <string name="account_error_invalid_password">That password is too short. %1$s</string>
+    <string name="account_error_invalid_display_name">That display name is not allowed. Try something shorter and without unusual characters.</string>
+    <string name="account_error_username_taken">That username is already taken.</string>
+    <string name="account_error_no_such_user">No account with that username.</string>
+    <string name="account_error_wrong_password">Wrong password.</string>
+    <string name="account_error_rate_limited">Too many attempts. Wait a minute and try again.</string>
+    <string name="account_hint_username">%1$d–%2$d letters, digits or underscores; must start with a letter.</string>
+    <string name="account_hint_password">At least %1$d characters.</string>
+    <string name="account_dismiss_error">Dismiss</string>
+
+    <string name="multiplayer_disconnected">Disconnected</string>
+    <string name="multiplayer_connecting">Connecting…</string>
+    <string name="multiplayer_reconnecting">Reconnecting…</string>
+    <string name="multiplayer_connected">Connected</string>
+    <string name="multiplayer_error">Connection error</string>
+    <string name="multiplayer_encrypted">Encrypted</string>
+    <string name="multiplayer_encrypted_description">Encrypted connection</string>
+    <string name="multiplayer_unencrypted_description">Unencrypted connection</string>
+    <string name="multiplayer_unencrypted_warning">Not encrypted: your password and everything else you send to this server cross the network in plain text. Use a server without wss:// only on a network you trust, such as your own home network.</string>
+    <string name="multiplayer_unencrypted_password">This connection is not encrypted: your password is sent in plain text.</string>
+    <string name="multiplayer_host">Host race</string>
+    <string name="multiplayer_join">Join race</string>
+    <string name="multiplayer_no_rooms">No open rooms</string>
+    <string name="multiplayer_max_players">Max players</string>
+    <string name="multiplayer_laps">Laps: %1$d</string>
+    <string name="multiplayer_room_settings_summary">Max players: %1$d · Turn timeout: %2$ds</string>
+    <string name="multiplayer_player_name">Your name</string>
+    <string name="multiplayer_room_password">Room password</string>
+    <string name="multiplayer_room_password_optional">Password (optional)</string>
+    <string name="multiplayer_room_private">Private room</string>
+    <string name="multiplayer_room_code">Room code</string>
+    <string name="multiplayer_ready_header">Ready?</string>
+    <string name="multiplayer_players">Players</string>
+    <string name="multiplayer_start_race">Start race</string>
+    <string name="multiplayer_leave">Leave</string>
+    <string name="multiplayer_race_settings">Race settings…</string>
+    <string name="multiplayer_turn_timeout_label">Turn timeout</string>
+    <!-- Lobby seats. Every seat the room has gets a row, so these distinguish an empty seat
+         (nobody took it, and it is simply not raced unless the host seats an AI) from one
+         whose player has dropped and is expected back. -->
+    <string name="multiplayer_seat_empty">Not connected</string>
+    <!-- Badge under an AI seat's name, like the "Host" badge under a human's. Not a suffix:
+         the seats are already named "AI 1", "AI 2". -->
+    <string name="multiplayer_seat_ai">Computer</string>
+    <string name="multiplayer_seat_ai_level">Computer · %1$s</string>
+    <string name="multiplayer_change_ai_level">change level</string>
+    <string name="multiplayer_seat_you">%1$s (you)</string>
+    <string name="multiplayer_seat_host">Host</string>
+    <string name="multiplayer_seat_disconnected">Disconnected</string>
+    <string name="multiplayer_kick_player">Kick player</string>
+    <string name="multiplayer_kick_title">Kick this player?</string>
+    <string name="multiplayer_kick_message">%1$s will be removed from the room and will have to be invited again.</string>
+    <string name="multiplayer_kick_unnamed">This player</string>
+    <string name="multiplayer_add_ai">Add AI</string>
+    <string name="multiplayer_remove_ai">Remove AI</string>
+    <string name="multiplayer_remove_ai_title">Remove this AI driver?</string>
+    <string name="multiplayer_remove_ai_message">%1$s leaves the grid and the seat opens up again.</string>
+    <string name="multiplayer_leave_title">Leave this room?</string>
+    <string name="multiplayer_leave_message">You will lose your seat. If a race is running, leaving forfeits it.</string>
+    <string name="multiplayer_room_code_copied">Room code copied</string>
+    <string name="multiplayer_room_code_share">Join my Grid Racer room with code %1$s</string>
+    <string name="action_copy">Copy</string>
+    <string name="action_share">Share</string>
+    <string name="lobby_hazards_on">⚡ Hazards on</string>
+    <string name="lobby_hazards_off">⚡ Hazards off</string>
+    <string name="lobby_gravel_on">Gravel trap on</string>
+    <string name="lobby_gravel_off">Gravel trap off</string>
+    <string name="error_title">Error</string>
+    <string name="action_load_more">Load more</string>
+    <string name="action_refresh">Refresh</string>
+
+    <string name="how_to_play_title">How to play</string>
+    <string name="how_to_play_back">Back to menu</string>
+    <string name="how_to_play_swipe_hint">Swipe left/right for next/previous rule</string>
+    <string name="how_to_play_step1_title">Choosing your move</string>
+    <string name="how_to_play_step1_body">Each turn, you project your current speed forward. From this coasted position, you must choose any of the 8 neighboring positions or the coast itself as your next turn.</string>
+    <string name="how_to_play_step2_title">Walls and crashing</string>
+    <string name="how_to_play_step2_body">Walls block any move whose path crosses them. If your coast projects past a wall and every move would cross it, you crash and are out of the race. Plan your braking early: the faster you go, the longer it takes to slow down.</string>
+    <string name="how_to_play_step3_title">Finish line and laps</string>
+    <string name="how_to_play_step3_body">Cross the finish line in the direction of its arrow to complete a lap. Whoever completes all laps first wins. Crossing the line against the arrow crashes you instead.</string>
+    <string name="how_to_play_step4_title">Oil spills</string>
+    <string name="how_to_play_step4_body">Driving over an oil spill takes away your steering for the next turn. The coast is always offered, plus two randomly chosen nearby points — you get a choice, but not the usual one. Slow down before a spill, or steer around it.</string>
+    <string name="how_to_play_step5_title">Nails</string>
+    <string name="how_to_play_step5_body">Nails force a slowdown. At speed, only the three hardest-braking moves remain. At speed one or less, you can stop, coast forward, or strafe sideways — but you cannot accelerate. Pick your line carefully before hitting nails.</string>
+    <string name="how_to_play_step6_title">Gravel trap</string>
+    <string name="how_to_play_step6_body">Beyond the outer wall lies a gravel trap. When it is on, running wide is no crash: the gravel brakes you on every move from it and on the two after. The barrier at its far edge stops you like a wall. When it is off, the outer wall stops you as before.</string>
+
+    <string name="settings_placement_order_label">Start placement order</string>
+    <string name="settings_placement_sequential">In order</string>
+    <string name="settings_placement_random">Random</string>
+    <string name="settings_sound_label">Sound effects</string>
+    <string name="settings_dark_mode_label">Dark mode</string>
+    <string name="settings_dark_mode_description">Dims the whole app, the race track included. On by default.</string>
+    <string name="settings_crash_reporting_label">Crash reporting</string>
+    <string name="settings_language_label">Language</string>
+    <string name="settings_multiplayer_server_label">Multiplayer server</string>
+    <string name="settings_gameplay_section">Gameplay</string>
+    <string name="settings_privacy_section">Privacy</string>
+    <string name="settings_placement_order_description">Who picks a starting slot first.</string>
+    <string name="settings_crash_reporting_description">Send anonymous crash reports so faults can be fixed. Never includes your name, account or anything you have created.</string>
+    <string name="settings_server_section">Server</string>
+    <string name="settings_app_info_label">App information</string>
+    <string name="nav_permissions">Permissions</string>
+    <string name="nav_about">About</string>
+
+    <!-- Permissions screen (ui/PermissionsScreen.kt, legal/AppPermissions.kt). Wording matches legal/permissions.md. -->
+    <string name="permissions_intro">Grid Racer requests two permissions and deliberately avoids several others - here\'s exactly what each one does, and whether your device has granted it.</string>
+    <string name="permissions_never_title">Not needed</string>
+    <string name="permission_status_granted">Granted</string>
+    <string name="permission_status_denied">Denied</string>
+    <string name="permission_status_not_requested">Not requested</string>
+    <string name="permission_grant_install_time">Granted when you installed the app. Android does not list it among the permissions you can switch off.</string>
+    <string name="permission_grant_runtime_granted">You allowed this.</string>
+    <string name="permission_grant_runtime_denied">You have not allowed this.</string>
+    <string name="permission_grant_notifications_on">Notifications are switched on for this app.</string>
+    <string name="permission_grant_notifications_off">Notifications are switched off for this app.</string>
+    <string name="permission_grant_never_requested">Grid Racer never asks for it, so it can never be given</string>
+    <string name="permission_tap_to_revoke">Tap to revoke in Android settings</string>
+    <string name="permission_tap_to_allow">Tap to allow in Android settings</string>
+    <string name="permission_notifications_title">Notifications</string>
+    <string name="permission_notifications_body">Used to tell you it is your turn in an online race while Grid Racer is in the background. Nothing else is ever posted, and declining it changes nothing about the game itself.</string>
+    <string name="permission_notifications_granted">Grid Racer may notify you when it is your turn.</string>
+    <string name="permission_notifications_denied">Turned off, so you will not be told when it is your turn in an online race.</string>
+    <string name="permission_internet_title">Internet access</string>
+    <string name="permission_internet_body">Used for online multiplayer races and, only when you turn it on in Settings, for sending crash reports to Bugsink. Multiplayer needs a network connection; crash reporting is off by default and the game works exactly the same without it.</string>
+    <string name="permission_internet_granted">Given automatically when you install the app. Android does not list it among the permissions you can switch, so there is nothing to turn off here.</string>
+    <string name="permission_internal_broadcasts_title">Internal broadcast protection</string>
+    <string name="permission_internal_broadcasts_body">Not something we ask for: the Android build tools generate it for the app and grant it only to the app itself, so that receivers registered at runtime cannot be triggered by other apps. It grants no access to anything and is not visible to you as a capability.</string>
+    <string name="permission_internal_broadcasts_granted">Granted at install, and usable only by Grid Racer itself.</string>
+    <string name="permission_camera_title">Camera</string>
+    <string name="permission_camera_body">Grid Racer has no need for your camera and never requests access to it.</string>
+    <string name="permission_microphone_title">Microphone</string>
+    <string name="permission_microphone_body">Grid Racer has no need for your microphone and never requests access to it.</string>
+    <string name="permission_location_title">Location</string>
+    <string name="permission_location_body">Grid Racer has no need for your location and never requests access to it.</string>
+    <string name="permission_contacts_title">Contacts</string>
+    <string name="permission_contacts_body">Grid Racer has no need for your contacts and never requests access to them.</string>
+
+    <string name="about_version">Version %1$s</string>
+    <string name="about_description">Grid Racer is a turn-based vector-racing game played on a grid, developed at piepgras.info.</string>
+    <string name="about_website">https://piepgras.info</string>
+    <string name="about_copyright">© piepgras.info. Contact: apps@piepgras.info</string>
+    <string name="about_privacy_policy_url" translatable="false">https://piepgras.info/legal/grid-racer/privacy-policy/</string>
+    <string name="about_terms_url" translatable="false">https://piepgras.info/legal/grid-racer/terms-of-service/</string>
+    <string name="about_permissions_url" translatable="false">https://piepgras.info/legal/grid-racer/permissions/</string>
+    <string name="about_delete_account_url" translatable="false">https://piepgras.info/legal/grid-racer/delete-account/</string>
+    <string name="about_view_privacy_policy">View privacy policy online</string>
+    <string name="about_view_terms">View terms of service online</string>
+    <string name="about_view_permissions">View permissions explanation online</string>
+    <string name="about_view_delete_account">Request account deletion online</string>
+    <string name="about_view_source">View source code</string>
+    <string name="about_source_url" translatable="false">https://github.com/piepgrasInfo/gridracer</string>
+    <string name="about_license">Open-source software under the MIT License. The complete source code is published, and you may use, study, change and share it, commercially or not.</string>
+
+    <string name="legal_disclaimer_title">Terms of use</string>
+    <string name="legal_disclaimer_body">Grid Racer is provided “as is”, to the extent permitted by applicable law. Your settings, leaderboard and custom tracks are kept on this device only.</string>
+    <string name="legal_disclaimer_read_full">Privacy Policy &amp; Terms</string>
+    <string name="legal_disclaimer_storage_note">Custom tracks live on this device and are not backed up anywhere. Uninstalling the app deletes them.</string>
+    <string name="legal_disclaimer_privacy_note">Privacy: no analytics, no ads, no account. Local play keeps everything on this device. If you join or host an online multiplayer race, your player name, chosen moves and the current race state are sent to the server you connect to; this data is only used to run the race and is not stored permanently.</string>
+    <string name="legal_disclaimer_checkbox">I have read and accept the Privacy Policy and Terms of Service</string>
+    <string name="legal_disclaimer_continue">Continue</string>
+
+    <string name="crash_consent_title">Crash reporting</string>
+    <string name="crash_consent_body">You can help improve Grid Racer by sending anonymous crash reports. A report is sent only after the app actually crashes or freezes, and only if you turn it on below. It contains the error, the device model and the Android version, so the problem can be found and fixed.</string>
+    <string name="crash_consent_permission_note">Turning this on enables network communication and uses the Internet permission. Your custom tracks, player names and race results are never included in a crash report and are never transmitted.</string>
+    <string name="crash_consent_change_later">You can change this choice at any time in Settings. The default is off, so no information leaves your device unless you explicitly agree.</string>
+    <string name="crash_consent_toggle">Send crash reports</string>
+    <string name="crash_consent_continue">Continue</string>
+
+    <string name="setup_players_label">Players</string>
+    <string name="setup_human">Human</string>
+    <string name="setup_ai">AI</string>
+    <string name="setup_ai_with_level">AI: %1$s</string>
+    <string name="ai_level_easy">Easy</string>
+    <string name="ai_level_normal">Normal</string>
+    <string name="ai_level_best">Best</string>
+    <string name="ai_level_option">%1$s – %2$s</string>
+    <string name="ai_level_easy_description">the original opponent</string>
+    <string name="ai_level_normal_description">plans its line, slips now and then</string>
+    <string name="ai_level_best_description">drives the fastest line there is</string>
+    <string name="setup_gravel_label">Gravel trap</string>
+    <string name="setup_gravel_description">Running wide into the gravel beyond the outer wall brakes the car instead of crashing it.</string>
+    <string name="setup_track_label">Track</string>
+    <string name="setup_laps_label">Laps</string>
+    <string name="setup_modifiers_label">Hazards (oil &amp; nails)</string>
+    <string name="setup_start_race">Start Race</string>
+    <string name="setup_duplicate_names_warning">Human players need unique names.</string>
+    <string name="setup_track_no_start_positions">This track has no valid starting positions and can\'t be raced. Try editing or deleting it.</string>
+    <string name="setup_track_not_raceable">No start grid this way round</string>
+
+    <string name="track_dimensions">%1$d × %2$d grid</string>
+    <string name="tracks_custom_section">Custom Tracks</string>
+    <string name="tracks_new_track">+ New Track</string>
+    <string name="action_edit">Edit</string>
+    <string name="action_delete">Delete</string>
+
+    <!-- Shared tracks (Phase 7) -->
+    <string name="shared_tracks_title">Shared Tracks</string>
+    <string name="shared_tracks_refresh">Refresh</string>
+    <string name="shared_tracks_empty">No shared tracks yet. Be the first to upload one from the track editor!</string>
+    <string name="shared_tracks_download">Download</string>
+    <string name="shared_tracks_upload">Share Track</string>
+    <string name="shared_tracks_uploaded">Track shared successfully!</string>
+    <string name="shared_tracks_login_required">Log in to share tracks.</string>
+    <string name="shared_tracks_upload_failed">Upload failed: %1$s</string>
+    <string name="shared_tracks_download_saved">Track saved to your tracks.</string>
+    <string name="shared_tracks_download_failed">Download failed: %1$s</string>
+    <string name="shared_tracks_reported">Track reported for review.</string>
+    <string name="shared_tracks_not_connected">Not connected to server.</string>
+    <string name="shared_tracks_loading">Loading shared tracks…</string>
+    <string name="shared_tracks_open_settings">Open server settings</string>
+    <string name="shared_tracks_rating_summary">★ %1$.1f (%2$d)</string>
+
+    <!-- Track info screen -->
+    <string name="track_info_not_found">Track not found.</string>
+    <string name="track_info_rating_aggregate">★ %1$.1f from %2$d ratings</string>
+    <string name="track_info_no_ratings">No ratings yet.</string>
+    <string name="track_info_your_rating">Your rating: %1$d</string>
+    <string name="track_info_rate_label">Rate this track</string>
+    <string name="track_info_sign_in_to_rate">Sign in to rate this track.</string>
+    <string name="track_info_uuid">UUID</string>
+    <string name="track_info_server_id">Server ID</string>
+    <string name="track_info_user_id">Author</string>
+    <string name="track_info_shared_id">Shared track ID</string>
+    <string name="track_info_not_applicable">N/A</string>
+    <string name="track_info_builtin_description">This is a built-in track. It has no server identity and cannot be edited or uploaded.</string>
+    <string name="track_info_report">Report this track</string>
+    <string name="track_info_report_title">Report this track?</string>
+    <string name="track_info_report_message">Tell us what is wrong with “%1$s”. A moderator will review it.</string>
+    <string name="track_info_report_reason">Reason</string>
+    <string name="track_info_report_submit">Send report</string>
+    <string name="track_info_sign_in_to_report">Sign in to report this track.</string>
+    <string name="tracks_downloaded_marker">Downloaded from a server</string>
+    <string name="tracks_delete_title">Delete this track?</string>
+    <string name="tracks_delete_message">“%1$s” will be removed from this device. This cannot be undone.</string>
+
+    <string name="placement_choose_prompt">%1$s, choose your starting position</string>
+    <string name="placement_choosing_ai">%1$s is choosing a starting position…</string>
+
+    <string name="race_turn_label">%1$s\'s turn</string>
+    <string name="race_turn_label_ai">%1$s\'s turn (AI)</string>
+    <string name="race_round_label">Round %1$d</string>
+    <string name="race_player_count">%1$d players · %2$d AI</string>
+    <string name="race_turn_seconds_remaining">⏱ %1$ds left</string>
+
+    <!-- Turn reminder notification, shown when the app is backgrounded during the local
+         player's turn so they know to come back before the server forfeits it for them. -->
+    <string name="turn_notification_channel_name">Turn reminders</string>
+    <string name="turn_notification_title">Your turn in Grid Racer</string>
+    <string name="turn_notification_text">%1$ds left before your turn is forfeited</string>
+
+    <!-- Replay browser -->
+    <string name="replay_import">Import…</string>
+    <string name="replay_row_summary">%1$d moves — %2$s</string>
+    <string name="replay_row_server">From %1$s · room %2$s</string>
+    <string name="replay_row_unknown_server">a server</string>
+    <string name="replay_truncated">This replay stops early: a move in it could not be played back.</string>
+    <string name="replay_delete_title">Delete this replay?</string>
+    <string name="replay_delete_message">The replay of “%1$s” will be removed from this device. This cannot be undone.</string>
+    <string name="replay_import_done">Replay imported.</string>
+    <string name="replay_import_duplicate">You already have that replay.</string>
+    <string name="replay_import_failed">That file is not a readable Grid Racer replay.</string>
+    <string name="race_quit">Quit</string>
+    <string name="race_quit_title">Quit this race?</string>
+    <string name="race_quit_message_local">The race will be abandoned. Your progress is not saved.</string>
+    <string name="race_quit_message_online">Leaving forfeits the race — you will be retired and the others carry on without you.</string>
+
+    <string name="results_title">Race Results</string>
+    <string name="results_finished_label">Finished</string>
+    <string name="results_crashed_label">Crashed</string>
+    <string name="results_dnf_label">Did not finish (time limit)</string>
+    <string name="results_race_again">Race Again</string>
+    <string name="results_rematch">Start New Race</string>
+    <string name="results_waiting_for_host">Waiting for the host to start a new race…</string>
+    <string name="results_leave">Leave Room</string>
+    <string name="results_host_promoted_title">You are the new host</string>
+    <string name="results_host_promoted_body">The previous host left. You are now the host of this room — it\'s up to you to start the next race when everyone is ready.</string>
+
+    <string name="leaderboard_empty">No races recorded yet.</string>
+    <string name="leaderboard_points">%1$d pts · %2$d races · %3$d wins</string>
+
+    <string name="race_mode_single">Single Race</string>
+    <string name="race_mode_tournament">Tournament</string>
+
+    <string name="setup_mode_label">Mode</string>
+    <string name="setup_format_label">Format</string>
+    <string name="setup_mode_local">Local</string>
+    <string name="setup_mode_host">Host online</string>
+    <string name="setup_mode_join">Join</string>
+    <string name="setup_tap_room_hint">Tap a room to use its code</string>
+    <string name="multiplayer_room_unavailable">Full or already racing</string>
+
+    <string name="setup_direction_normal">Normal</string>
+    <string name="setup_direction_reversed">Reversed</string>
+
+    <string name="tournament_available_tracks_label">Pick a direction, then tap a track to add it to the itinerary</string>
+    <string name="tournament_itinerary_label">Itinerary: %1$d tracks (need %2$d–%3$d)</string>
+    <string name="tournament_start">Start Tournament</string>
+    <string name="tournament_track_progress">Track %1$d of %2$d complete</string>
+    <string name="tournament_complete_title">Tournament Complete</string>
+    <string name="tournament_standings_label">Standings</string>
+    <string name="tournament_standings_row">%1$d. %2$s%3$s — %4$d pts</string>
+
+    <string name="multiplayer_host_tournament">Host tournament</string>
+    <string name="multiplayer_spectate">Spectate</string>
+    <string name="multiplayer_ratings">Ratings</string>
+    <string name="multiplayer_read_only">Spectator (read-only)</string>
+
+
+    <string name="tournament_lobby_waiting">Waiting for host…</string>
+    <string name="tournament_standings_title">Tournament Standings</string>
+    <string name="tournament_standings_start_next">Start next race</string>
+
+    <string name="ratings_title">Ratings</string>
+    <string name="ratings_empty">No ratings available.</string>
+    <string name="ratings_row">%1$d matches · %2$d wins</string>
+
+    <string name="setup_none">None</string>
+    <string name="setup_not_enough_players">A race needs at least two cars.</string>
+
+    <!-- Replay -->
+    <string name="results_watch_replay">Watch Replay</string>
+    <string name="action_save_replay">Save Replay</string>
+    <string name="menu_replay_browser">Replay Player</string>
+    <string name="replay_empty">No saved replays yet. Finish a race to record one.</string>
+    <string name="replay_play">Play</string>
+    <string name="replay_export">Export</string>
+    <string name="replay_delete">Delete</string>
+    <string name="replay_export_subject">GridRacer replay</string>
+    <string name="replay_export_error">Could not export replay.</string>
+
+    <!-- How to play: the caption shown beside each frame of a walkthrough, one resource per
+         frame. The names are what tools/tutorial-editor/codegen.py derives from a project id
+         ("how_to_play_", the project id, "_caption_", the frame number), so a generated
+         walkthrough and a hand-written one draw their captions from the same resources. -->
+    <string name="how_to_play_velocity_rule_caption_1">Your car starts at rest.</string>
+    <string name="how_to_play_velocity_rule_caption_2">You haven\'t moved yet, so the coast is your current position.</string>
+    <string name="how_to_play_velocity_rule_caption_3">Choose any of the 9 marked positions.</string>
+    <string name="how_to_play_velocity_rule_caption_4">You drive to the selected position.</string>
+    <string name="how_to_play_velocity_rule_caption_5">Your new coast is determined by your current speed — one grid point ahead.</string>
+    <string name="how_to_play_velocity_rule_caption_6">Choose any of the 9 marked positions.</string>
+    <string name="how_to_play_velocity_rule_caption_7">You drive to the selected position.</string>
+
+    <string name="how_to_play_wall_crash_caption_1">Your coast projects toward the wall.</string>
+    <string name="how_to_play_wall_crash_caption_2">Green points are legal; dim points would cross the wall.</string>
+    <string name="how_to_play_wall_crash_caption_3">You brake and steer to (4,2), but the new coast still crosses the wall.</string>
+    <string name="how_to_play_wall_crash_caption_4">You crash into the wall and are out of the race.</string>
+
+    <string name="how_to_play_finish_line_caption_1">The finish line is ahead. Its arrow shows the direction you must cross it in.</string>
+    <string name="how_to_play_finish_line_caption_2">All nine points are offered as usual. The three beyond the line would cross it the right way.</string>
+    <string name="how_to_play_finish_line_caption_3">You cross the line: one lap done. The lap counter in your status frame ticks up.</string>
+    <string name="how_to_play_finish_line_caption_4">Later you come back toward the line, heading against its arrow.</string>
+    <string name="how_to_play_finish_line_caption_5">The points beyond the line are still offered, but crossing against the arrow is a crash.</string>
+    <string name="how_to_play_finish_line_caption_6">You cross the wrong way, burn out on the line, and are out of the race.</string>
+
+    <string name="how_to_play_oil_spill_caption_1">The dark patch ahead is an oil spill, and your coast point lies right on it.</string>
+    <string name="how_to_play_oil_spill_caption_2">Oil does not block you: all nine points are offered as usual. You keep your speed and take the coast.</string>
+    <string name="how_to_play_oil_spill_caption_3">You are on the oil. Driving through it costs you your steering on the next move.</string>
+    <string name="how_to_play_oil_spill_caption_4">Only your coast point and two random points beside it are offered. The other six are withheld.</string>
+    <string name="how_to_play_oil_spill_caption_5">You take one of the three and skid there. A spill is a loss of control, not a crash.</string>
+    <string name="how_to_play_oil_spill_caption_6">That move touched no oil, so all nine points are offered again.</string>
+
+    <string name="how_to_play_nails_caption_1">The orange patch ahead is a strip of nails, and your coast point lies on it.</string>
+    <string name="how_to_play_nails_caption_2">Nails do not block you: all nine points are offered as usual. You keep your speed and take the coast.</string>
+    <string name="how_to_play_nails_caption_3">You are on the nails. Driving over them forces a slow-down on your next move.</string>
+    <string name="how_to_play_nails_caption_4">At speed, only the three hardest-braking points are offered: the three nearest your car.</string>
+    <string name="how_to_play_nails_caption_5">You brake to speed one. That move started on the nails, so they act once more.</string>
+    <string name="how_to_play_nails_caption_6">At speed one you may stop, roll straight on, or move to either side, but not accelerate.</string>
+    <string name="how_to_play_nails_caption_7">You roll on, clear of the nails.</string>
+    <string name="how_to_play_nails_caption_8">That move touched no nails, so all nine points are offered again.</string>
+
+    <!-- Track editor rejections. The first four are raised by the editor itself; the rest are
+         one per TrackValidationError, mapped in TrackEditorScreen.describeError. -->
+    <string name="editor_error_boundary_too_few_points">Boundary needs at least 3 points.</string>
+    <string name="editor_error_shape_too_few_points">Shape needs at least 3 points.</string>
+    <string name="editor_error_obstacle_crosses_both">Obstacle intersects both boundaries - draw it in one loop only.</string>
+    <string name="editor_error_no_auto_placement">Couldn\'t find an automatic placement - try redrawing the finish line manually.</string>
+    <string name="editor_error_outer_too_few_points">Outer boundary needs at least 3 points.</string>
+    <string name="editor_error_inner_too_few_points">Inner boundary needs at least 3 points.</string>
+    <string name="editor_error_outer_not_simple">Outer boundary edges cross themselves.</string>
+    <string name="editor_error_inner_not_simple">Inner boundary edges cross themselves.</string>
+    <string name="editor_error_outer_too_small">Track loop is too small - make it bigger.</string>
+    <string name="editor_error_inner_not_nested">Inner boundary must sit fully inside the outer boundary.</string>
+    <string name="editor_error_corridor_too_narrow">The track is too narrow somewhere - widen the gap between the boundaries.</string>
+    <string name="editor_error_obstacle_not_simple">Obstacle shape crosses itself.</string>
+    <string name="editor_error_obstacle_touches_boundary">Obstacle touches a track boundary - move it away.</string>
+    <string name="editor_error_obstacle_narrows_corridor">Obstacle leaves too little room to drive past - move it away from the walls.</string>
+    <string name="editor_error_obstacle_not_in_track">Obstacle must be inside the track corridor.</string>
+    <string name="editor_error_modifier_not_simple">Hazard shape crosses itself.</string>
+    <string name="editor_error_modifier_not_in_track">Hazard must be inside the track corridor.</string>
+    <string name="editor_error_finish_line_missing">Place a finish line.</string>
+    <string name="editor_error_finish_line_too_short">Finish line is too short - drag further across the track.</string>
+    <string name="editor_error_finish_line_not_across">Finish direction should cross the finish line, not run along it.</string>
+    <string name="editor_error_start_positions_invalid">Starting positions would land outside the track - adjust the finish line.</string>
+
+    <!-- Multiplayer failures the app raises itself. MultiplayerClient publishes a stable code
+         and the UI maps it here, the same way ServerSection maps an AuthRejection: a message
+         that came from the server is passed through untouched. -->
+    <string name="multiplayer_error_connect">Could not connect</string>
+    <string name="multiplayer_error_room_list">Could not fetch rooms</string>
+    <string name="multiplayer_error_send">Send failed</string>
+    <string name="multiplayer_error_protocol_too_old">This app is too old for that server - please update</string>
+
+    <!-- Race results and standings rows. %2$s/%3$s is the AI badge, empty for a human. The
+         escape keeps the leading space, which aapt would otherwise trim away. -->
+    <string name="player_ai_tag">\u0020(AI)</string>
+    <string name="results_rank_row">%1$d. %2$s%3$s — %4$d pts</string>
+    <string name="results_name_row">%1$s%2$s</string>
+    <string name="results_no_points_row">%1$s%2$s — 0 pts</string>
+    <string name="lobby_tournament_header">Tournament — %1$d tracks</string>
+    <string name="lobby_standings_row">%1$s: %2$d pts</string>
+    <string name="setup_laps_custom">Custom</string>
+    <string name="multiplayer_turn_timeout_seconds">%1$ds</string>
+
+    <!-- Finish ranks drawn on a player's status frame. English picks a suffix from the last
+         digit (1st, 2nd, 3rd, 4th); a language that simply numbers the places translates all
+         four to the same thing. -->
+    <string name="race_ordinal_st">st</string>
+    <string name="race_ordinal_nd">nd</string>
+    <string name="race_ordinal_rd">rd</string>
+    <string name="race_ordinal_th">th</string>
+
+    <!-- Replay transport controls (icon-only, so these are their labels for TalkBack). -->
+    <string name="replay_step_backward">Step backward</string>
+    <string name="replay_step_forward">Step forward</string>
+    <string name="replay_pause">Pause</string>
+    <string name="replay_speed_multiplier">%1$sx</string>
+
+    <!-- Accessibility descriptions. The race canvas is a raw Canvas with no touch targets
+         TalkBack can land on, so every legal move is exposed as a named custom action. -->
+    <string name="a11y_race_track">Race track</string>
+    <string name="a11y_race_track_moves">Race track, %1$d legal moves available</string>
+    <string name="a11y_move_coast">Coast straight to (%1$d, %2$d)</string>
+    <string name="a11y_move_accelerate">Accelerate %1$s to (%2$d, %3$d)</string>
+    <string name="a11y_direction_up">up</string>
+    <string name="a11y_direction_down">down</string>
+    <string name="a11y_direction_left">left</string>
+    <string name="a11y_direction_right">right</string>
+    <string name="a11y_direction_diagonal">%1$s-%2$s</string>
+    <string name="a11y_player">%1$s, lap %2$d of %3$d</string>
+    <string name="a11y_player_crashed">%1$s, lap %2$d of %3$d, crashed</string>
+    <string name="a11y_player_hazards">%1$s, hazards: %2$s</string>
+    <string name="a11y_hazard_nails">nails</string>
+    <string name="a11y_hazard_oil">oil</string>
+    <string name="a11y_hazard_gravel">braked by the gravel</string>
+
+    <plurals name="multiplayer_empty_seat_notice">
+        <item quantity="one">The empty seat is not raced.</item>
+        <item quantity="other">The %1$d empty seats are not raced.</item>
+    </plurals>
+    <plurals name="multiplayer_empty_seat_notice_host">
+        <item quantity="one">The empty seat is not raced — add an AI driver to fill it.</item>
+        <item quantity="other">The %1$d empty seats are not raced — add AI drivers to fill them.</item>
+    </plurals>
+
+    <!-- Captions for the gravel_trap walkthrough, from
+         tools/tutorial-editor/projects/gravel_trap.json. -->
+    <string name="how_to_play_gravel_trap_caption_1">Beyond the outer wall lies a gravel trap, two grid points deep, with a barrier at its far edge.</string>
+    <string name="how_to_play_gravel_trap_caption_2">With the gravel trap on, running wide is no crash: points in the gravel are legal moves.</string>
+    <string name="how_to_play_gravel_trap_caption_3">In the gravel the car is braked: its coast point is pulled back two grid points.</string>
+    <string name="how_to_play_gravel_trap_caption_4">You choose around the braked point as usual. Points past the barrier are withheld, like those past a wall.</string>
+    <string name="how_to_play_gravel_trap_caption_5">Every move from the gravel is braked; at low speed you may stop or crawl one point in any direction.</string>
+    <string name="how_to_play_gravel_trap_caption_6">Back on the track, the brake holds for two more moves, then you can speed up again.</string>
+</resources>

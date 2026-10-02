@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Google Play feature graphic, 1024x500, and the preview banner on
+     https://piepgras.info/apps/grid-racer/.
+
+     Layout note, learned the hard way on Work Time Tracker's version: every
+     text run must fit inside the 1024px canvas with a margin, because Play
+     crops this image and overlays its own UI on some surfaces. Measured with
+     DejaVu Sans at the sizes below:
+
+       headline "Grid"  @104 bold = 246px, x 452..698
+       headline "Racer" @104 bold = 334px, x 452..786 (margin 238)
+       tagline          @26       = 483px, x 452..935 (margin  89)
+
+     The motif is the game itself: a finish line, a racing line whose steps get
+     longer as the car accelerates, and the nine moves open on the next turn -
+     the same red car and green dots as the launcher icon. If you change the
+     wording or the sizes, re-measure with PIL; do not eyeball it. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="500" viewBox="0 0 1024 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1024" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2C3768"/>
+      <stop offset="0.55" stop-color="#1D2440"/>
+      <stop offset="1" stop-color="#141827"/>
+    </linearGradient>
+    <pattern id="paper" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40,0 L0,0 L0,40" fill="none" stroke="#FFFFFF" stroke-opacity="0.07" stroke-width="1"/>
+    </pattern>
+    <pattern id="checker" width="24" height="24" patternUnits="userSpaceOnUse">
+      <rect width="24" height="24" fill="#101425"/>
+      <rect width="12" height="12" fill="#FFFFFF"/>
+      <rect x="12" y="12" width="12" height="12" fill="#FFFFFF"/>
+    </pattern>
+  </defs>
+
+  <rect width="1024" height="500" fill="url(#bg)"/>
+  <rect width="1024" height="500" fill="url(#paper)"/>
+  <!-- Decorative, kept clear of the text block -->
+  <circle cx="120" cy="60" r="150" fill="#FFFFFF" opacity="0.03"/>
+  <circle cx="930" cy="470" r="160" fill="#000000" opacity="0.12"/>
+
+  <!-- Track boundaries: a corner, drawn the way the editor draws one -->
+  <path d="M44,372 Q140,330 204,273 Q250,220 287,134" fill="none"
+        stroke="#FFFFFF" stroke-opacity="0.14" stroke-width="3" stroke-linecap="round"/>
+  <path d="M106,498 Q210,460 286,387 Q360,320 413,196" fill="none"
+        stroke="#FFFFFF" stroke-opacity="0.14" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Finish line, square across the direction of travel -->
+  <g transform="translate(75,435) rotate(63.4)">
+    <rect x="-46" y="-9" width="92" height="18" fill="url(#checker)"/>
+  </g>
+
+  <!-- The racing line. Each step is longer than the last and the direction
+       bends by one square at a time: that is the entire rule set. -->
+  <polyline points="75,435 115,415 175,380 245,330 305,255 350,165"
+            fill="none" stroke="#4CAF50" stroke-width="5"
+            stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+  <g fill="#4CAF50">
+    <circle cx="75" cy="435" r="7"/>
+    <circle cx="115" cy="415" r="7"/>
+    <circle cx="175" cy="380" r="7"/>
+    <circle cx="245" cy="330" r="7"/>
+    <circle cx="305" cy="255" r="7"/>
+  </g>
+  <!-- Momentum carries the car to the white dot; the eight around it are the
+       rest of next turn's legal moves. -->
+  <line x1="350" y1="165" x2="395" y2="75" stroke="#4CAF50" stroke-width="3"
+        stroke-dasharray="6 8" opacity="0.6"/>
+  <g fill="#4CAF50" opacity="0.5">
+    <circle cx="361" cy="41" r="7"/>  <circle cx="395" cy="41" r="7"/>  <circle cx="429" cy="41" r="7"/>
+    <circle cx="361" cy="75" r="7"/>                                    <circle cx="429" cy="75" r="7"/>
+    <circle cx="361" cy="109" r="7"/> <circle cx="395" cy="109" r="7"/> <circle cx="429" cy="109" r="7"/>
+  </g>
+  <circle cx="395" cy="75" r="11" fill="#FFFFFF" opacity="0.92"/>
+
+  <!-- The car, at the head of the line, pointing along its last move -->
+  <g transform="translate(350,165) rotate(-63.4)">
+    <rect x="-30" y="-15" width="60" height="30" rx="9" fill="#E53935"/>
+    <rect x="-30" y="-15" width="16" height="30" rx="8" fill="#C62828"/>
+    <rect x="2" y="-10" width="16" height="20" rx="5" fill="#FFCDD2"/>
+  </g>
+
+  <text x="452" y="212" font-family="DejaVu Sans, sans-serif" font-weight="bold" font-size="104" fill="#FFFFFF">Grid</text>
+  <text x="452" y="316" font-family="DejaVu Sans, sans-serif" font-weight="bold" font-size="104" fill="#FFFFFF">Racer</text>
+  <!-- The only translatable run: scripts/generate_feature_graphic.py swaps the
+       text and shrinks font-size per locale so every translation stays inside
+       the canvas. The wordmark above is the app's name and is never translated. -->
+  <text id="tagline" x="452" y="374" font-family="DejaVu Sans, sans-serif" font-size="26" fill="#B8C4E4">Race the grid. Draw your own tracks.</text>
+</svg>

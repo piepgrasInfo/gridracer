@@ -1,0 +1,326 @@
+/* The tutorial editor's chrome. Dark, because the scene canvas is a bright track surface and
+   everything around it should stay out of the way of judging what the animation looks like. */
+
+:root {
+  color-scheme: dark;
+  --bg: #16181d;
+  --panel: #1e2128;
+  --panel-2: #262a33;
+  --line: #333945;
+  --text: #e6e8ec;
+  --muted: #9aa1ae;
+  --accent: #00c853;
+  --accent-dim: #2e7d32;
+  --danger: #d32f2f;
+  --car: #e53935;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background: var(--bg);
+  color: var(--text);
+  font: 13px/1.45 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+/* ---------------------------------------------------------------- top bar */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+}
+
+.topbar h1 {
+  margin: 0 8px 0 0;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.topbar h1 span {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.spacer { flex: 1; }
+
+/* ---------------------------------------------------------------- controls */
+
+button {
+  padding: 5px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel-2);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover { border-color: #4a5262; }
+button:active { transform: translateY(1px); }
+button:disabled { opacity: 0.4; cursor: default; }
+button.primary { background: var(--accent-dim); border-color: var(--accent); }
+button.danger { border-color: #6b2b2b; }
+button.danger:hover { background: #4a1f1f; }
+button.tiny { padding: 2px 6px; font-size: 11px; }
+
+input, select, textarea {
+  padding: 4px 6px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: #12141a;
+  color: var(--text);
+  font: inherit;
+}
+
+input[type="range"] { padding: 0; background: none; border: none; }
+input[type="number"] { width: 74px; }
+input[type="checkbox"] { width: auto; }
+
+textarea {
+  width: 100%;
+  min-height: 420px;
+  font-family: ui-monospace, "JetBrains Mono", Menlo, monospace;
+  font-size: 12px;
+  resize: vertical;
+}
+
+.field { display: flex; flex-direction: column; gap: 3px; margin-bottom: 8px; }
+.field > span { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.4px; }
+.field.inline { flex-direction: row; align-items: center; gap: 6px; margin-bottom: 0; }
+.field.inline > span { text-transform: none; letter-spacing: 0; font-size: 12px; }
+.field.inline.grow { flex: 1; }
+.field.inline.grow input[type="range"] { flex: 1; }
+.field.checkbox { flex-direction: row-reverse; align-items: center; justify-content: flex-end; }
+
+.row { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; margin: 6px 0; }
+.row > .grow { flex: 1; }
+
+.help { color: var(--muted); font-size: 11px; margin: 4px 0 0; }
+.readout { font-family: ui-monospace, monospace; min-width: 52px; text-align: right; color: var(--muted); }
+
+/* ---------------------------------------------------------------- layout */
+
+.workspace {
+  display: grid;
+  grid-template-columns: 268px 1fr 320px;
+  min-height: 0;
+}
+
+.panel {
+  overflow-y: auto;
+  padding: 10px;
+  background: var(--panel);
+}
+
+.panel.left { border-right: 1px solid var(--line); }
+.panel.right { border-left: 1px solid var(--line); padding: 0; }
+
+.panel h2 {
+  margin: 4px 0 6px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--muted);
+}
+
+.panel h2 small, .panel h3 small {
+  display: block;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+  color: #6f7684;
+}
+
+.panel h3 { margin: 16px 0 6px; font-size: 12px; color: var(--muted); }
+
+/* ---------------------------------------------------------------- stage */
+
+.stage {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 0;
+  min-width: 0;
+}
+
+.stage-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
+  flex-wrap: wrap;
+}
+
+.canvas-wrap {
+  position: relative;
+  display: grid;
+  place-items: center;
+  /* Both minimums matter: a grid item defaults to min-*: auto, which would let the canvas push
+     the row past its 1fr share and cover the info panel below. */
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
+  padding: 12px;
+  background:
+    repeating-conic-gradient(#1b1e24 0% 25%, #191c21 0% 50%) 50% / 20px 20px;
+}
+
+canvas {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+  cursor: crosshair;
+}
+
+.canvas-hint {
+  position: absolute;
+  left: 18px;
+  bottom: 14px;
+  color: #2b2f38;
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+  pointer-events: none;
+}
+
+/* The app's info panel, reproduced so caption length can be judged here. */
+.info-preview {
+  border-top: 1px solid var(--line);
+  background: var(--panel);
+  padding: 10px 14px;
+  display: grid;
+  gap: 6px;
+  text-align: center;
+}
+
+.caption-box {
+  background: #143a1f;
+  border-radius: 8px;
+  padding: 6px 12px;
+  min-height: 52px;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  color: #d7f5df;
+}
+
+.preview-title { font-size: 15px; font-weight: 600; }
+.preview-body { font-size: 12px; color: var(--muted); max-width: 70ch; margin: 0 auto; }
+
+/* ---------------------------------------------------------------- lists */
+
+.frame-list, .element-list { list-style: none; margin: 0; padding: 0; }
+
+.frame-list li, .element-list li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.frame-list li:hover, .element-list li:hover { background: var(--panel-2); }
+.frame-list li.active, .element-list li.active { border-color: var(--accent); background: #17301f; }
+
+.frame-list .phase { font-family: ui-monospace, monospace; color: var(--accent); width: 44px; }
+.frame-list .caption {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--muted);
+}
+
+.element-list .kind {
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+  color: var(--accent);
+  width: 84px;
+  flex-shrink: 0;
+}
+
+.element-list .name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* A dot showing whether the element is visible at the current phase. */
+.element-list .vis {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.element-list .vis.off { background: #3a4049; }
+
+/* ---------------------------------------------------------------- tabs */
+
+.tabs { display: flex; border-bottom: 1px solid var(--line); }
+
+.tab {
+  flex: 1;
+  border: none;
+  border-radius: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  padding: 8px 4px;
+}
+
+.tab.active { color: var(--text); border-bottom-color: var(--accent); }
+
+.tab-body { padding: 10px; overflow-y: auto; max-height: calc(100vh - 140px); }
+.hidden { display: none !important; }
+
+/* ---------------------------------------------------------------- envelope */
+
+.envelope {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px;
+  margin: 8px 0;
+  background: #191c22;
+}
+
+.envelope h4 { margin: 0 0 6px; font-size: 11px; color: var(--muted); text-transform: uppercase; }
+
+/* The little alpha curve over 0..1 phase, with the frames ticked on it. */
+.envelope canvas { width: 100%; height: 40px; border-radius: 4px; box-shadow: none; cursor: default; }
+
+/* ---------------------------------------------------------------- status */
+
+.statusbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 12px;
+  border-top: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.statusbar .dirty { color: #ffb74d; }
+.statusbar .error { color: var(--danger); }
+.statusbar .ok { color: var(--accent); }
+
+.warnings { color: #ffb74d; font-size: 11px; margin: 6px 0 0; }
+
+/* ---------------------------------------------------------------- point rows */
+
+.points { display: grid; gap: 4px; }
+
+.point-row { display: flex; align-items: center; gap: 4px; }
+.point-row input[type="number"] { width: 66px; }
+.point-row .label { color: var(--muted); font-size: 11px; width: 58px; }

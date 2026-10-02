@@ -1,0 +1,346 @@
+{
+  "id": "oil_spill",
+  "symbol": "OilSpill",
+  "name": "Oil spills",
+  "title": "Oil spills",
+  "titleRes": "how_to_play_step4_title",
+  "bodyRes": "how_to_play_step4_body",
+  "body": "Driving over an oil spill takes away your steering for the next turn. The coast is always available, plus two randomly chosen nearby points — your choices are restricted. Slow down before a spill, or steer around it.",
+  "notes": "Six-frame walkthrough of an oil spill, following GameEngine.oilSlipTargets: a move whose path touches the spill costs the player their steering on the *next* move, when only the coast point and two randomly drawn neighbours of it are offered.\n\nThe restricted set is centred on the coast point (position + lastVelocity), not on the car — centring it on the car would show moves the engine never offers.",
+  "grid": {
+    "cols": 9,
+    "rows": 5,
+    "cellMode": "fit",
+    "cellScale": 0.85,
+    "cellDivisor": 7,
+    "originMode": "points"
+  },
+  "groups": {},
+  "frames": [
+    {
+      "phase": 0,
+      "caption": "The dark patch ahead is an oil spill, and your coast point lies right on it."
+    },
+    {
+      "phase": 0.15,
+      "caption": "You drive onto an oil spill..."
+    },
+    {
+      "phase": 0.3,
+      "caption": "You are on the oil. Driving through it costs you your steering on the next move."
+    },
+    {
+      "phase": 0.45,
+      "caption": "Only your coast point and two random points beside it are offered. The other six are withheld."
+    },
+    {
+      "phase": 0.6,
+      "caption": "You take one of the three and skid there. A spill is a loss of control, not a crash."
+    },
+    {
+      "phase": 0.75,
+      "caption": "That move touched no oil, so all nine points are offered again."
+    }
+  ],
+  "elements": [
+    {
+      "id": "spill",
+      "type": "hazard",
+      "color": "oil",
+      "corners": [
+        [
+          3.1,
+          0.9
+        ],
+        [
+          3.5,
+          0.25
+        ],
+        [
+          4.4,
+          0.15
+        ],
+        [
+          4.95,
+          0.7
+        ],
+        [
+          4.85,
+          1.55
+        ],
+        [
+          4.2,
+          1.9
+        ],
+        [
+          3.4,
+          1.75
+        ],
+        [
+          3.05,
+          1.4
+        ]
+      ]
+    },
+    {
+      "id": "trail_in",
+      "type": "trail",
+      "kind": "static",
+      "from": [
+        0,
+        1
+      ],
+      "to": [
+        2,
+        1
+      ]
+    },
+    {
+      "id": "trail_onto_oil",
+      "type": "trail",
+      "kind": "follow",
+      "car": "car",
+      "move": 0
+    },
+    {
+      "id": "trail_skid",
+      "type": "trail",
+      "kind": "follow",
+      "car": "car",
+      "move": 1
+    },
+    {
+      "id": "projector_1",
+      "type": "projector",
+      "from": [
+        2,
+        1
+      ],
+      "to": [
+        4,
+        1
+      ],
+      "color": "legal",
+      "alpha": {
+        "out": [
+          0.16,
+          0.22
+        ]
+      }
+    },
+    {
+      "id": "pickers_1",
+      "type": "pickers",
+      "style": "offered",
+      "around": [
+        4,
+        1
+      ],
+      "alpha": {
+        "in": [
+          0.03,
+          0.11
+        ],
+        "out": [
+          0.16,
+          0.22
+        ]
+      }
+    },
+    {
+      "id": "ring_1",
+      "type": "pickRing",
+      "at": [
+        4,
+        1
+      ],
+      "alpha": {
+        "in": [
+          0.11,
+          0.15
+        ],
+        "out": [
+          0.16,
+          0.22
+        ]
+      }
+    },
+    {
+      "id": "projector_2",
+      "type": "projector",
+      "from": [
+        4,
+        1
+      ],
+      "to": [
+        6,
+        1
+      ],
+      "color": "legal",
+      "alpha": {
+        "in": [
+          0.26,
+          0.3
+        ],
+        "out": [
+          0.5,
+          0.56
+        ]
+      }
+    },
+    {
+      "id": "pickers_slips",
+      "type": "pickers",
+      "style": "offered",
+      "points": [
+        [
+          6,
+          1
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          7,
+          2
+        ]
+      ],
+      "alpha": {
+        "in": [
+          0.32,
+          0.4
+        ],
+        "out": [
+          0.5,
+          0.56
+        ]
+      }
+    },
+    {
+      "id": "pickers_withheld",
+      "type": "pickers",
+      "style": "withheld",
+      "around": [
+        6,
+        1
+      ],
+      "exclude": [
+        [
+          6,
+          1
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          7,
+          2
+        ]
+      ],
+      "alpha": {
+        "in": [
+          0.32,
+          0.4
+        ],
+        "out": [
+          0.5,
+          0.56
+        ]
+      }
+    },
+    {
+      "id": "ring_2",
+      "type": "pickRing",
+      "at": [
+        5,
+        2
+      ],
+      "alpha": {
+        "in": [
+          0.46,
+          0.5
+        ],
+        "out": [
+          0.5,
+          0.56
+        ]
+      }
+    },
+    {
+      "id": "projector_3",
+      "type": "projector",
+      "from": [
+        5,
+        2
+      ],
+      "to": [
+        6,
+        3
+      ],
+      "color": "legal",
+      "alpha": {
+        "in": [
+          0.62,
+          0.68
+        ]
+      }
+    },
+    {
+      "id": "pickers_free",
+      "type": "pickers",
+      "style": "offered",
+      "around": [
+        6,
+        3
+      ],
+      "alpha": {
+        "in": [
+          0.66,
+          0.75
+        ]
+      }
+    },
+    {
+      "id": "car",
+      "type": "car",
+      "rest": [
+        2,
+        1
+      ],
+      "restHeading": [
+        1,
+        0
+      ],
+      "moves": [
+        {
+          "to": [
+            4,
+            1
+          ],
+          "start": 0.17,
+          "end": 0.28,
+          "heading": [
+            1,
+            0
+          ]
+        },
+        {
+          "to": [
+            5,
+            2
+          ],
+          "start": 0.5,
+          "end": 0.6,
+          "heading": [
+            1,
+            1
+          ],
+          "shimmy": 0.1,
+          "shimmyCycles": 3
+        }
+      ]
+    }
+  ]
+}
